@@ -1,0 +1,25 @@
+#!/bin/bash
+# vim:tabstop=2:autoindent:expandtab:shiftwidth=2
+#
+# Author:  Javier Cacheiro Lopez (jlopez@cesga.es)
+# Purpose: Connect to a Hadoop cluster
+# Usage:   $0 --option
+# Return:  0 if success, 1 if error
+#
+# Changelog
+#   11-10-2013 JLC
+#     First version
+
+# Hadoop-on-demand root directory
+HADOOP_ROOT=$HOME/.hadoop-on-demand
+
+# Load config if available (overwrites previous default values)
+if [[ -r $HADOOP_ROOT/config ]]; then
+  . $HADOOP_ROOT/config
+fi
+
+cd $HADOOP_ROOT
+
+MASTER=`head -n1 node.list`
+
+ssh hadoop@$MASTER
