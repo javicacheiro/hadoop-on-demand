@@ -1,0 +1,326 @@
+#!/bin/bash
+# vim:tabstop=2:autoindent:expandtab:shiftwidth=2
+#
+# Author:  Javier Cacheiro Lopez (jlopez@cesga.es)
+# Purpose: Start a Hadoop cluster
+# Usage:   $0 --option
+# Return:  0 if success, 1 if error
+#
+# Changelog
+#   19-07-2013 JLC
+#     First version
+#   12-09-2013 JLC
+#     Parallel version
+#   17-9-2013 JLC
+#     Amazon EC2
+#     TODO: Improve instance listing code (now it only checks for instances using AMI_IMAGE)
+
+scriptName="${0##*/}"
+
+#
+# Default values
+#
+declare -i SIZE=10
+declare -i REPLICATION=3
+declare -i BLOCKSIZE=16777216
+declare -i RTASKS=1
+#AMI_IMAGE="ami-16f61261"
+AMI_IMAGE="ami-54d43023"
+#INSTANCE_TYPE="t1.micro"
+INSTANCE_TYPE="m1.small"
+#KERNEL_ARG=
+
+# Location of the check_ssh nagios binary
+CHECK_SSH=/usr/local/bin/check_ssh
+
+#
+# Functions
+#
+function printUsage() {
+    cat <<EOF
+
+Usage: $scriptName [-s SIZE] [-r dfs.replication] [-b  <dfs.block.size>] [-t <mapred.reduce.tasks>]
+    
+Start a Hadoop cluster 
+
+options include:
+    -s SIZE                   Number of slaves in the Hadoop cluster (default 10)
+    -r dfs.replication        Number of replicas of each file (default 3)
+    -b dfs.block.size         HDFS block size (default 16MB)
+    -t mapred.reduce.tasks    Number of reduce tasks (default 1)
+    -h                        Print help
+
+EOF
+}
+
+
+#
+#  Read options
+#
+function readOptions() {
+  while getopts ":hs:r:b:t:" opt; do
+      case "$opt" in
+          s) SIZE=$OPTARG ;;
+          r) REPLICATION=$OPTARG ;;
+          b) BLOCKSIZE=$OPTARG ;;
+          t) RTASKS=$OPTARG ;;
+          h) printUsage; exit 1 ;;
+          *) printUsage; exit 1 ;;
+      esac
+  done
+
+  # Check that there are no unparsed options and that we have the options we need
+  shift $((OPTIND - 1))
+  if [[ $# != 0 || -z $SIZE ]]; then
+      printUsage
+      exit 1
+  fi
+}
+
+
+#
+# Start VM instances 
+# 
+function startCluster() {
+
+#  for i in `seq 0 $SIZE`; do 
+#	  #onetemplate instantiate 177 -n $LABEL-$i
+#	  ec2-run-instances $AMI_IMAGE -n 1 -g jlc-hadoop -k id-rsa-ec2-javier -t $INSTANCE_TYPE $KERNEL_ARG
+#	  # If we want to pass a specific file to run on start use USER_DATA_FILE variable
+#	  #ec2-run-instances $AMI_IMAGE -n 1 -g jlc-hadoop -k id-rsa-ec2-javier -f "$bin"/$USER_DATA_FILE -t $INSTANCE_TYPE $KERNEL_ARG
+#  done
+
+  ec2-run-instances $AMI_IMAGE -n $TOTAL -g jlc-hadoop -k id-rsa-ec2-javier -t $INSTANCE_TYPE $KERNEL_ARG
+
+  # --raw "SSH_KEY=\"`cat ~/.ssh/id_dsa.pub`\"
+
+  # Waiting for all nodes to start
+  echo "Esperando a que arranquen los nodos ..."
+  STARTED=0
+  while [[ $STARTED -lt $TOTAL ]]; do
+    sleep 10
+    #STARTED=`onevm list m | grep $LABEL | awk '{print $5}'| grep running | wc -l`
+    #STARTED=`ec2-describe-instances|grep id-rsa-ec2-javier | grep running | wc -l`
+    STARTED=`ec2-describe-instances|grep $AMI_IMAGE | grep running | wc -l`
+    echo "  ... arrancados $STARTED / $TOTAL"
+  done
+}
+
+#
+# Get node list and store it in the file node.list and in the variable NODES
+#
+function getNodeList() {
+  #onevm list m | grep $LABEL | awk '{print $1}'|xargs -l1 onevm show |grep IP= | grep -Eo '[0-9.]+' > node.list
+  #ec2-describe-instances|grep $AMI_IMAGE | grep running | cut -f4
+  # Get the IPs of the nodes
+  #ec2-describe-instances|grep $AMI_IMAGE | grep running | cut -f4| xargs -l1 host | cut -d' ' -f4 > node.list
+  #ec2-describe-instances|grep $AMI_IMAGE | grep running | cut -f15 > node.list
+  # DEBUG
+  echo " ... instancias en ejecucion " `ec2-describe-instances|grep $AMI_IMAGE | grep running | wc -l`
+  ec2-describe-instances|grep $AMI_IMAGE | grep running
+  # END DEBUG
+  ec2-describe-instances|grep $AMI_IMAGE | grep running | awk '{print $4}' > node.list
+  ec2-describe-instances|grep $AMI_IMAGE | grep running | awk '{print $15}' > node.private.list
+  NODES=`cat node.list`
+}
+
+
+#
+# Configure Hadoop Node
+#
+function configureNode() {
+  local node=$1
+  local nodename=$2
+
+  echo "Configurando el nodo $node"
+
+  # First we have to check the node has already completed the boot process and ssh is available
+  #OK=1
+  #while [[ $OK -ne 0 ]]; do
+  #  $CHECK_SSH -t 10 $node
+  #  OK=$?
+  #done
+
+  until scp node.private.list root@$node: ;do
+    echo "Esperando por el nodo $node"
+    sleep 10
+  done
+
+  #scp iptables root@$node:/etc/sysconfig/iptables
+  #scp conf/* root@$node:/opt/cesga/hadoop/conf/
+  #scp version root@$node:/opt/cesga/modules/hadoop/.version
+
+  echo "... hadoop"
+  ssh root@$node <<EOF
+        # Commands below are already included in the init.d context script
+        echo " ... scratch"
+        #mkfs.ext4 /dev/vdc
+        #mount /dev/vdc /scratch/ -o noatime
+        #mkdir /scratch/hadoop
+        #chown hadoop:hadoop /scratch/hadoop
+        #mkdir /scratch/hadoop/logs
+        #chown hadoop:hadoop /scratch/hadoop/logs
+        #ln -s /scratch/hadoop/logs /opt/cesga/hadoop/logs
+	ln -s /media/ephemeral0/ /scratch
+	mkdir -p /scratch/hadoop/logs
+	chown -R hadoop:hadoop /media/ephemeral0/
+
+        # Regeneate hosts file
+        echo "127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4" > /etc/hosts
+        echo "::1         localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
+        MASTER=`head -n1 node.private.list`
+        # /etc/hosts
+        echo "\$MASTER hadoop-master" >> /etc/hosts
+
+        # Generate hadoop slaves
+        sed '1d' node.private.list > /opt/cesga/hadoop/conf/slaves
+
+        n=1
+        for slave in \`cat /opt/cesga/hadoop/conf/slaves\`; do
+                #echo "\$slave hadoop-`printf '%02d' \$n`" >> /etc/hosts
+                echo "\$slave hadoop-\$n" >> /etc/hosts
+                let "n++"
+        done
+
+        # Change hostname (it is afterwards displayed in hadoop monitoring page)
+        hostname $nodename
+        cp /etc/sysconfig/network /etc/sysconfig/network.0
+        sed "s/HOSTNAME=localhost/HOSTNAME=$nodename/" /etc/sysconfig/network.0 > /etc/sysconfig/network
+
+        # Restart firewall
+        #service iptables restart
+EOF
+}
+
+#
+# Configure Hadoop master
+#
+function configureMaster() {
+  local master=$1
+  ssh root@$master "
+    echo StrictHostKeyChecking no >> /etc/ssh/ssh_config
+    su - hadoop -c '
+      #echo module load hadoop >> /home/hadoop/.bashrc
+      #module load hadoop
+      hadoop namenode -format
+      cd /opt/cesga/hadoop/bin
+      #./start-dfs.sh
+      #./start-mapred.sh
+      ./start-all.sh
+    '
+    "
+}
+
+###############################################################################
+#
+# MAIN
+#
+###############################################################################
+
+readOptions "$@"
+
+# Total number of VM to start is SIZE+1
+TOTAL=$((SIZE+1))
+
+# Label for the cluster
+LABEL=hadoop-1.1.2-$$
+
+# Start the VMs needed (SIZE+1)
+date
+echo "Paso 1/3: Arrancando el cluster"
+startCluster
+echo "Arranque del cluster Finalizado."
+date
+echo ""
+
+
+# Get list of nodes
+echo "Paso 2/3: Obteniendo la lista de nodos."
+getNodeList
+echo "Lista de nodos obtenida."
+date
+echo ""
+
+# Configure Hadoop
+echo "Paso 3/3: Configurando Hadoop."
+N=0
+
+for node in $NODES; do
+  # Set node name
+  if [[ $N == 0 ]]; then
+	  nodename="hadoop-master"
+	  let "N++"
+  else
+	  #nodename="hadoop-`printf '%02d' $N`"
+	  nodename="hadoop-$N"
+	  let "N++"
+  fi
+
+  configureNode $node $nodename &
+
+done
+
+# Wait until all nodes are configured
+wait
+
+MASTER=`head -n1 node.list`
+configureMaster $MASTER
+
+echo ""
+date
+echo ""
+
+# Wait a little bit for complete hadoop startup
+SLAVES=$((TOTAL-1))
+DN=`ssh hadoop@$MASTER '. /etc/profile; hadoop dfsadmin -report | grep "Datanodes available" | cut -d" " -f3'`
+while [[ $DN -lt $SLAVES ]]; do   
+  sleep 10
+  DN=`ssh hadoop@$MASTER '. /etc/profile; hadoop dfsadmin -report | grep "Datanodes available" | cut -d" " -f3'`
+  echo " ... esperando a que arranque Hadoop"
+  date
+  echo " ... DataNodes disponibles $DN / $SLAVES"
+done
+
+echo ""
+echo "-------------- HADOOP STATUS ------------------------------"
+ssh hadoop@$MASTER '
+. /etc/profile
+echo "===> HDFS"
+hadoop dfsadmin -report
+echo "===> Task trackers"
+hadoop job -list-active-trackers
+echo "==> Hadoop cluster status"
+hadoop dfsadmin -report | grep "Datanodes available"
+echo -ne "Tasktrackers available "
+hadoop job -list-active-trackers|wc -l
+'
+echo "-------------- END HADOOP STATUS ------------------------------"
+echo ""
+
+date
+
+# Configuration finished
+cat <<EOF
+
+-----------------------------------------------------------------------
+
+¡Configuracion finalizada!"
+
+-----------------------------------------------------------------------
+
+Ya puede conectarse al nuevo cluster de hadoop a traves mediante ssh:
+  ssh hadoop@$MASTER
+la contraseña temporal es "h4d00p.05", recuerde cambiarla en su primera
+conexion para evitar problemas de seguridad.
+    
+
+Puede monitorizar el estado del cluster en las siguientes direcciones:
+    JobTracker Web Interface:  http://$MASTER:50030/jobtracker.jsp
+    NameNode Web Interface:    http://$MASTER:50070/dfshealth.jsp
+
+-----------------------------------------------------------------------
+
+EOF
+
+date
+

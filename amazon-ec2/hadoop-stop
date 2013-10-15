@@ -1,0 +1,115 @@
+#!/bin/bash
+# vim:tabstop=2:autoindent:expandtab:shiftwidth=2
+#
+# Author:  Javier Cacheiro Lopez (jlopez@cesga.es)
+# Purpose: Start a Hadoop cluster
+# Usage:   $0 --option
+# Return:  0 if success, 1 if error
+#
+# Changelog
+#   12-09-2013 JLC
+#     First version
+#   18-09-2013 JLC
+#     Amazon EC2
+
+scriptName="${0##*/}"
+
+#
+# Default values
+#
+#declare -i SIZE=10
+declare -i FORCE="no"
+# AMI to use
+AMI_IMAGE="ami-54d43023"
+
+#
+# Functions
+#
+function printUsage() {
+    cat <<EOF
+
+Usage: $scriptName -n <cluster name>
+    
+Stop a Hadoop cluster 
+
+options include:
+    -n cluster name           Name of the cluster to stop: e.g. hadoop-1.1.2-9282
+    -y                        Proceed to delete the instances without confirmation
+    -h                        Print help
+
+EOF
+}
+
+
+#
+#  Read options
+#
+function readOptions() {
+  while getopts ":hn:y" opt; do
+      case "$opt" in
+          n) NAME=$OPTARG ;;
+          y) FORCE="yes" ;;
+          h) printUsage; exit 1 ;;
+          *) printUsage; exit 1 ;;
+      esac
+  done
+
+  # Check that there are no unparsed options and that we have the options we need
+  shift $((OPTIND - 1))
+  if [[ $# != 0 || -z $NAME ]]; then
+      printUsage
+      exit 1
+  fi
+}
+
+function yesno() {
+  while true; do
+      read -p "¿Está seguro? [s/N]" yn
+      case $yn in
+          [Ss]* ) break;;
+          [Nn]* ) exit;;
+          * ) echo "Por favor responda sí o no.";;
+      esac
+  done
+}
+
+#
+# Stop VM instances in OpenNebula
+# 
+function stopCluster() {
+
+  local LABEL=$1
+
+  if [[ -z $LABEL ]]; then
+    echo "ERROR: No se ha recibido correctamente el nombre del cluster"
+  fi
+
+  echo "Se eliminarán las siguientes máquinas:"
+  #onevm list|grep $LABEL
+  INSTANCES=`ec2-describe-instances|grep $AMI_IMAGE | grep running | awk '{print $2}'`
+  #echo $INSTANCES
+  ec2-describe-instances|grep $AMI_IMAGE | grep running
+  echo
+
+  # Are you sure?
+  if [[ $FORCE != "yes" ]]; then
+    yesno
+  fi
+
+  # Let's do it
+  #ec2-describe-instances|grep $AMI_IMAGE | grep running | awk '{print $15}' | xargs -l1 ec2-terminate-instances
+  ec2-terminate-instances $INSTANCES
+  #onevm list|grep $LABEL|awk '{print $1}'|xargs -l1 onevm delete
+
+}
+
+###############################################################################
+#
+# MAIN
+#
+###############################################################################
+
+readOptions "$@"
+
+stopCluster $NAME
+

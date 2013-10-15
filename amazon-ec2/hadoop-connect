@@ -1,0 +1,15 @@
+#!/bin/bash
+# vim:tabstop=2:autoindent:expandtab:shiftwidth=2
+#
+# Author:  Javier Cacheiro Lopez (jlopez@cesga.es)
+# Purpose: Connect to a Hadoop cluster
+# Usage:   $0 --option
+# Return:  0 if success, 1 if error
+#
+# Changelog
+#   11-10-2013 JLC
+#     First version
+
+MASTER=`head -n1 node.list`
+
+ssh root@$MASTER
