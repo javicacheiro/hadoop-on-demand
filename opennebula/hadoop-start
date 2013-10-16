@@ -16,6 +16,16 @@
 #   11-10-2013 JLC
 #     Remove password connection
 #     Connection using SSH public key
+#   15-10-2013 JLC
+#     Use different template for master
+#
+# TODO
+#   TODO1: Implement replication size, blocksize and rtasks cmdline options and conf options
+#            hdfs-site dfs.block.size 16777216
+#            dfs-replication 3
+#            mapred.reduce.tasks "95%*<tast_trackers>"
+#   TODO2: Link /home/hadoop to /scratch/hadoop-home directory
+#   TODO3: añadir a /etc/init.d/context: barriers=0 o nobarrier
 
 scriptName="${0##*/}"
 
@@ -120,7 +130,10 @@ function progressbar {
 # 
 function startCluster() {
   echo "Desplegando las maquinas en OpenNebula"
-  for i in `seq 0 $SIZE`; do onetemplate instantiate 177 -n $LABEL-$i;done
+  # master
+  onetemplate instantiate 205 -n $LABEL-0
+  # slaves
+  for i in `seq 1 $SIZE`; do onetemplate instantiate 177 -n $LABEL-$i;done
   # --raw "SSH_KEY=\"`cat ~/.ssh/id_dsa.pub`\"
 
   # Waiting for all nodes to start
@@ -210,6 +223,13 @@ function configureMaster() {
     su - hadoop -c '
       #echo module load hadoop >> /home/hadoop/.bashrc
       #module load hadoop
+      cd /opt/cesga/hadoop/conf/
+      cp hadoop-env.sh hadoop-env.sh.0
+      sed 's/HADOOP_HEAPSIZE=512/HADOOP_HEAPSIZE=1024/' hadoop-env.sh.0 > hadoop-env.sh
+      cp hdfs-site.xml hdfs-site.xml.0
+      sed 's/1048576/$BLOCKSIZE/' hdfs-site.xml.0 > hdfs-site.xml
+      cp mapred-site.xml mapred-site.xml.0
+      sed 's/9/$RTASKS/' mapred-site.xml.0 > mapred-site.xml
       hadoop namenode -format
       cd /opt/cesga/hadoop/bin
       #./start-dfs.sh
