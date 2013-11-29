@@ -244,7 +244,8 @@ function configureMaster() {
 #
 function getNodeList() {
   #onevm list m|grep hadoop112|awk '{print $1}'|xargs -l1 onevm show |grep IP= |sed 's/.*IP="//'|sed 's/",//' > node.list
-  onevm list m | grep $LABEL | awk '{print $1}'|xargs -l1 onevm show |grep IP= | grep -Eo '[0-9.]+' > node.list
+  #onevm list m | grep $LABEL | awk '{print $1}'|xargs -l1 onevm show |grep IP= | grep -Eo '[0-9.]+' > node.list
+  onevm list m | grep $LABEL | awk '{print $1}'|xargs -l1 oneip > node.list
   NODES=`cat node.list`
 }
 
