@@ -131,9 +131,9 @@ function progressbar {
 function startCluster() {
   echo "Desplegando las maquinas en OpenNebula"
   # master
-  onetemplate instantiate 205 -n $LABEL-0
+  onetemplate instantiate 205 --name $LABEL-0
   # slaves
-  for i in `seq 1 $SIZE`; do onetemplate instantiate 177 -n $LABEL-$i;done
+  for i in `seq 1 $SIZE`; do onetemplate instantiate 177 --name $LABEL-$i;done
   # --raw "SSH_KEY=\"`cat ~/.ssh/id_dsa.pub`\"
 
   # Waiting for all nodes to start
