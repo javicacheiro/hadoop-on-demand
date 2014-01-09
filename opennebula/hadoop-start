@@ -271,8 +271,9 @@ cd $HADOOP_ROOT
 if [[ -r clustername ]]; then
   # A cluster is already registered so we stop here
   echo
-  echo "Ya tiene un cluster Hadoop en ejecucion!"
-  echo "Debe pararlo antes de arrancar un nuevo cluster utilizando:"
+  echo "¡Ya tiene un cluster Hadoop en ejecucion!"
+  echo "Solo se permite un cluster por usuario"
+  echo "Para parar el cluster actual puede utilizar:"
   echo "    hadoop-stop"
   echo
   exit 2
