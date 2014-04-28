@@ -1,6 +1,7 @@
 package main.java.restcloud.rest;
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.InputStream;
@@ -14,6 +15,7 @@ import main.java.restcloud.domain.DataNode;
 import main.java.restcloud.domain.HadoopCluster;
 import main.java.restcloud.domain.HadoopStartRequest;
 import main.java.restcloud.domain.Message;
+import restx.annotations.DELETE;
 import restx.annotations.GET;
 import restx.annotations.POST;
 import restx.annotations.RestxResource;
@@ -284,6 +286,115 @@ public class ClusterResource {
 			return ret;
 		}catch(Exception ex){
 			return null;
+		}
+	}
+	
+	
+	
+	/* * * * * * * * * * * * * * * * * * * * * *
+	 * *   HTTP REQUEST: DELETE              * *
+	 * *   URL: /clusters/{id}               * *
+	 * *   MAIN METHOD: deleteHadoopCluster  * *
+	 * * * * * * * * * * * * * * * * * * * * * */
+	
+	/**
+	 * This method uses the modified version of hadoop-stop script to drop the user's VMs
+	 * and also removes the clustername file.
+	 * Before this the method check if 'onevm list' answers a virtual machine which name
+	 * matches the given id.
+	 * @param id
+	 * @return Message which tells what happened
+	 */
+	@DELETE("/clusters/{id}")
+	@PermitAll
+	public Message deleteHadoopCluster(String id){
+		try{
+			if(vmNamedWithClusterIDExists(id)){
+				// hadoop-stop
+				Process hs = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
+						"/home/cesga/albertoep/hadoopscripts/hadoop-stop"}); // Hadoop Stop
+				hs.waitFor();
+				
+				// rm clustername
+				Process rmcn = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
+						"rm -f /home/cesga/albertoep/.hadoop-on-demand/clustername"}); // rm clustername
+				rmcn.waitFor();
+				
+				// Comprobar posibles fallos
+				Message failMessage = null;
+				
+				// Comprobar que clustername ya no exista
+				if(clusternameStillExists())
+					failMessage = new Message().setMessage("File clustername still exists.");
+				
+				// Comprobar que no hay maquinas virtuales cuyo name coincida con la id del cluster
+				if(vmNamedWithClusterIDExists(id))
+					failMessage = (failMessage == null) ?
+							new Message().setMessage("At least one virtual machine which name matches "+
+									"with cluster id still existing.")
+							: failMessage.setMessage(failMessage.getMessage()+"\n"+
+									"At least one virtual machine which name matches "+
+									"with cluster id still existing.");
+				
+				return ((failMessage==null) ?
+						new Message().setMessage("Hadoop cluster with id ["+id+"]: DELETED SUCCESSFULLY")
+						: failMessage);
+			}else
+				return new Message().setMessage("A hadoop cluster with the given id ["+id+"] does not exist.");
+		}catch(Exception ex){
+			return new Message().setMessage("An exception ocurred while trying to delete"+
+					"hadoop cluster with id ["+id+"]:\n"+ex.toString());
+		}
+	}
+	
+	// ** UTIL METHODS ** //
+	// ****************** //
+	/**
+	 * This method instantiate a File using the path of clustername file then it
+	 * calls the File.exists method to check if clustername exists or not
+	 * @return True: clustername file exists. False: clustername file doesn't exist.
+	 * If an exception ocurred this method will return true.
+	 */
+	private boolean clusternameStillExists(){
+		try{
+			File file = new File("/home/cesga/albertoep/.hadoop-on-demand/clustername");
+			
+			if(file.exists())
+				return true;
+			
+			return false;
+		}catch(Exception ex){
+			return true;
+		}
+	}
+	
+	/**
+	 * This method reads the answer of calling 'onevm list' and check if any
+	 * virtual machine name matches the id as a hadoop cluster name will do 
+	 * @return True: At least un virtual machine which name matches cluster id exists.
+	 * If an exception ocurred this method will return true.
+	 */
+	private boolean vmNamedWithClusterIDExists(String id){
+		try{
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list"});
+			p.waitFor();
+			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			while(in.ready()){
+				String line = in.readLine();
+				if(line.contains(id)){
+					line = line.replaceAll("\\s+"," ");
+					String[] arr = line.split(" ");
+					if(arr[4].split("-")[2].equals(id)){
+						in.close();
+						return true;
+					}
+				}
+			}
+			
+			in.close();
+			return false;
+		}catch(Exception ex){
+			return true;
 		}
 	}
 }

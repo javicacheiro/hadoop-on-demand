@@ -122,6 +122,37 @@ public class ClusterResourceRouter extends RestxRouter {
                 operation.sourceLocation = "main.java.restcloud.rest.ClusterResource#createHadoopCluster(main.java.restcloud.domain.HadoopStartRequest)";
             }
         },
+        new StdEntityRoute<Void, main.java.restcloud.domain.Message>("default#ClusterResource#deleteHadoopCluster",
+                readerRegistry.<Void>build(Void.class, Optional.<String>absent()),
+                writerRegistry.<main.java.restcloud.domain.Message>build(main.java.restcloud.domain.Message.class, Optional.<String>absent()),
+                new StdRestxRequestMatcher("DELETE", "/clusters/{id}"),
+                HttpStatus.OK, RestxLogLevel.DEFAULT) {
+            @Override
+            protected Optional<main.java.restcloud.domain.Message> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
+                securityManager.check(request, open());
+                return Optional.of(resource.deleteHadoopCluster(
+                        /* [PATH] id */ match.getPathParam("id")
+                ));
+            }
+
+            @Override
+            protected void describeOperation(OperationDescription operation) {
+                super.describeOperation(operation);
+                                OperationParameterDescription id = new OperationParameterDescription();
+                id.name = "id";
+                id.paramType = OperationParameterDescription.ParamType.path;
+                id.dataType = "string";
+                id.schemaKey = "";
+                id.required = true;
+                operation.parameters.add(id);
+
+
+                operation.responseClass = "Message";
+                operation.inEntitySchemaKey = "";
+                operation.outEntitySchemaKey = "main.java.restcloud.domain.Message";
+                operation.sourceLocation = "main.java.restcloud.rest.ClusterResource#deleteHadoopCluster(java.lang.String)";
+            }
+        },
         });
     }
 
