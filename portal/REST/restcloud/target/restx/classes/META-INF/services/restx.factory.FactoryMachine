@@ -1,0 +1,10 @@
+main.java.restcloud.AppModuleFactoryMachine
+main.java.restcloud.rest.ClusterResourceFactoryMachine
+main.java.restcloud.rest.ClusterResourceRouterFactoryMachine
+main.java.restcloud.rest.HelloResourceFactoryMachine
+main.java.restcloud.rest.HelloResourceRouterFactoryMachine
+main.java.restcloud.rest.UserResourceFactoryMachine
+main.java.restcloud.rest.UserResourceRouterFactoryMachine
+restcloud.AppModuleFactoryMachine
+restcloud.rest.HelloResourceFactoryMachine
+restcloud.rest.HelloResourceRouterFactoryMachine

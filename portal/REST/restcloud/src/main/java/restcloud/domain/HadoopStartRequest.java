@@ -1,0 +1,93 @@
+package main.java.restcloud.domain;
+
+/**
+ * HadoopStartRequest 
+ * @author albertoep
+ */
+public class HadoopStartRequest {
+	// ** CONSTANTS ** //
+	// *************** //
+	public final static short DEFAULT_SIZE = 10;
+	public final static short DEFAULT_DFS_REPLICAS = 3;
+	public final static short DEFAULT_DFS_BLOCK_SIZE = 16; // MB
+	public final static short DEFAULT_REDUCE_TASKS_NUMBER = 1;
+	
+	// ** ATTRIBUTES ** //
+	// **************** //
+	//hadoop-start [-s SIZE] [-r dfs.replication] [-b  <dfs.block.size>] [-t <mapred.reduce.tasks>]
+	private short size;
+	private short dfsReplicas;
+	private short dfsBlockSize;
+	private short reduceTasksNumber;
+	
+	// ** CONSTRUCTORS ** //
+	// ****************** //
+	public HadoopStartRequest(){
+		size = DEFAULT_SIZE;
+		dfsReplicas = DEFAULT_DFS_REPLICAS;
+		dfsBlockSize = DEFAULT_DFS_BLOCK_SIZE;
+		reduceTasksNumber = DEFAULT_REDUCE_TASKS_NUMBER;
+	}
+	
+	public HadoopStartRequest(short size, short dfsReplicas,
+			short dfsBlockSize, short reduceTasksNumber){
+		this.size = size;
+		this.dfsReplicas = dfsReplicas;
+		this.dfsBlockSize = dfsBlockSize;
+		this.reduceTasksNumber = reduceTasksNumber;
+	}
+
+	// ** GETTERS n SETTERS ** //
+	// *********************** //
+	
+	public short getSize() {
+		return size;
+	}
+
+	public void setSize(short size) {
+		this.size = size;
+	}
+
+	public short getDfsReplicas() {
+		return dfsReplicas;
+	}
+
+	public void setDfsReplicas(short dfsReplicas) {
+		this.dfsReplicas = dfsReplicas;
+	}
+
+	public short getDfsBlockSize() {
+		return dfsBlockSize;
+	}
+
+	public void setDfsBlockSize(short dfsBlockSize) {
+		this.dfsBlockSize = dfsBlockSize;
+	}
+
+	public short getReduceTasksNumber() {
+		return reduceTasksNumber;
+	}
+
+	public void setReduceTasksNumber(short reduceTasksNumber) {
+		this.reduceTasksNumber = reduceTasksNumber;
+	}
+	
+	// ** METHODS ** //
+	// ************* //
+	public String generateCmd(){
+		String cmd = "/home/cesga/albertoep/hadoopscripts/hadoop-start -s "+size+" -r "+dfsReplicas+" -b "+dfsBlockSize+" -t "+reduceTasksNumber;
+		return cmd;
+	}
+	
+	// ** toString ** //
+	// ************** //
+	@Override
+	public String toString() {
+		return "{"+
+				"size : '"+size+"',"+
+				"dfsReplicas : '"+dfsReplicas+"',"+
+				"dfsBlockSize : '"+dfsBlockSize+"',"+
+				"reduceTasksNumber : "+reduceTasksNumber+"'"+
+				"}";
+	}
+}
