@@ -15,6 +15,12 @@ import restx.security.PermitAll;
 
 @Component @RestxResource
 public class UserResource {
+	// ** CONSTANTS ** //
+	// *************** //
+	public final static String LOGINS_FOLDER_PATH = "/home/cesga/albertoep/logins/";
+	
+	// ** REQUESTS ** //
+	// ************** //
 
 	@POST("/test")
 	@PermitAll
@@ -32,11 +38,11 @@ public class UserResource {
 	 * If something unexpected occurred return a Message with information relative
 	 * to the exception.
 	 */
-	@POST("/users/register")
+	@POST("/users")
 	@PermitAll
-	public Message testMkdir(Login login){
+	public Message userRegister(Login login){
 		try{
-			dumpLoginToFile("/tmp/carpetita",login);
+			dumpLoginToFile(LOGINS_FOLDER_PATH+login.getUser()+"/.one/",login);
 		}catch(Exception ex){
 			return new Message().setMessage("FAIL\nException ocurred:\n"+ex.toString());
 		}
@@ -53,7 +59,7 @@ public class UserResource {
 	 * the file one_auth with the received login data.
 	 * @param directory Directory's path where the file is going to be located
 	 * @param login Data relative to the login (user and pass)
-	 * @throws Exception UserResouce.public Message testMkdir(Login login) understands
+	 * @throws Exception UserResouce.public Message userRegister(Login login) understands
 	 * how to manage the thrown exception
 	 */
 	private void dumpLoginToFile(String directory, Login login) throws Exception{
@@ -69,7 +75,7 @@ public class UserResource {
 			
 			// Output
 			PrintWriter out = new PrintWriter(file);
-			out.println(login.getUser()+":"+login.getPass());
+			out.println(login.getUser()+":"+login.getPasswd());
 			out.close();
 	}
 	

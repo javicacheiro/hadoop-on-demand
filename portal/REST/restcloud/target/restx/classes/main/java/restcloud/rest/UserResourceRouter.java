@@ -67,15 +67,15 @@ public class UserResourceRouter extends RestxRouter {
                 operation.sourceLocation = "main.java.restcloud.rest.UserResource#test(main.java.restcloud.domain.Message)";
             }
         },
-        new StdEntityRoute<main.java.restcloud.domain.Login, main.java.restcloud.domain.Message>("default#UserResource#testMkdir",
+        new StdEntityRoute<main.java.restcloud.domain.Login, main.java.restcloud.domain.Message>("default#UserResource#userRegister",
                 readerRegistry.<main.java.restcloud.domain.Login>build(main.java.restcloud.domain.Login.class, Optional.<String>absent()),
                 writerRegistry.<main.java.restcloud.domain.Message>build(main.java.restcloud.domain.Message.class, Optional.<String>absent()),
-                new StdRestxRequestMatcher("POST", "/users/register"),
+                new StdRestxRequestMatcher("POST", "/users"),
                 HttpStatus.OK, RestxLogLevel.DEFAULT) {
             @Override
             protected Optional<main.java.restcloud.domain.Message> doRoute(RestxRequest request, RestxRequestMatch match, main.java.restcloud.domain.Login body) throws IOException {
                 securityManager.check(request, open());
-                return Optional.of(resource.testMkdir(
+                return Optional.of(resource.userRegister(
                         /* [BODY] login */ checkValid(validator, body)
                 ));
             }
@@ -95,7 +95,7 @@ public class UserResourceRouter extends RestxRouter {
                 operation.responseClass = "Message";
                 operation.inEntitySchemaKey = "main.java.restcloud.domain.Login";
                 operation.outEntitySchemaKey = "main.java.restcloud.domain.Message";
-                operation.sourceLocation = "main.java.restcloud.rest.UserResource#testMkdir(main.java.restcloud.domain.Login)";
+                operation.sourceLocation = "main.java.restcloud.rest.UserResource#userRegister(main.java.restcloud.domain.Login)";
             }
         },
         });

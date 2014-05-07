@@ -19,6 +19,7 @@ public class HadoopStartRequest {
 	private short dfsReplicas;
 	private short dfsBlockSize;
 	private short reduceTasksNumber;
+	private String user;
 	
 	// ** CONSTRUCTORS ** //
 	// ****************** //
@@ -30,11 +31,12 @@ public class HadoopStartRequest {
 	}
 	
 	public HadoopStartRequest(short size, short dfsReplicas,
-			short dfsBlockSize, short reduceTasksNumber){
+			short dfsBlockSize, short reduceTasksNumber, String user){
 		this.size = size;
 		this.dfsReplicas = dfsReplicas;
 		this.dfsBlockSize = dfsBlockSize;
 		this.reduceTasksNumber = reduceTasksNumber;
+		this.user = user;
 	}
 
 	// ** GETTERS n SETTERS ** //
@@ -72,6 +74,14 @@ public class HadoopStartRequest {
 		this.reduceTasksNumber = reduceTasksNumber;
 	}
 	
+	public String getUser(){
+		return user;
+	}
+	
+	public void setUser(String user){
+		this.user = user;
+	}
+	
 	// ** METHODS ** //
 	// ************* //
 	public String generateCmd(){
@@ -87,7 +97,8 @@ public class HadoopStartRequest {
 				"size : '"+size+"',"+
 				"dfsReplicas : '"+dfsReplicas+"',"+
 				"dfsBlockSize : '"+dfsBlockSize+"',"+
-				"reduceTasksNumber : "+reduceTasksNumber+"'"+
+				"reduceTasksNumber : '"+reduceTasksNumber+"'"+
+				"user : '"+user+"'"+
 				"}";
 	}
 }

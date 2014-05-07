@@ -1,7 +1,6 @@
 package main.java.restcloud.rest;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.InputStream;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import main.java.restcloud.domain.ClusterInfo;
 import main.java.restcloud.domain.ClusterList;
 import main.java.restcloud.domain.DataNode;
-import main.java.restcloud.domain.HadoopCluster;
 import main.java.restcloud.domain.HadoopStartRequest;
 import main.java.restcloud.domain.Message;
 import restx.annotations.DELETE;
@@ -51,30 +49,29 @@ public class ClusterResource {
 			// ejecutar el comando con /bin/sh -c para que lo lea de una string ya que tiene pipes
 			// y podria fallar/responder algo raro
 			// Ejemplo: Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list | tr -s ' ' | tail -n +2"});
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list | tr -s ' ' | tail -n +2"});
-			
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list"});
+			//Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","cat /home/albertoep/tmp/onevmlist"});
 			
 			// Esperar a que finalice la ejecucion del comando
 			p.waitFor();
 			
 			
 			// Leer y procesar la salida estandar del comando
+			ArrayList<String> onevmListLines = new ArrayList<String>();
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			while(in.ready()){
-				String read = in.readLine();
-				String[] arr = read.split(" ");
-				if(arr[5].equals("runn"))
-					cl.addCluster(new HadoopCluster(Integer.parseInt(arr[1]), arr[2], arr[3], arr[4], arr[5],
-						Short.parseShort(arr[6]), arr[7], arr[8], arr[9]));
-			}
+			while(in.ready())
+				onevmListLines.add(in.readLine());
+			cl.parseOnevmListLines(onevmListLines);
 			
 			
 			// Return
 			return cl;
 			
 		}catch(Exception ex){
-			return new ClusterList().addCluster(new HadoopCluster(1, "ERROR",ex.getMessage(),
+			/*return new ClusterList().addCluster(new HadoopCluster(1, "ERROR",ex.getMessage(),
 					ex.toString(), java.util.Arrays.toString(ex.getStackTrace()), (short)0, "", "", ""));
+			*/
+			return null;
 		}
 	}
 	
@@ -213,11 +210,13 @@ public class ClusterResource {
 	public Message createHadoopCluster(HadoopStartRequest hsr){
 		try{
 			// enable-hadoop si procede
-			String user = "albertoep";
-			enableHadoop(user);
+			enableHadoop(hsr.getUser());
 			
 			// hadoop-start
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash","-c",hsr.generateCmd()});
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash","-c",
+					"export ONE_AUTH="+UserResource.LOGINS_FOLDER_PATH+hsr.getUser()+
+						"/.one/one_auth && "+hsr.generateCmd()});
+			
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String id = "no_id_found";
 			

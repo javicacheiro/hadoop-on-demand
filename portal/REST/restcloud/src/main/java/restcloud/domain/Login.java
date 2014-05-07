@@ -2,14 +2,14 @@ package main.java.restcloud.domain;
 
 public class Login {
 	private String user;
-	private String pass;
+	private String passwd;
 
     public String getUser() {
         return user;
     }
     
-    public String getPass() {
-    	return pass;
+    public String getPasswd() {
+    	return passwd;
     }
 
     public Login setUser(final String user) {
@@ -17,8 +17,8 @@ public class Login {
         return this;
     }
     
-    public Login setPass(final String pass){
-    	this.pass = pass;
+    public Login setPass(final String passwd){
+    	this.passwd = passwd;
     	return this;
     }
 
@@ -26,7 +26,7 @@ public class Login {
     public String toString() {
         return "Login{" +
                 "user='" + user + "'," +
-                "pass='" + pass + "'" +
+                "passwd='" + passwd + "'" +
                 '}';
     }
 }
