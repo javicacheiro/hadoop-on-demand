@@ -12,8 +12,13 @@ function doListHadoop(){
 // ***** Do the request for list all hadoop clusters ** //
 // **************************************************** //
 function request_list_clusters(requestData){
+	
+	var requestData = {
+		user : user
+	}
+	
 	var request = $.ajax({
-		type: "GET",
+		type: "POST",
 		url: "php/list_clusters.php",
 		data: JSON.stringify(requestData),
 		dataType: "json",

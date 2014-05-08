@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import main.java.restcloud.Utils;
 import main.java.restcloud.db.DBOperations;
 import main.java.restcloud.domain.ClusterInfo;
 import main.java.restcloud.domain.ClusterList;
@@ -39,7 +40,7 @@ public class ClusterResource {
 	 */
 	@GET("/clusters")
 	@PermitAll
-	public ClusterList listClusters(){
+	public ClusterList listClusters(String user){
 		try{
 			ClusterList cl = new ClusterList();
 			
@@ -50,7 +51,9 @@ public class ClusterResource {
 			// ejecutar el comando con /bin/sh -c para que lo lea de una string ya que tiene pipes
 			// y podria fallar/responder algo raro
 			// Ejemplo: Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list | tr -s ' ' | tail -n +2"});
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list"});
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
+					Utils.generateExport(user)
+					+" && onevm list"});
 			//Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","cat /home/albertoep/tmp/onevmlist"});
 			
 			// Esperar a que finalice la ejecucion del comando
@@ -215,8 +218,8 @@ public class ClusterResource {
 			
 			// hadoop-start
 			Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash","-c",
-					"export ONE_AUTH="+UserResource.LOGINS_FOLDER_PATH+hsr.getUser()+
-						"/.one/one_auth && "+hsr.generateCmd()});
+					Utils.generateExport(hsr.getUser())
+					+" && "+hsr.generateCmd()});
 			
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String id = "no_id_found";

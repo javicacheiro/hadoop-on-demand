@@ -1,5 +1,8 @@
-<?php                                                                                                                                             
-	$ch = curl_init('http://cloud.cesga.es:8080/hadoop/v1/clusters');                                                                      
+<?php                  
+	$receivedJson = file_get_contents("php://input");
+	$arrayJson = json_decode($receivedJson, true);
+
+	$ch = curl_init('http://cloud.cesga.es:8080/hadoop/v1/clusters?user=' . json_decode($arrayJson["user"]));                                                                      
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");                                                                     
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      

@@ -45,19 +45,26 @@ public class ClusterResourceRouter extends RestxRouter {
             protected Optional<main.java.restcloud.domain.ClusterList> doRoute(RestxRequest request, RestxRequestMatch match, Void body) throws IOException {
                 securityManager.check(request, open());
                 return Optional.of(resource.listClusters(
-                        
+                        /* [QUERY] user */ checkPresent(request.getQueryParam("user"), "query param user is required")
                 ));
             }
 
             @Override
             protected void describeOperation(OperationDescription operation) {
                 super.describeOperation(operation);
-                
+                                OperationParameterDescription user = new OperationParameterDescription();
+                user.name = "user";
+                user.paramType = OperationParameterDescription.ParamType.query;
+                user.dataType = "string";
+                user.schemaKey = "";
+                user.required = true;
+                operation.parameters.add(user);
+
 
                 operation.responseClass = "ClusterList";
                 operation.inEntitySchemaKey = "";
                 operation.outEntitySchemaKey = "main.java.restcloud.domain.ClusterList";
-                operation.sourceLocation = "main.java.restcloud.rest.ClusterResource#listClusters()";
+                operation.sourceLocation = "main.java.restcloud.rest.ClusterResource#listClusters(java.lang.String)";
             }
         },
         new StdEntityRoute<Void, main.java.restcloud.domain.ClusterInfo>("default#ClusterResource#obtainClusterInfo",
