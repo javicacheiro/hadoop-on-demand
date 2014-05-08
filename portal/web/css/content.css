@@ -1,0 +1,52 @@
+#contentDiv{
+	margin: 0 auto;
+	height: 88%;
+	border-left: solid 1px black;
+	border-right: solid 1px black;
+	border-bottom: solid 1px black;
+	padding: 5px;
+	overflow: scroll;
+}
+
+.form_table{
+	margin: 0 auto;
+	border: solid 1px black;
+	float: left;
+}
+
+.form_table td{
+	text-align: center;
+}
+
+.form_table td.labelTd{
+	text-align: right;
+}
+
+.labelTd{
+	width: 50%;
+	cursor: default;
+}
+
+#tipDiv{
+	float: left;
+	margin-left: 5%;
+	padding: 5px;
+	background-color: #DEF;
+	width: auto;
+	visibility: hidden;
+}
+
+.spanResponseTitle{
+	font-size: 22px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.spanResponseLabel{
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+.spanWhiteSpace{
+	padding: 0 5px;
+}
