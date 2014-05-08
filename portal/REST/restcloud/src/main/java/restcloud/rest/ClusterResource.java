@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import main.java.restcloud.db.DBOperations;
 import main.java.restcloud.domain.ClusterInfo;
 import main.java.restcloud.domain.ClusterList;
 import main.java.restcloud.domain.DataNode;
@@ -210,7 +211,7 @@ public class ClusterResource {
 	public Message createHadoopCluster(HadoopStartRequest hsr){
 		try{
 			// enable-hadoop si procede
-			enableHadoop(hsr.getUser());
+			//enableHadoop(hsr.getUser());
 			
 			// hadoop-start
 			Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash","-c",
@@ -228,9 +229,10 @@ public class ClusterResource {
 			}
 					
 			String arr[] = firstLine.split(":");
-			id = arr[1];
+			id = arr[1].split("-")[2];
 			
 			// return
+			DBOperations.insertHadoopStartRequestInfo(id, hsr);
 			return new Message().setMessage("id:"+id);
 			
 		}catch(Exception ex){

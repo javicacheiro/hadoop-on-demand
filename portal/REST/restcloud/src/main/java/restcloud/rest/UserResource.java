@@ -3,6 +3,7 @@ package main.java.restcloud.rest;
 import java.io.File;
 import java.io.PrintWriter;
 
+import main.java.restcloud.db.DBOperations;
 import main.java.restcloud.domain.Login;
 import main.java.restcloud.domain.Message;
 
@@ -43,6 +44,7 @@ public class UserResource {
 	public Message userRegister(Login login){
 		try{
 			dumpLoginToFile(LOGINS_FOLDER_PATH+login.getUser()+"/.one/",login);
+			DBOperations.registerUserIfNotYet(login);
 		}catch(Exception ex){
 			return new Message().setMessage("FAIL\nException ocurred:\n"+ex.toString());
 		}
