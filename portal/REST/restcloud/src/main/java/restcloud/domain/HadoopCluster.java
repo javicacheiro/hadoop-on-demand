@@ -159,7 +159,7 @@ public class HadoopCluster {
 															// cabecera (la 0)
 			String line = onevmListLines.get(i);
 			if (line != null) {
-				if (line.length() > 0 && line.contains("hadoop-1.1.2-" + id)) {
+				if (line.length() > 0 && line.contains("hadoop-" + id)) {
 					line = line.replaceAll("\\s+", " ");
 					String ret = (line.split(" ").length > position) ? line
 							.split(" ")[position] : notFoundReturn;

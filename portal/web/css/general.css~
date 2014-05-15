@@ -6,6 +6,7 @@ body, html{
 #mainDiv{
 	width: 90%;	
 	margin: 0 auto;
+	height: 99%;
 }
 
 .clickable_span{
@@ -21,4 +22,15 @@ body, html{
 .clickable_span:active{
 	color: red;
 	text-decoration: none;
+}
+
+#containerDiv{
+	margin: 0 auto;
+	height: 88%;
+	border-left: solid 1px black;
+	border-right: solid 1px black;
+	border-bottom: solid 1px black;
+	padding: 5px;
+	overflow: scroll;
+	width: 99.2%;
 }

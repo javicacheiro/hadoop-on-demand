@@ -37,6 +37,7 @@
 	if (substr($response['message'],0,3) == 'id:'){
 		$resp .= '<span class="spanResponseLabel">id : </span>'
 			. '<span class="spanResponseValue">' . substr($response["message"],3) . '</span><br/>';
+		$resp .= '<br/><br/><span class="clickable_span" onclick="doStartProgress(' . substr($response["message"],3) . ')">WATCH PROGRESS</span>';
 	}else{
 		$resp .= '<span class="spanResponseLabel">message : </span>'
 			. '<span class="spanResponseValue">' . $response["message"] . '</span><br/>';

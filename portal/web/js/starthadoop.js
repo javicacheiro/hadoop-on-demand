@@ -5,6 +5,7 @@ var defaultSize = 10;
 var defaultReplicas = 3;
 var defaultBlockSize = 16;
 var defaultReduceTasks = 1;
+var defaultHadoopVersion = 1;
 
 var hadoopSize = defaultSize;
 var hadoopReplicas = defaultReplicas;
@@ -55,6 +56,13 @@ function doStartHadoopAdvanced(){
 			+'<td><input type="text" id="input_reduce" name="reduce"/></td>'
 		+'</tr>'
 		+'<tr>'
+			+'<td onmouseover="showHadoopVersion()" onmouseout="hideTipDiv()">Hadoop version</td>'
+		+'</tr>'
+		+'<tr>'
+ 			+'<td><input type="radio" name="version" checked="checked">Hadoop v1</input></td>'
+			+'<td><input type="radio" name="version">Hadoop v2</input></td>'
+		+'</tr>'
+		+'<tr>'
 			+'<td colspan="2"><span class="clickable_span" onclick="doStartHadoop()">Standard features</span></td>'
 		+'</tr>'
 		+'<tr>'
@@ -100,10 +108,17 @@ function showReduceTasksNumber(){
 													+"default: "+defaultReduceTasks;
 }
 
+function showHadoopVersion(){
+	document.getElementById("tipDiv").style.visibility="visible";
+	document.getElementById("tipDiv").innerHTML="Sepecifies the hadoop version you want to use.<br/>"
+													+"default: "+defaultHadoopVersion;
+}
+
 function hideTipDiv(){
 	document.getElementById("tipDiv").innerHTML = "";
 	document.getElementById("tipDiv").style.visibility="hidden";
 }
+
 
 // ********************** SAVE n FILL FUNCTIONS ********************** //
 // ***** These functions are used to manage data during transitions ** //

@@ -339,7 +339,7 @@ public class ClusterInfo {
 		if((line=onevmListLines.get(1))!=null){
 				line = line.replaceAll("\\s+"," ");
 				String arr[] = line.split(" ");
-				id = arr[4].split("-")[2];
+				id = arr[4].split("-")[1];
 		}
 	}
 	
@@ -358,7 +358,7 @@ public class ClusterInfo {
 					if(line.length()>0){
 						line = line.replaceAll("\\s+"," ");
 						String arr[] = line.split(" ");
-						if(arr[4].split("-")[2].equals(id)){
+						if(arr[4].split("-")[1].equals(id)){
 							user = arr[2];
 							return;
 						}
@@ -383,7 +383,7 @@ public class ClusterInfo {
 					if(line.length()>0){
 						line = line.replaceAll("\\s+"," ");
 						String arr[] = line.split(" ");
-						if(arr[4].split("-")[2].equals(id)){
+						if(arr[4].split("-")[1].equals(id)){
 							group = arr[3];
 							return;
 						}
@@ -408,7 +408,7 @@ public class ClusterInfo {
 					if(line.length()>0){
 						line = line.replaceAll("\\s+"," ");
 						String arr[] = line.split(" ");
-						if(arr[5].equals("runn") && arr[4].split("-")[2].equals(id)) // State == runn && id == id
+						if(arr[5].equals("runn") && arr[4].split("-")[1].equals(id)) // State == runn && id == id
 							vmRunning++;
 						
 					}
@@ -432,7 +432,7 @@ public class ClusterInfo {
 					if(line.length()>0){
 						line = line.replaceAll("\\s+"," ");
 						String arr[] = line.split(" ");
-						if(arr[4].split("-")[2].equals(id)) // id == id
+						if(arr[4].split("-")[1].equals(id)) // id == id
 							vmTotal++;
 						
 					}
@@ -457,7 +457,7 @@ public class ClusterInfo {
 					if(line.length()>0){
 						line = line.replaceAll("\\s+"," ");
 						String[] arr = line.split(" ");
-						if(arr[4].split("-")[2].equals(id)){
+						if(arr[4].split("-")[1].equals(id)){
 							String mem = arr[7];
 							switch(mem.charAt(mem.length()-1)){
 								case 'T': // Tera
@@ -510,7 +510,7 @@ public class ClusterInfo {
 					if(line.length()>0){
 						line = line.replaceAll("\\s+"," ");
 						String[] arr = line.split(" ");
-						if(arr[4].split("-")[2].equals(id)){
+						if(arr[4].split("-")[1].equals(id)){
 							ucpu += Integer.parseInt(arr[6]);
 						}
 					}

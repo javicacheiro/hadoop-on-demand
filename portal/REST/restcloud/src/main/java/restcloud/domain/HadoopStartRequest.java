@@ -1,5 +1,8 @@
 package main.java.restcloud.domain;
 
+import main.java.restcloud.Constants;
+import main.java.restcloud.db.DBOperations;
+
 /**
  * HadoopStartRequest 
  * @author albertoep
@@ -85,7 +88,8 @@ public class HadoopStartRequest {
 	// ** METHODS ** //
 	// ************* //
 	public String generateCmd(){
-		String cmd = "/home/cesga/albertoep/hadoopscripts/hadoop-start -s "+size+" -r "+dfsReplicas+" -b "+dfsBlockSize+" -t "+reduceTasksNumber;
+		String cmd = Constants.HADOOP_START_PATH+" -R -c "+DBOperations.generateClusterId()
+				+" -s "+size+" -r "+dfsReplicas+" -b "+dfsBlockSize+" -t "+reduceTasksNumber;
 		return cmd;
 	}
 	

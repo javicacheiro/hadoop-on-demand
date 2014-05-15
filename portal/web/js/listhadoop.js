@@ -5,13 +5,14 @@ var receivedJsonData = null;
 
 function doListHadoop(){
 	document.getElementById("contentDiv").innerHTML = "";
+	document.getElementById("detailsDiv").innerHTML = "";
 	request_list_clusters();
 }
 
 // ************ request_list_clusters() ************** //
 // ***** Do the request for list all hadoop clusters ** //
 // **************************************************** //
-function request_list_clusters(requestData){
+function request_list_clusters(){
 	
 	var requestData = {
 		user : user
@@ -31,7 +32,9 @@ function request_list_clusters(requestData){
 			
 			for(var i = 0 ; i < clusters.length ; i++ ){
 				if(clusters[i].user == user){
-					printing += '<span class="spanResponseTitle">Cluster '+(i+1)+'</span><br/>'
+					printing += '<span class="spanResponseTitle">Cluster '+(i+1)+'</span>'
+							+'<span class="spanInfoCluster" onclick="doGetClusterInfo('+clusters[i].id+')">INFO</span>'
+							+'<span class="spanStopCluster" onclick="doStopHadoop('+clusters[i].id+')">STOP</span><br/>'
 						+'<span class="spanResponseLabel">id : </span>'
 							+'<span class="spanResponseValue">' + clusters[i].id +'</span><br/>'
 						+'<span class="spanResponseLabel">user : </span>'

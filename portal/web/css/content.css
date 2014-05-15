@@ -1,11 +1,7 @@
 #contentDiv{
-	margin: 0 auto;
-	height: 88%;
-	border-left: solid 1px black;
-	border-right: solid 1px black;
-	border-bottom: solid 1px black;
 	padding: 5px;
-	overflow: scroll;
+	width: 45%;
+	float: left;
 }
 
 .form_table{
@@ -29,10 +25,12 @@
 
 #tipDiv{
 	float: left;
-	margin-left: 5%;
+	margin-left: 1%;
+	margin-top: 3%;
 	padding: 5px;
 	background-color: #DEF;
-	width: auto;
+	width: 50%;
+	text-align: center;
 	visibility: hidden;
 }
 
@@ -49,4 +47,46 @@
 
 .spanWhiteSpace{
 	padding: 0 5px;
+}
+
+.spanInfoCluster{
+	margin-left: 10px;
+	padding: 0 10px;
+	
+	background-color: blue;
+	color: white;
+	cursor: pointer;
+	border: solid 1px blue;
+}
+
+.spanInfoCluster:hover{
+	border-color: cyan;
+	background-color: darkblue;
+	color: #EEE;
+}
+
+.spanInfoCluster:active{
+	border-color: cyan;
+	background-color: black;
+	color: #DDD;
+}
+
+.spanStopCluster{
+	margin-left: 10px;
+	padding: 0 10px;
+	
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	border: solid 1px red;
+}
+
+.spanStopCluster:hover{
+	background-color: darkred;
+	color: #EEE;
+}
+
+.spanStopCluster:active{
+	background-color: black;
+	color: #DDD;
 }

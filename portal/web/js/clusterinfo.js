@@ -3,11 +3,10 @@
 //var receivedJsonData = null; // Defined in main.sj
 
 
-function doGetClusterInfo(){
-	document.getElementById("contentDiv").innerHTML = "";
-	var id = prompt("Type cluster id");
-	if(isValidIdForGetClusterInfo(id)){
-		request_cluster_info(id);
+function doGetClusterInfo(clusterId){
+	document.getElementById("detailsDiv").innerHTML = "";
+	if(isValidIdForGetClusterInfo(clusterId)){
+		request_cluster_info(clusterId);
 	}
 }
 
@@ -15,14 +14,16 @@ function doGetClusterInfo(){
 // ***** Functions which purpose is to validate stuff of this javascript ** //
 // ************************************************************************ //
 function isValidIdForGetClusterInfo(id){
-	return true;
+	if((""+id).length>0)
+		return true;
+	return false;
 }
 
 // ************ request_list_clusters() ************** //
 // ***** Do the request for list all hadoop clusters ** //
 // **************************************************** //
 function request_cluster_info(id){
-	document.getElementById("contentDiv").innerHTML = "Requesting cluster with id <b>"+id+"</b> information.<br/>"
+	document.getElementById("detailsDiv").innerHTML = "Requesting cluster with id <b>"+id+"</b> information.<br/>"
 		+"This process can take a while. Please be patient.";
 	
 	var requestData = {
@@ -127,7 +128,7 @@ function request_cluster_info(id){
 			
 			
 			
-			document.getElementById("contentDiv").innerHTML = printing;
+			document.getElementById("detailsDiv").innerHTML = printing;
 		}
 	});
 	

@@ -1,5 +1,6 @@
 package main.java.restcloud.db;
 
+import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -102,6 +103,85 @@ public class DBOperations {
 			return rs.getLong(1);
 		}catch(Exception ex){
 			return -2;
+		}
+	}
+	
+	/**
+	 * Generates a clusterId which values is the las clusterId value found in dddbb plus one
+	 * @return Cluster id
+	 */
+	public static String generateClusterId(){
+		try{
+			BigInteger maxClusterId = new BigInteger(obtainMaxClusterId());
+			maxClusterId = maxClusterId.add(BigInteger.ONE);
+			return maxClusterId.toString();
+		}catch(NullPointerException npex){
+			/*
+			 * hacer un max(_id) en SQL cuando no hay ids no es que no devuelva nada,
+			 * es que devuelve NULL
+			 */
+			return "1";
+		}
+	}
+	
+	/**
+	 * Obtains the max value stored in the table cluster of DDBB hadoop for field _id
+	 * @return _id max value @ hadoop.cluster
+	 */
+	public static String obtainMaxClusterId(){
+		try{
+			Connection con = establishConnection();
+			ResultSet rs = con.prepareStatement("SELECT max(_id) FROM cluster;").executeQuery();
+			if(!rs.first())
+				return "0";
+			else return rs.getString(1);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * Retrieves the username corresponding to the given userId
+	 * @param userId
+	 * @return
+	 * 		String "xxx" where XXX is username
+	 * 		String "" when no user with such id has been found
+	 * 		String null when something unexpected occurred
+	 */
+	public static String getUsernameByUserid(String userId){
+		try{
+			Connection con = establishConnection();
+			ResultSet rs = con.prepareStatement("SELECT username FROM user "
+					+"WHERE _id="+userId).executeQuery();
+			if(!rs.first())
+				return "";
+			return rs.getString(1);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param clusterId
+	 * @return
+	 * 		String "xxx" where XXX is userId
+	 * 		String "" when no cluster with given id has been found
+	 * 		String null when something unexpected occurred
+	 */
+	public static String getUserIdFromClusterWithId(String clusterId){
+		try{
+			Connection con = establishConnection();
+			ResultSet rs = con.prepareStatement("SELECT userId FROM cluster "
+					+"WHERE _id="+clusterId).executeQuery();
+			if(!rs.first())
+				return "";
+			return rs.getString(1);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
 		}
 	}
 

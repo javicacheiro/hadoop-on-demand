@@ -3,11 +3,10 @@
 //var receivedJsonData = null; // Defined in main.sj
 
 
-function doStopHadoop(){
-	document.getElementById("contentDiv").innerHTML = "";
-	var id = prompt("Type cluster id");
-	if(isValidIdForDeleteCluster(id)){
-		request_delete_cluster(id);
+function doStopHadoop(clusterId){
+	document.getElementById("detailsDiv").innerHTML = "";
+	if(isValidIdForDeleteCluster(clusterId)){
+		request_delete_cluster(clusterId);
 	}
 }
 
@@ -15,7 +14,7 @@ function doStopHadoop(){
 // ***** Functions which purpose is to validate stuff of this javascript ** //
 // ************************************************************************ //
 function isValidIdForDeleteCluster(id){
-	if(id.length > 0)
+	if((""+id).length > 0)
 		return true;
 	return false;
 }
@@ -24,7 +23,7 @@ function isValidIdForDeleteCluster(id){
 // ***** Do the request for list all hadoop clusters ** //
 // **************************************************** //
 function request_delete_cluster(id){
-	document.getElementById("contentDiv").innerHTML = "Deleting cluster with id <b>"+id+"</b> . . . <br/>"
+	document.getElementById("detailsDiv").innerHTML = "Deleting cluster with id <b>"+id+"</b> . . . <br/>"
 		+"This process can take a while. Please be patient.";
 	
 	var requestData = {
@@ -40,7 +39,7 @@ function request_delete_cluster(id){
 			//Create jQuery object from the response HTML.
 			receivedJsonData = jQuery.parseJSON(data);
 			var printing = receivedJsonData.message;
-			document.getElementById("contentDiv").innerHTML = printing;
+			document.getElementById("detailsDiv").innerHTML = printing;
 		}
 	});
 }

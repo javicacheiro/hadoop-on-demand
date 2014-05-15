@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import main.java.restcloud.Constants;
 import main.java.restcloud.Utils;
 import main.java.restcloud.db.DBOperations;
 import main.java.restcloud.domain.ClusterInfo;
@@ -51,9 +52,8 @@ public class ClusterResource {
 			// ejecutar el comando con /bin/sh -c para que lo lea de una string ya que tiene pipes
 			// y podria fallar/responder algo raro
 			// Ejemplo: Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list | tr -s ' ' | tail -n +2"});
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
-					Utils.generateExport(user)
-					+" && onevm list"});
+			String cmd = Utils.generateExport(user) + " && onevm list";
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",cmd});
 			//Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","cat /home/albertoep/tmp/onevmlist"});
 			
 			// Esperar a que finalice la ejecucion del comando
@@ -75,6 +75,7 @@ public class ClusterResource {
 			/*return new ClusterList().addCluster(new HadoopCluster(1, "ERROR",ex.getMessage(),
 					ex.toString(), java.util.Arrays.toString(ex.getStackTrace()), (short)0, "", "", ""));
 			*/
+			ex.printStackTrace();
 			return null;
 		}
 	}
@@ -108,8 +109,8 @@ public class ClusterResource {
 		try{
 			// Obtener datos
 			ClusterInfo info = new ClusterInfo();
-			ArrayList<String> onevmListLines = doOnevmList();
-			ArrayList<String> hadoopStatusLines = doHadoopStatus();
+			ArrayList<String> onevmListLines = doOnevmList(id);
+			ArrayList<String> hadoopStatusLines = doHadoopStatus(id);
 			//System.out.printf("%s\n\n\n\n%s\n\n\n\n",java.util.Arrays.toString(onevmListLines.toArray()),java.util.Arrays.toString(hadoopStatusLines.toArray()));
 			
 			// Pasar datos a ClusterInfo
@@ -123,10 +124,13 @@ public class ClusterResource {
 	
 	// ** UTIL METHODS ** //
 	// ****************** //
-	private ArrayList<String> doOnevmList(){
+	private ArrayList<String> doOnevmList(String id){
 		try{
+			String userId = DBOperations.getUserIdFromClusterWithId(id);
+			String user = DBOperations.getUsernameByUserid(userId); // username
 			//Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","cat /home/albertoep/tmp/onevmlist"});
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list"});
+			String cmd = Utils.generateExport(user)+ " && "+ "onevm list";
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",cmd});
 			p.waitFor();
 			
 			// Return
@@ -137,10 +141,13 @@ public class ClusterResource {
 		}
 	}
 	
-	private ArrayList<String> doHadoopStatus(){
+	private ArrayList<String> doHadoopStatus(String id){
 		try{
+			String userId = DBOperations.getUserIdFromClusterWithId(id);
+			String user = DBOperations.getUsernameByUserid(userId); // username
 			//Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","cat /home/albertoep/tmp/hadoop-status"});
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","/home/cesga/albertoep/hadoopscripts/hadoop-status"});
+			String cmd = Utils.generateExport(user) + " && "+Constants.HADOOP_STATUS_PATH+" -R -c "+id;
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",cmd});
 			p.waitFor();
 			
 			// Return
@@ -232,7 +239,7 @@ public class ClusterResource {
 			}
 					
 			String arr[] = firstLine.split(":");
-			id = arr[1].split("-")[2];
+			id = arr[1].split("-")[1];
 			
 			// return
 			DBOperations.insertHadoopStartRequestInfo(id, hsr);
@@ -303,7 +310,7 @@ public class ClusterResource {
 	
 	/**
 	 * This method uses the modified version of hadoop-stop script to drop the user's VMs
-	 * and also removes the clustername file.
+	 * and also removes the clustername file [NEW VERSION DOES NOT REMOVE clustername FILE].
 	 * Before this the method check if 'onevm list' answers a virtual machine which name
 	 * matches the given id.
 	 * @param id
@@ -313,26 +320,33 @@ public class ClusterResource {
 	@PermitAll
 	public Message deleteHadoopCluster(String id){
 		try{
-			if(vmNamedWithClusterIDExists(id)){
+			// Obtener userId del cluster cuya id coincida con aquella pasad como parametro
+			String userId = DBOperations.getUserIdFromClusterWithId(id); 
+			
+			// Coger el nombre de usuario por cluster.userId=useruser._id
+			String user = DBOperations.getUsernameByUserid(userId); // username
+			
+			if(vmNamedWithClusterIDExists(id, user)){
 				// hadoop-stop
+				String cmd = Utils.generateExport(user) + " && "+Constants.HADOOP_STOP_PATH+" -R -c "+id;
 				Process hs = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
-						"/home/cesga/albertoep/hadoopscripts/hadoop-stop"}); // Hadoop Stop
+				cmd}); // Hadoop Stop
 				hs.waitFor();
 				
-				// rm clustername
-				Process rmcn = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
+				// rm clustername // Ya no hace falta
+				/*Process rmcn = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
 						"rm -f /home/cesga/albertoep/.hadoop-on-demand/clustername"}); // rm clustername
-				rmcn.waitFor();
+				rmcn.waitFor();*/
 				
 				// Comprobar posibles fallos
 				Message failMessage = null;
 				
-				// Comprobar que clustername ya no exista
-				if(clusternameStillExists())
-					failMessage = new Message().setMessage("File clustername still exists.");
+				// Comprobar que clustername ya no exista // Ya no hace falta
+				/*if(clusternameStillExists())
+					failMessage = new Message().setMessage("File clustername still exists.");*/
 				
 				// Comprobar que no hay maquinas virtuales cuyo name coincida con la id del cluster
-				if(vmNamedWithClusterIDExists(id))
+				if(vmNamedWithClusterIDExists(id, user))
 					failMessage = (failMessage == null) ?
 							new Message().setMessage("At least one virtual machine which name matches "+
 									"with cluster id still existing.")
@@ -378,9 +392,10 @@ public class ClusterResource {
 	 * @return True: At least un virtual machine which name matches cluster id exists.
 	 * If an exception ocurred this method will return true.
 	 */
-	private boolean vmNamedWithClusterIDExists(String id){
+	private boolean vmNamedWithClusterIDExists(String id, String user){
 		try{
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c","onevm list"});
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
+					Utils.generateExport(user)+" && onevm list"});
 			p.waitFor();
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			while(in.ready()){
@@ -388,7 +403,7 @@ public class ClusterResource {
 				if(line.contains(id)){
 					line = line.replaceAll("\\s+"," ");
 					String[] arr = line.split(" ");
-					if(arr[4].split("-")[2].equals(id)){
+					if(arr[4].split("-")[1].equals(id)){
 						in.close();
 						return true;
 					}

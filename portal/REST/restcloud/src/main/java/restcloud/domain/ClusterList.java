@@ -48,7 +48,7 @@ public class ClusterList {
 			if (s.length() > 0) {
 				s = s.replaceAll("\\s+", " ");
 				String arr[] = s.split(" ");
-				String id = arr[4].split("-")[2];
+				String id = arr[4].split("-")[1];
 				if (!clusterIds.contains(id))
 					clusterIds.add(id);
 			}
