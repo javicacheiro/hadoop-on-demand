@@ -2,6 +2,7 @@ var progressWindow;
 var progressReloading = false;
 var progressReload = null;
 var startInstant = 0;
+
 function doStartProgress(clusterId){
 	startInstant = new Date().getTime();
 	progressWindow = window.open("","_blank","resizable=0,scrollbars=1,location=0,width=500,height=200,top=50,left=50");
@@ -62,8 +63,8 @@ function printClusterProgress(cluster){
 	var totalCells = 50;
 	var vmRunn = findRunningVirtualMachines(cluster.vms);
 	var runnCells = (vmRunn*totalCells)/vmTotal;
-	var elapsedTime = (new Date().getTime() - startInstant)/1000;
-	
+	var elapsedTime = (new Date().getTime() - startInstant)/1000;	
+
 	var content = '<span class="spanResponseLabel">Total Virtual Machines : </span>'
 			+'<span class="spanResponseValue">'+vmTotal+'</span><br/>'
 		+'<span class="spanResponseLabel">Running Virtual Machines : </span>'
@@ -82,7 +83,7 @@ function printClusterProgress(cluster){
 	
 	content += "Elapsed time: "+parseInt(elapsedTime)+"s";
 	
-	content += "<br/><br/>"+getProgressStatus();
+	content += "<br/><br/>"+getProgressStatus(cluster);
 	
 	progressWindow.document.body.innerHTML = "";
 	progressWindow.document.write(content); // Write page
@@ -90,12 +91,13 @@ function printClusterProgress(cluster){
 			+'<link rel="stylesheet" type="text/css" href="css/progress.css"/>'
 			+'<link rel="stylesheet" type="text/css" href="css/content.css"/>';
 	
-	if(progressReloading == false && vmRunn < vmTotal)
+	if(progressReloading == false && cluster.exitStatus == -1)
 		progressReload = progressWindow.setInterval(progress_request(cluster.id),500);
 	
 	
-	if(vmRunn == vmTotal)
+	if(cluster.exitStatus != -1)
 		progressWindow.clearInterval(progressReload);
+	
 }
 
 function findRunningVirtualMachines(vms){
@@ -106,6 +108,14 @@ function findRunningVirtualMachines(vms){
 	}
 	return numRunningVms;
 }
-function getProgressStatus(){
-	return "OK";
+function getProgressStatus(cluster){
+	switch (cluster.exitStatus){
+		case -1:
+			return "Starting cluster...";
+		case 0:
+			return "OK";
+		default:
+			return "ERROR";
+	}
+	return "????";
 }

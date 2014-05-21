@@ -75,7 +75,11 @@ function request_list_clusters(){
 							+'<span class="spanWhiteSpace">&nbsp;</span>'
 							+'<span class="spanWhiteSpace">&nbsp;</span>'
 								+'<span class="spanResponseLabel">name : </span>'
-									+'<span class="spanResponseValue">'+clusters[i].vms[j].name+'</span><br/>';
+									+'<span class="spanResponseValue">'+clusters[i].vms[j].name+'</span><br/>'
+							+'<span class="spanWhiteSpace">&nbsp;</span>'
+							+'<span class="spanWhiteSpace">&nbsp;</span>'
+								+'<span class="spanResponseLabel">ip : </span>'
+									+'<span class="spanResponseValue">'+clusters[i].vms[j].ip+'</span><br/>';
 					}
 				}
 			}

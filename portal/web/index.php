@@ -6,6 +6,7 @@
 	<script type="text/javascript" src="js/stophadoop.js"></script>
 	<script type="text/javascript" src="js/listhadoop.js"></script>
 	<script type="text/javascript" src="js/clusterinfo.js"></script>
+	<script type="text/javascript" src="js/startprogress.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/json2.js"></script>
 </head>

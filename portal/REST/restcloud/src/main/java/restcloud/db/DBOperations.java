@@ -7,8 +7,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import main.java.restcloud.domain.ClusterList;
+import main.java.restcloud.domain.HadoopCluster;
 import main.java.restcloud.domain.HadoopStartRequest;
 import main.java.restcloud.domain.Login;
+import main.java.restcloud.domain.VirtualMachine;
 
 public class DBOperations {
 
@@ -71,7 +74,7 @@ public class DBOperations {
 					+"(_id, userId, name, passwd, size, replication, blocksize, "
 					+ "reducetasks, submitTime) VALUES (?,?,?,?,?,?,?,?,now())");
 		
-			String name="hadoop-1.1.2-"+id;
+			String name="hadoop-"+id;
 			
 			ps.setLong(1, clusterId); // clusterId (_id)
 			ps.setLong(2, findIdUserByUsername(hsr.getUser())); // userId
@@ -182,6 +185,146 @@ public class DBOperations {
 		}catch(Exception ex){
 			ex.printStackTrace();
 			return null;
+		}
+	}
+	
+	/**
+	 * Updates into hadoop.cluster the stopTime field which corresponding
+	 * cluster _id is the passed through parameter id
+	 * @param id
+	 */
+	public static void updateStopTimeForCluster(String id){
+		try{
+			// stopTime for cluster
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE cluster "
+					+"SET stopTime = now() "
+					+"WHERE _id=?");
+			ps.setString(1, id);
+			ps.executeUpdate();
+			
+			// endTime for cluster nodes
+			ps = con.prepareStatement("UPDATE node "
+					+"SET endTime=now() "
+					+"WHERE clusterId=?");
+			ps.setString(1, id);
+			ps.executeUpdate();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Insert into DDBB info relative to nodes of the cluster. This information is
+	 * obtained through the ClusterList object passed as parameter.
+	 * This only inserts data in DDBB when the HadoopCluster objects contained in
+	 * the ClusterList have VirtualMachine info with values different than null.
+	 * @param clusters
+	 */
+	public static void insertInfoIntoDB(ClusterList clusters){
+		// Comprobar que clusters tienen datos validos y por lo tanto seran insertados
+		boolean valid[] = new boolean[clusters.getClusters().size()];
+		for(int i = 0 ; i < clusters.getClusters().size() ; i++){
+			valid[i] = true;
+			for(VirtualMachine vm : clusters.getCluster(i).getVms()){
+				if(vm.getVmid()!=null && vm.getStatus().equals("runn")
+						&& vm.getHost()!=null && vm.getHost().length()>0
+						&& vm.getTime()!=null && vm.getTime().length()>0
+						&& vm.getName()!=null && vm.getName().length()>0);
+				else
+					valid[i] = false;
+			}
+		}
+		
+		// Si no hay ningun cluster valido salir del metodo directamente
+		boolean exit = true;
+		for(boolean b : valid){
+			if(b){
+				exit = false;
+				break;
+			}
+		}
+		
+		if(exit){
+			System.out.println("As any valid cluster has been found "
+					+"no insert is gonna be performed");
+			return;
+		}
+		
+		// Realizar insercions y borrados correspondientes
+		try{
+			Connection con = establishConnection();
+			for(int i = 0 ; i < clusters.getClusters().size() ; i++){
+				if(valid[i]){
+					HadoopCluster c = clusters.getCluster(i);
+					for (VirtualMachine vm : c.getVms()){
+						// Comprobar si existe
+						boolean exists = false;
+						PreparedStatement ps = con.prepareStatement("SELECT * FROM node "
+								+"WHERE _id=? AND clusterId=?");
+						ps.setString(1, vm.getVmid());
+						ps.setString(2, c.getId());
+						ResultSet rs = ps.executeQuery();
+						if(rs.first())
+							exists = true;
+						
+						// Insertar
+						if(!exists){
+							ps = con.prepareStatement("INSERT INTO node (_id, clusterId, memory, cpu, "
+									+"diskSize, startTime) VALUES (?,?,?,?,?,now())");
+							ps.setString(1,vm.getVmid());
+							ps.setString(2,c.getId());
+							ps.setString(3,vm.getUmem());
+							ps.setInt(4,vm.getUcpu());
+							ps.setDouble(5,0.0);
+							ps.executeUpdate();
+						}
+					}
+				}
+			}
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	/**
+	 * Used to assign to a cluster the given exitValue as exitStatus
+	 * @param clusterId
+	 * @param exitValue
+	 */
+	public static void setClusterExitStatus(String clusterId, int exitValue){
+		try{
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement("UPDATE cluster "
+					+"SET exitStatus=? WHERE _id=?");
+			ps.setInt(1,exitValue);
+			ps.setString(2,clusterId);
+			ps.executeUpdate();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 
+	 * @param clusterId
+	 * @return
+	 * 			0	: 	OK
+	 * 			>0	:	ERROR
+	 * 			-1	:	Starting cluster yet
+	 */
+	public static int obtainExitStatusForCluster(String clusterId){
+		try{
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT exitStatus FROM cluster "
+					+"WHERE _id=? AND exitStatus IS NOT NULL");
+			ps.setString(1, clusterId);
+			ResultSet rs = ps.executeQuery();
+			if(rs.first())
+				return rs.getInt(1);
+			return -1;
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return -1;
 		}
 	}
 

@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import main.java.restcloud.Constants;
+import main.java.restcloud.DataObtainerThread;
 import main.java.restcloud.Utils;
 import main.java.restcloud.db.DBOperations;
 import main.java.restcloud.domain.ClusterInfo;
@@ -66,6 +67,8 @@ public class ClusterResource {
 			while(in.ready())
 				onevmListLines.add(in.readLine());
 			cl.parseOnevmListLines(onevmListLines);
+			cl.fillClustersExitStatus();
+			cl.obtainIps();
 			
 			
 			// Return
@@ -241,8 +244,10 @@ public class ClusterResource {
 			String arr[] = firstLine.split(":");
 			id = arr[1].split("-")[1];
 			
+			// Async Job
+			new DataObtainerThread(p,id,hsr).start();
+			
 			// return
-			DBOperations.insertHadoopStartRequestInfo(id, hsr);
 			return new Message().setMessage("id:"+id);
 			
 		}catch(Exception ex){
@@ -332,6 +337,7 @@ public class ClusterResource {
 				Process hs = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
 				cmd}); // Hadoop Stop
 				hs.waitFor();
+				DBOperations.updateStopTimeForCluster(id);
 				
 				// rm clustername // Ya no hace falta
 				/*Process rmcn = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",

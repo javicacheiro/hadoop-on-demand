@@ -1,5 +1,10 @@
 package main.java.restcloud.domain;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import main.java.restcloud.Utils;
+
 public class VirtualMachine {
 	// ** CONSTANTS ** //
 	// *************** //
@@ -20,6 +25,7 @@ public class VirtualMachine {
 	private String host;
 	private String time; // Tiempo que lleva funcionando
 	private String name;
+	private String ip;
 
 	// ** CONSTRUCTOR ** //
 	// ***************** //
@@ -27,7 +33,7 @@ public class VirtualMachine {
 	}
 
 	public VirtualMachine(String vmid, String status, short ucpu, String umem,
-			String host, String time, String name) {
+			String host, String time, String name, String ip) {
 		this.vmid = vmid;
 		this.status = status;
 		this.ucpu = ucpu;
@@ -35,6 +41,7 @@ public class VirtualMachine {
 		this.host = host;
 		this.time = time;
 		this.name = name;
+		this.ip = ip;
 	}
 
 	// ** GETTERS n SETTERS ** //
@@ -95,13 +102,21 @@ public class VirtualMachine {
 		this.name = name;
 	}
 	
+	public String getIp(){
+		return ip;
+	}
+	
+	public void setIp(){
+		this.ip = ip;
+	}
+	
 	// ** toString ** //
 	@Override
 	public String toString() {
 		return "VirtualMachine{ " + "\"vmid\":\"" + vmid + "\", "
 				+ "\"status\":\"" + status + "\"," + "\"ucpu\":" + ucpu + ", "
 				+ "\"umem\":\"" + umem + "\", " + "\"host\":\"" + host + "\","
-				+ "\"time\":\"" + time + "\"" + "}";
+				+ "\"time\":\"" + time + "\", " + "\"ip\":\"" + ip+"\"}";
 	}
 
 	// ** METHODS ** //
@@ -124,6 +139,21 @@ public class VirtualMachine {
 				}
 			} else
 				time = TIME_NOT_FOUND;
+		}
+	}
+	
+	public void obtainIp(String user){
+		try{
+			String cmd = Utils.generateExport(user)+" && oneip "+vmid;
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",cmd});
+			p.waitFor();
+			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			if(in.ready()){
+				ip = in.readLine();
+			}else
+				System.out.println("IP Could not be obtained through VirtualMachine.obtainIp()");
+		}catch(Exception ex){
+			ex.printStackTrace();
 		}
 	}
 }

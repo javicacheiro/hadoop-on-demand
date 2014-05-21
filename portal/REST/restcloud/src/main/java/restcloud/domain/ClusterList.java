@@ -3,12 +3,18 @@ package main.java.restcloud.domain;
 import java.util.ArrayList;
 
 public class ClusterList {
+	// ** ATTRIBUTES ** //
+	// **************** //
 	private ArrayList<HadoopCluster> clusters;
 
+	// ** CONSTRUCTORS ** //
+	// ****************** //
 	public ClusterList() {
 		clusters = new ArrayList<HadoopCluster>(0);
 	}
 
+	// ** GETTERS n SETTERS ** //
+	// *********************** //
 	public ArrayList<HadoopCluster> getClusters() {
 		return clusters;
 	}
@@ -59,6 +65,37 @@ public class ClusterList {
 			HadoopCluster cluster = new HadoopCluster();
 			cluster.parse(id, onevmListLines);
 			clusters.add(cluster);
+		}
+	}
+	
+	// ** obtain all vm ip using 'oneip vmid' ** //
+	public void obtainIps(){
+		Thread threads[] = new Thread[clusters.size()];
+		
+		for(int i = 0 ; i < clusters.size() ; i++){
+			final int index = i;
+			threads[i] = new Thread(){
+				@Override
+				public void run(){
+					clusters.get(index).obtainIps();
+				}
+			};
+			threads[i].start();
+		}
+		
+		for(Thread t : threads){
+			while(t.isAlive()){
+				try{
+					Thread.sleep(5);
+				}catch(Exception ex){}
+			}
+		}
+	}
+	
+	// ** obtain for each cluster its exitStatus on DDBB ** //
+	public void fillClustersExitStatus(){
+		for(HadoopCluster cluster : clusters){
+			cluster.obtainExitStatus();
 		}
 	}
 
