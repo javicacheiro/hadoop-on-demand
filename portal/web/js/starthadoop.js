@@ -12,12 +12,18 @@ var hadoopReplicas = defaultReplicas;
 var hadoopBlockSize = defaultBlockSize;
 var hadoopReduceTasks = defaultReduceTasks;
 
+var startInstant = -1;
+
 // var user = "albertoep"; // Comentar cuando se use en el servidor pues este valor lo recibira del php
 
 // **************************** DO FUNCTIONS **************************** //
 // ***** doFunctions are functions which work is to "draw" the webpage ** //
 // ********************************************************************** //
 function doStartHadoop(){
+	clearAllUsing();
+	document.getElementById("startHadoopTd").className="using";
+	
+	document.getElementById("detailsDiv").innerHTML = "";
 	save();
 	document.getElementById("contentDiv").innerHTML = '<table class="form_table">'
 		+'<tr>'
@@ -37,6 +43,7 @@ function doStartHadoop(){
 }
 
 function doStartHadoopAdvanced(){
+	document.getElementById("detailsDiv").innerHTML = "";
 	save();
 	document.getElementById("contentDiv").innerHTML = '<table class="form_table">'
 		+'<tr>'
@@ -298,8 +305,15 @@ function submit_request(requestData){
 		data: JSON.stringify(requestData),
 		dataType: "json",
 		success: function(data){
+			startInstant = new Date().getTime();
 			//Create jQuery object from the response HTML.
 			document.getElementById("contentDiv").innerHTML = data;
+			
+			// Progress pop-up
+			if(document.getElementById("watchProgress")){
+				var element = document.getElementById("watchProgress");
+				element.onclick.apply(element);
+			}
 		}
 	});
 	

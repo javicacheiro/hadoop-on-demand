@@ -4,6 +4,9 @@ var receivedJsonData = null;
 
 
 function doListHadoop(){
+	clearAllUsing();
+	document.getElementById("listHadoopTd").className="using";
+	
 	document.getElementById("contentDiv").innerHTML = "";
 	document.getElementById("detailsDiv").innerHTML = "";
 	request_list_clusters();
@@ -84,7 +87,11 @@ function request_list_clusters(){
 				}
 			}
 			
-			document.getElementById("contentDiv").innerHTML = printing;
+			if(printing.length < 1)
+				document.getElementById("contentDiv").innerHTML = "<span class=\"spanResponseTitle\">"
+						+"No hadoop clusters found</span>";
+			else
+				document.getElementById("contentDiv").innerHTML = printing;
 		}
 	});
 	

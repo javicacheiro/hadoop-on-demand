@@ -6,11 +6,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import main.java.restcloud.domain.ClusterList;
 import main.java.restcloud.domain.HadoopCluster;
 import main.java.restcloud.domain.HadoopStartRequest;
 import main.java.restcloud.domain.Login;
+import main.java.restcloud.domain.SSHKey;
+import main.java.restcloud.domain.SSHKeys;
 import main.java.restcloud.domain.VirtualMachine;
 
 public class DBOperations {
@@ -327,7 +330,181 @@ public class DBOperations {
 			return -1;
 		}
 	}
-
+	
+	/**
+	 * Inserts the given key into sshkey and also its relation with
+	 * corresponding user
+	 * @param key
+	 */
+	public static void insertSSHKey(SSHKey key){
+		try{
+			Connection con = establishConnection();
+			// Insertar SSHKEY
+			PreparedStatement ps = con.prepareStatement("INSERT INTO sshkey "
+					+"(sshkey) VALUES (?)");
+			ps.setString(1, key.getKey());
+			ps.executeUpdate();
+			
+			// Insertar relacion SSHKEY-USER
+			ps = con.prepareStatement("INSERT INTO keys_users "
+					+"(idUser, idKey) VALUES (?,?)");
+			ps.setString(1, ""+findIdUserByUsername(key.getUsername()));
+			ps.setString(2, findSSHKeyIdBySSHKeyKey(key.getKey()));
+			ps.executeUpdate();
+			con.close();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Deletes the given key from sshkey and also its relation with
+	 * corresponding user
+	 * @param key
+	 */
+	public static void deleteSSHKey(SSHKey key){
+		try{
+			Connection con = establishConnection();
+			
+			// Borrar relacion SSHKEY-USER
+			PreparedStatement ps = con.prepareStatement("DELETE FROM keys_users "
+					+"WHERE idUser=? AND idKey=?");
+			ps.setString(1, ""+findIdUserByUsername(key.getUsername()));
+			ps.setString(2, findSSHKeyIdBySSHKeyKey(key.getKey()));
+			ps.executeUpdate();
+			
+			// Borrar SSHKEY
+			ps = con.prepareStatement("DELETE FROM sshkey "
+					+"WHERE sshkey=?");
+			ps.setString(1,key.getKey());
+			ps.executeUpdate();
+			
+			// Limpiar todas las sshkey residuales que hayan quedado
+				/*
+				 * Esto se produce cuando se inserta varias
+				 * veces la misma clave porque cada una
+				 * tiene un id distinto y solo se borra
+				 * la relacion de la correspondiente a
+				 * aquella con el id mayor
+				 */
+			con.prepareStatement("DELETE FROM keys_users WHERE idKey not in (SELECT _id FROM sshkey);")
+				.executeUpdate();
+			
+			con.close();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Used to obtain all the sshkeys corresponding to the given user
+	 * @param userId
+	 * @return
+	 * 			SSHKeys object containing all the keys for the given user
+	 * 			null If something unexpected occurred
+	 */			
+	public static SSHKeys getSSHKeysForUser(String userId){
+		try{
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT sshkey "
+					+"FROM sshkey join keys_users on (sshkey._id=keys_users.idKey) "
+					+"WHERE keys_users.idUser=?");
+			ps.setString(1,userId);
+			ResultSet rs = ps.executeQuery();
+			
+			SSHKeys keys = new SSHKeys();
+			while(rs.next()){
+				keys.addKey(rs.getString(1));
+			}
+			
+			con.close();
+			return keys;
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * Find the highest _id value in sshkey table which sshkey fields matches the
+	 * given key parameter
+	 * @param key
+	 * @return sshkey id
+	 */
+	public static String findSSHKeyIdBySSHKeyKey(String key){
+		try{
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT _id FROM sshkey "
+					+"WHERE sshkey=? ORDER BY _id desc LIMIT 1");
+			ps.setString(1,key);
+			ResultSet rs = ps.executeQuery();
+			
+			String str = "";
+			
+			if(rs.first())
+				str = rs.getString(1);
+			
+			return str;
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * getNodesIdForUser method queries the database to find all the nodes id
+	 * (which equals the vmid) which are inside a cluster which userID matches
+	 * the given userId as parameter
+	 * @param userId
+	 * @return Array of String containing all the userId found
+	 */
+	public static String [] getActiveNodesIdForUser(String userId){
+		try{
+			ArrayList<String> nodesId = new ArrayList<String>(0);
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement(
+					"SELECT node._id FROM node JOIN cluster ON (node.clusterId = cluster._id) "
+					+"WHERE cluster.userId = ?"
+					+"AND cluster.stopTime is null;");
+			ps.setString(1,userId);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				nodesId.add(rs.getString(1));
+			}
+			
+			con.close();
+			return nodesId.toArray(new String[0]);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	public static String [] getKeysForUser(String userId){
+		try{
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement(
+					"SELECT sshkey FROM sshkey JOIN keys_users on (sshkey._id = keys_users.idKey) "
+					+"WHERE keys_users.idUser = ?;");
+			ps.setString(1,userId);
+			
+			ArrayList<String> keys = new ArrayList<String>(0);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				keys.add(rs.getString(1));
+			}
+			
+			con.close();
+			return keys.toArray(new String[0]);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
 	// ** CONNECTION UTILS ** //
 	// ********************** //
 	public static Connection establishConnection() {

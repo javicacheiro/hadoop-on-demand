@@ -55,6 +55,9 @@ public class DataObtainerThread extends Thread {
 	private void onSuccess(int exitValue){
 		ClusterList cl = obtainClusterList();
 		DBOperations.insertInfoIntoDB(cl);
+		
+		// Synchronize keys
+		new SSHKeyAddThread(""+DBOperations.findIdUserByUsername(hsr.getUser())).start();
 	}
 	
 	private ClusterList obtainClusterList(){

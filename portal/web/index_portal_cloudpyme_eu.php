@@ -79,8 +79,8 @@
 
 	if($response['message']=='OK'){
 		echo '<script type="text/javascript"> '
-			. 'var user = "' . $user .'";'
-			. 'doIndex(); '
+			. 'window.localStorage.setItem("user" , "' . $user .'"); '
+			. 'window.location="hadoop.php"'
 			. '</script>';
 	}
 	else{

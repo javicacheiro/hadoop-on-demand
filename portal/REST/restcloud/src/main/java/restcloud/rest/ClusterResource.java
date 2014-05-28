@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import main.java.restcloud.Constants;
 import main.java.restcloud.DataObtainerThread;
+import main.java.restcloud.SSHKeyAddThread;
 import main.java.restcloud.Utils;
 import main.java.restcloud.db.DBOperations;
 import main.java.restcloud.domain.ClusterInfo;
@@ -244,7 +245,7 @@ public class ClusterResource {
 			String arr[] = firstLine.split(":");
 			id = arr[1].split("-")[1];
 			
-			// Async Job
+			// Async Jobs
 			new DataObtainerThread(p,id,hsr).start();
 			
 			// return

@@ -2,6 +2,7 @@ body, html{
    height: 99%;
    padding: 5px 0 0 0;
    margin: 0;
+   background-color: #EEF	;
 }
 #mainDiv{
 	width: 90%;	
@@ -27,10 +28,10 @@ body, html{
 #containerDiv{
 	margin: 0 auto;
 	height: 88%;
-	border-left: solid 1px black;
-	border-right: solid 1px black;
-	border-bottom: solid 1px black;
+	border-left: solid 2px white;
+	border-right: solid 2px white;
+	border-bottom: solid 2px white;
+	outline: solid 2px black;
 	padding: 5px;
 	overflow: scroll;
-	width: 99.2%;
 }

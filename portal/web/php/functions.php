@@ -18,4 +18,22 @@
 		
 		return $response;
 	}
+	
+	function requestDeleteJSON($content , $url){
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+				'Content-Type: application/json',
+				'Accept: application/json',
+				'Content-Length: ' . strlen($content))
+		);
+		
+		$result = curl_exec($ch);
+
+		$response = json_decode($result, true);
+		
+		return $response;
+	}
 ?>
