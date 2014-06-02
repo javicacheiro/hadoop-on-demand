@@ -1,0 +1,64 @@
+#!/bin/bash
+
+### EXIT CODES
+##### 0 Success
+##### 1 Insufficient arguments
+##### 2 Too much arguments
+##### 3 Help
+
+##### VARS #####
+################
+akp=~/.ssh/authorized_keys # authorized_keys path
+akop=~/.ssh/authorized_keys.original # original authorized_keys path
+
+##### FUNCTIONS #####
+#####################
+function print_help {
+	echo -e 'sshkey-add syntax:'
+	echo -e "\t"'sshkey-add "key"'
+}
+
+
+#####################
+#####  M A I N  #####
+#####################
+if [ $# -lt 1 ]; then
+	echo 'Insufficient arguments'
+	print_help
+	exit 1
+fi
+
+if [ $# -gt 1 ]; then
+	echo 'Too much arguments'
+	print_help
+	exit 2
+fi
+
+if [ $1 == '-h' ] 2>/dev/null || [ $1 == '--help' ] 2> /dev/null; then
+	print_help
+	exit 3
+fi
+
+if [ ! -r $akop ]; then
+	if [ -r $akp ]; then
+		cp -f $akp $akop
+	fi
+fi
+
+akcl=`cat $akp 2>/dev/null | wc -c` # authorized keys content length
+
+if [ $akcl -lt 1 ]; then
+	if [ -r $akop ]; then
+		cat $akop > $akp
+	fi
+fi
+
+if [ $(cat $akp 2>/dev/null | grep "$1" | wc -c) -gt 0 ]; then # If key exists
+	echo 'Given key ('"$1"') already exists'
+else
+	echo $1 >> $akp
+	echo 'sshkey succesfully added!'
+fi
+
+
+exit 0

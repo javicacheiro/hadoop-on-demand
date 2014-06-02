@@ -4,9 +4,6 @@ var receivedJsonData = null;
 
 
 function doListHadoop(){
-	clearAllUsing();
-	document.getElementById("listHadoopTd").className="using";
-	
 	document.getElementById("contentDiv").innerHTML = "";
 	document.getElementById("detailsDiv").innerHTML = "";
 	request_list_clusters();

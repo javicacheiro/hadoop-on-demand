@@ -1,0 +1,131 @@
+#contentDiv{
+	padding: 5px;
+	width: 45%;
+	float: left;
+}
+
+.form_table{
+	margin: 0 auto;
+	border: solid 1px white;
+	outline: solid 1px black;
+	float: left;
+	background-color: #832;
+	color: #EEE;
+}
+
+.form_table td{
+	text-align: center;
+}
+
+.form_table td.labelTd{
+	text-align: right;
+}
+
+.form_table .clickable_span{
+	color: yellow;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.form_table .clickable_span:hover{
+	color: orange;
+}
+
+.form_table .clickable_span:active{
+	color: red;
+	text-decoration: none;
+}
+
+.form_table button{
+	outline: solid 1px black;
+	border: solid 1px #BDF;
+	border-bottom: solid 1px black; 
+	background-color: #B64;
+	color: white;
+	padding: 2px;
+}
+
+.form_table button:hover{
+	background-color: #942;
+	color: #EFEFEF;
+}
+
+.form_table button:active{
+	background-color: #720;
+	color: #E8E8E8;
+}
+
+.labelTd{
+	width: 50%;
+	cursor: default;
+}
+
+#tipDiv{
+	float: left;
+	margin-left: 1%;
+	margin-top: 3%;
+	padding: 5px;
+	background-color: #A54;
+	width: 50%;
+	text-align: center;
+	visibility: hidden;
+	color: #EEE;
+}
+
+.spanResponseTitle{
+	font-size: 22px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.spanResponseLabel{
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+.spanWhiteSpace{
+	padding: 0 5px;
+}
+
+.spanInfoCluster{
+	margin-left: 10px;
+	padding: 0 10px;
+	
+	background-color: blue;
+	color: white;
+	cursor: pointer;
+	border: solid 1px blue;
+}
+
+.spanInfoCluster:hover{
+	border-color: cyan;
+	background-color: darkred;
+	color: #EEE;
+}
+
+.spanInfoCluster:active{
+	border-color: cyan;
+	background-color: black;
+	color: #DDD;
+}
+
+.spanStopCluster{
+	margin-left: 10px;
+	padding: 0 10px;
+	
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	border: solid 1px red;
+}
+
+.spanStopCluC L U S T E R S
+No hadoop clusters foundster:hover{
+	background-color: darkred;
+	color: #EEE;
+}
+
+.spanStopCluster:active{
+	background-color: black;
+	color: #DDD;
+}

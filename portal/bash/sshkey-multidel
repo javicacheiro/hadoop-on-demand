@@ -1,0 +1,55 @@
+#!/bin/bash
+
+### EXIT CODES
+##### 0 Success
+##### 1 Insufficient arguments
+##### 2 Too much arguments
+##### 3 Help
+##### 4 Unexpected Error
+##### 5 Less than 10 chars
+##### 6 More than 10 chars
+
+##### VARS #####
+################
+sshkey_del_path='/home/albertoep/Documentos/restcloud/bash/sshkey-del' # authorized_keys path
+MAX_ALLOWED_KEYS=10
+
+##### FUNCTIONS #####
+#####################
+function print_help {
+	echo -e 'sshkey-multidel syntax:'
+	echo -e "\t"'sshkey-multidel "key-fragment key-fragment key-fragment key-fragment ..."'
+	echo -e 'Notice that key-fragment is composed by the last 10 chars of the key without id'
+	echo -e 'NUMBER OF KEYS CAN NOT EXCEED '$MAX_ALLOWED_KEYS
+}
+
+
+#####################
+#####  M A I N  #####
+#####################
+if [ $# -lt 1 ]; then
+	echo 'Insufficient arguments'
+	print_help
+	exit 1
+fi
+
+if [ $# -gt $MAX_ALLOWED_KEYS ]; then
+	echo 'Too much arguments'
+	print_help
+	exit 2
+fi
+
+if [ $1 == '-h' ] 2>/dev/null || [ $1 == '--help' ] 2> /dev/null; then
+	print_help
+	exit 3
+fi
+
+for i in $@; do
+	if [ $(echo -n $i | wc -c) == 10 ]; then
+		$sshkey_del_path `echo $i | awk '{print substr($1,1,10)}'`
+	else
+		echo "'$i'"' was not deleted because it is not a key-fragment of 10 chars.'
+	fi
+done
+
+exit 0
