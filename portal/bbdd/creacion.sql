@@ -9,6 +9,8 @@ DROP TABLE IF EXISTS node;
 DROP TABLE IF EXISTS cluster;
 DROP TABLE IF EXISTS sshkey;
 DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS ips_users;
+DROP TABLE IF EXISTS ip;
 
 -- ------------- --
 -- CREATE TABLES --
@@ -69,6 +71,15 @@ CREATE TABLE node(
 		REFERENCES cluster(_id),
 	CONSTRAINT pk_node
 		PRIMARY KEY (_id,clusterId)
+);
+
+CREATE TABLE ip(
+	ip VARCHAR(15),
+	idUser BIGINT(20) unsigned NOT NULL,
+	FOREIGN KEY (idUser)
+		REFERENCES user(_id),
+	CONSTRAINT pk_ip
+		PRIMARY KEY(ip,idUser)
 );
 
 -- ------------------- --

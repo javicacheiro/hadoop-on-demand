@@ -1,5 +1,10 @@
 package main.java.restcloud;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+import main.java.restcloud.db.DBOperations;
 import main.java.restcloud.domain.ClusterList;
 import main.java.restcloud.domain.HadoopCluster;
 import main.java.restcloud.domain.VirtualMachine;
@@ -38,6 +43,32 @@ public class Utils {
 				}else
 					vm.setUcpu((short)1);
 			}
+		}
+	}
+	
+	public static boolean nodeIdIsOnOnevmList(String nodeId, String userId){
+		try{
+			String username = DBOperations.getUsernameByUserid(userId);
+			String cmd = Utils.generateExport(username)
+				+" && onevm list | awk 'NR>1{print $1}'";
+			
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",cmd});
+			p.waitFor();
+			
+			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			ArrayList<String> ids = new ArrayList<String>();
+			while(in.ready())
+				ids.add(in.readLine());
+			
+			for(String id: ids){
+				if(id.equals(nodeId))
+					return true;
+			}
+			
+			return false;
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return false;
 		}
 	}
 

@@ -56,8 +56,13 @@ public class DataObtainerThread extends Thread {
 		ClusterList cl = obtainClusterList();
 		DBOperations.insertInfoIntoDB(cl);
 		
+		String userId = ""+DBOperations.findIdUserByUsername(hsr.getUser());
+		
 		// Synchronize keys
-		new SSHKeyAddThread(""+DBOperations.findIdUserByUsername(hsr.getUser())).start();
+		new SSHKeyAddThread(userId).start();
+		
+		// Syncrhonize ips
+		new IPAddThread(userId).start();
 	}
 	
 	private ClusterList obtainClusterList(){

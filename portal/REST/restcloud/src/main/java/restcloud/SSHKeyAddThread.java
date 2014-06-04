@@ -9,7 +9,7 @@ import main.java.restcloud.db.DBOperations;
  * @author albertoep
  * 
  */
-public class SSHKeyAddThread extends SSHKeyThread {
+public class SSHKeyAddThread extends OperatorThread {
 	// ** CONSTRUCTOR ** //
 	// ***************** //
 	public SSHKeyAddThread(String userId) {
@@ -19,7 +19,7 @@ public class SSHKeyAddThread extends SSHKeyThread {
 	// ** INTERNAL METHODS ** //
 	// ********************** //
 	@Override
-	void keysOperations(String ip) {
+	void operations(String ip) {
 		String[] keys = DBOperations.getKeysForUser(userId);
 		for (String key : keys) {
 			try {

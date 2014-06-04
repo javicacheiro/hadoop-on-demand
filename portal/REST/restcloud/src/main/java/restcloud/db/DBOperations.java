@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import main.java.restcloud.domain.ClusterList;
 import main.java.restcloud.domain.HadoopCluster;
 import main.java.restcloud.domain.HadoopStartRequest;
+import main.java.restcloud.domain.IP;
 import main.java.restcloud.domain.Login;
 import main.java.restcloud.domain.SSHKey;
 import main.java.restcloud.domain.SSHKeys;
@@ -482,6 +483,11 @@ public class DBOperations {
 		}
 	}
 	
+	/**
+	 * Get those sshkey which are related to the given userId through the table keys_users
+	 * @param userId
+	 * @return Array of String containing sshkeys
+	 */
 	public static String [] getKeysForUser(String userId){
 		try{
 			Connection con = establishConnection();
@@ -499,6 +505,77 @@ public class DBOperations {
 			
 			con.close();
 			return keys.toArray(new String[0]);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	/**
+	 * Inserts the given ip into ip and also its relation with
+	 * corresponding user
+	 * @param ip
+	 */
+	public static void insertIP(IP ip){
+		try{
+			Connection con = establishConnection();
+			// Insertar IP
+			PreparedStatement ps = con.prepareStatement("INSERT INTO ip "
+					+"(ip,idUser) VALUES (?,?)");
+			ps.setString(1, ip.getIP());
+			ps.setString(2, ""+findIdUserByUsername(ip.getUsername()));
+			ps.executeUpdate();
+
+			con.close();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Deletes the given ip from ip and also its relation with
+	 * corresponding user
+	 * @param key
+	 */
+	public static void deleteIP(IP ip){
+		try{
+			Connection con = establishConnection();
+			
+			// Borrar IP
+			PreparedStatement ps = con.prepareStatement("DELETE FROM ip "
+					+"WHERE ip=? AND idUser=?");
+			ps.setString(1,ip.getIP());
+			ps.setString(2,""+findIdUserByUsername(ip.getUsername()));
+			ps.executeUpdate();
+			
+			con.close();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Get those ips which are related to the given userId through the table ips_users
+	 * @param userId
+	 * @return Array of String containing sshkeys
+	 */
+	public static String [] getIpsForUser(String userId){
+		try{
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement(
+					"SELECT ip FROM ip "
+					+"WHERE idUser = ?;");
+			ps.setString(1,userId);
+			
+			ArrayList<String> ips = new ArrayList<String>(0);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()){
+				ips.add(rs.getString(1));
+			}
+			
+			con.close();
+			return ips.toArray(new String[0]);
 		}catch(Exception ex){
 			ex.printStackTrace();
 			return null;

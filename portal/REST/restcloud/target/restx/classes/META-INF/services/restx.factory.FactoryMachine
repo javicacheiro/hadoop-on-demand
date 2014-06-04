@@ -3,6 +3,8 @@ main.java.restcloud.rest.ClusterResourceFactoryMachine
 main.java.restcloud.rest.ClusterResourceRouterFactoryMachine
 main.java.restcloud.rest.HelloResourceFactoryMachine
 main.java.restcloud.rest.HelloResourceRouterFactoryMachine
+main.java.restcloud.rest.IpResourceFactoryMachine
+main.java.restcloud.rest.IpResourceRouterFactoryMachine
 main.java.restcloud.rest.KeyResourceFactoryMachine
 main.java.restcloud.rest.KeyResourceRouterFactoryMachine
 main.java.restcloud.rest.UserResourceFactoryMachine

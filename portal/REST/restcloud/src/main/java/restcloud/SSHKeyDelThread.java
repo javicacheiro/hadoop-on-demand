@@ -7,7 +7,7 @@ package main.java.restcloud;
  * @author albertoep
  *
  */
-public class SSHKeyDelThread extends SSHKeyThread{
+public class SSHKeyDelThread extends OperatorThread{
 	// ** ATTRIBUTES ** //
 	// **************** //
 	private String keys[];
@@ -22,7 +22,7 @@ public class SSHKeyDelThread extends SSHKeyThread{
 	// ** INTERNAL METHODS ** //
 	// ********************** //
 	@Override
-	void keysOperations(String ip) {
+	void operations(String ip) {
 		for (String key : keys) {
 			try {
 				String cmdHadoop = "ssh hadoop@" + ip + " \""
