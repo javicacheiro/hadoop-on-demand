@@ -1,7 +1,7 @@
 var clusters;
 
 var advancedMode = false;
-var defaultSize = 10;
+var defaultSize = 3;
 var defaultReplicas = 3;
 var defaultBlockSize = 16;
 var defaultReduceTasks = 1;
@@ -89,10 +89,15 @@ function fillClusterInfo(clusterId, which){
 			var printing = "";
 			
 			try{
+				// ** CLUSTER CONNECTION INFO ** //
+				// ***************************** //
+				printing = 'SSH access: \'<i>ssh hadoop@'+clusters[which].vms[0].ip+'</i>\'<br/>'
+					+'JobTracker Web Interface: <span class="clickable_span_bgwhite" onclick="window.open(\'http://'+clusters[which].vms[0].ip+':50030/jobtracker.jsp\')">http://'+clusters[which].vms[0].ip+':50030/jobtracker.jsp</span><br/>'
+					+'NameNode Web Interface: <span class="clickable_span_bgwhite" onclick="window.open(\'http://'+clusters[which].vms[0].ip+':50070/dfshealth.jsp\')">http://'+clusters[which].vms[0].ip+':50070/dfshealth.jsp</span><br/>';
 				
 				// ** VIRTUAL MACHINES ** //
 				// ********************** //
-				printing = '<table class="clusterInfoLongTable">'
+				printing += '<table class="clusterInfoLongTable">'
 					+'<tr><td colspan="8" class="tdInfoBigHeader">CLUSTER VIRTUAL MACHINES</td></tr>'
 					+'<tr>'
 						+'<td class="tdInfoHeader">VMID</td>'
@@ -386,7 +391,7 @@ function printLaunchClusterAdvancedTable(){
 	save();
 	document.getElementById("addClusterDiv").innerHTML = '<br/><br/><table class="form_table">'
 		+'<tr>'
-			+'<td class="labelTd" onmouseover="showNumberOfNodesHelp()" onmouseout="hideTipDiv()">Number of nodes</td>'
+			+'<td class="labelTd" onmouseover="showNumberOfNodesHelp()" onmouseout="hideTipDiv()">Number of slave nodes</td>'
 			+'<td><input type="text" id="input_size" name="nodes"/></td>'
 		+'</tr>'
 		+'<tr>'
@@ -406,7 +411,7 @@ function printLaunchClusterAdvancedTable(){
 		+'</tr>'
 		+'<tr>'
  			+'<td><input type="radio" name="version" checked="checked">Hadoop v1</input></td>'
-			+'<td><input type="radio" name="version">Hadoop v2</input></td>'
+			+'<td><input type="radio" name="version" disabled="disabled">Hadoop v2</input></td>'
 		+'</tr>'
 		+'<tr>'
 			+'<td colspan="2"><span class="clickable_span" onclick="printLaunchClusterTable()">Standard features</span></td>'
@@ -788,6 +793,12 @@ function updateVmNumbers(cluster){
 	progressStatus = getProgressStatus(cluster);
 	if(vmRunn==vmTotal && cluster.exitStatus==-1)
 		progressStatus = "Configuring cluster...";
+	if(cluster.exitStatus==0)
+		progressStatus = "OK<br/>"
+			+'SSH access: \'<i>ssh hadoop@'+cluster.vms[0].ip+'</i>\'<br/>'
+			+'JobTracker Web Interface: <span class="clickable_span_bgwhite" onclick="window.open(\'http://'+cluster.vms[0].ip+':50030/jobtracker.jsp\')">http://'+cluster.vms[0].ip+':50030/jobtracker.jsp</span><br/>'
+			+'NameNode Web Interface: <span class="clickable_span_bgwhite" onclick="window.open(\'http://'+cluster.vms[0].ip+':50070/dfshealth.jsp\')">http://'+cluster.vms[0].ip+':50070/dfshealth.jsp</span><br/>';
+
 	document.getElementById("spanProgressClusterStatus").innerHTML = progressStatus;
 }
 

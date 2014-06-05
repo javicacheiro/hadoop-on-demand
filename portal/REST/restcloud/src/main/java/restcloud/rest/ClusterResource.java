@@ -223,38 +223,46 @@ public class ClusterResource {
 	@POST("/clusters")
 	@PermitAll
 	public Message createHadoopCluster(HadoopStartRequest hsr){
-		try{
-			// enable-hadoop si procede
-			//enableHadoop(hsr.getUser());
-			
-			// hadoop-start
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash","-c",
-					Utils.generateExport(hsr.getUser())
-					+" && "+hsr.generateCmd()});
-			
-			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			String id = "no_id_found";
-			
-			String firstLine="";
-			while ((firstLine=in.readLine()) != null){
-				if(firstLine.length()<1)
-					Thread.sleep(5);
-				else break;
-			}
+		if(Utils.countUserClusters(hsr.getUser()) < Constants.USER_MAX_CLUSTERS){
+			if(hsr.getSize() < Constants.USER_MAX_VMS_FOR_CLUSTER){
+				try{
+					// enable-hadoop si procede
+					//enableHadoop(hsr.getUser());
 					
-			String arr[] = firstLine.split(":");
-			id = arr[1].split("-")[1];
-			
-			// Async Jobs
-			new DataObtainerThread(p,id,hsr).start();
-			
-			// return
-			return new Message().setMessage("id:"+id);
-			
-		}catch(Exception ex){
-			return new Message().setMessage("Could not create hadoop cluster: "+ex.toString()+
-					"\nEXCPETION STACK TRACE:"+java.util.Arrays.toString(ex.getStackTrace()));
-		}
+					// hadoop-start
+					Process p = Runtime.getRuntime().exec(new String[]{"/bin/bash","-c",
+							Utils.generateExport(hsr.getUser())
+							+" && "+hsr.generateCmd()});
+					
+					BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+					String id = "no_id_found";
+					
+					String firstLine="";
+					while ((firstLine=in.readLine()) != null){
+						if(firstLine.length()<1)
+							Thread.sleep(5);
+						else break;
+					}
+							
+					String arr[] = firstLine.split(":");
+					id = arr[1].split("-")[1];
+					
+					// Async Jobs
+					new DataObtainerThread(p,id,hsr).start();
+					
+					// return
+					return new Message().setMessage("id:"+id);
+					
+				}catch(Exception ex){
+					return new Message().setMessage("Could not create hadoop cluster: "+ex.toString()+
+							"\nEXCPETION STACK TRACE:"+java.util.Arrays.toString(ex.getStackTrace()));
+				}
+			}else
+				return new Message().setMessage("Max number of allowed VMs ("
+						+Constants.USER_MAX_VMS_FOR_CLUSTER+") was exceeded.");
+		}else
+			return new Message().setMessage("Max number of allowed clusters ("
+					+Constants.USER_MAX_CLUSTERS+") was exceeded.");
 	}
 	
 	// ** UTIL METHODS ** //

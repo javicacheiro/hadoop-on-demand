@@ -22,7 +22,7 @@ public class SSHKeyDelThread extends OperatorThread{
 	// ** INTERNAL METHODS ** //
 	// ********************** //
 	@Override
-	void operations(String ip) {
+	void operations(String ip, String nodeId) {
 		for (String key : keys) {
 			try {
 				String cmdHadoop = "ssh hadoop@" + ip + " \""

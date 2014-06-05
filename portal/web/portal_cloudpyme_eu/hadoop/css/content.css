@@ -208,3 +208,17 @@
 	overflow-x: hidden;
 	word-wrap: break-word;
 }
+
+.clickable_span_bgwhite{
+	text-decoration: underline;
+	cursor: pointer;
+	color: #008;
+}
+
+.clickable_span_bgwhite:hover{
+	color: #840;
+}
+
+.clickable_span_bgwhite:active{
+	color: #480;
+}

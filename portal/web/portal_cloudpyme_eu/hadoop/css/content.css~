@@ -1,6 +1,7 @@
 #contentDiv{
 	height: 83%;
 	overflow: scroll;
+	padding: 0 5px; 
 }
 
 #clustersDiv{
@@ -206,4 +207,18 @@
 	display: block;
 	overflow-x: hidden;
 	word-wrap: break-word;
+}
+
+.clickable_span_bgwhite{
+	text-decoration: underline;
+	cursor: pointer;
+	color: #008;
+}
+
+.clickable_span_bgwhite:hover{
+	color: #044;
+}
+
+.clickable_span_bgwhite:active{
+	color: #480;
 }

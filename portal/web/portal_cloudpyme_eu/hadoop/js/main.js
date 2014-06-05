@@ -89,8 +89,8 @@ function toggleMenu(){
 function doHeaderDivs(){
 	document.getElementById("headerOptionsDiv").innerHTML='<table id="optionsTable">'
 		+'<tr><td class="optionsTd" onclick="doClusters()">Clusters</td></tr>'
-		+'<tr><td class="optionsTd" onclick="doKeys()">SSH Keys</td></tr>'
-		+'<tr><td class="optionsTd" onclick="doIps()">IPs management</td></tr>'
+		+'<tr><td class="optionsTd" onclick="doIps()">Firewall</td></tr>'
+		+'<tr><td class="optionsTd" onclick="doKeys()">Login Credentials</td></tr>'
 		//+'<tr><td class="optionsTd">Default Settings</td></tr>'
 		+'<tr><td class="optionsTd" onclick="doHelp()">Help</td></tr>'
 		+'<tr><td class="optionsTd" onclick="hideMenu()">Close</td></tr>'

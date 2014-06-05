@@ -19,7 +19,7 @@ public class SSHKeyAddThread extends OperatorThread {
 	// ** INTERNAL METHODS ** //
 	// ********************** //
 	@Override
-	void operations(String ip) {
+	void operations(String ip, String nodeId) {
 		String[] keys = DBOperations.getKeysForUser(userId);
 		for (String key : keys) {
 			try {

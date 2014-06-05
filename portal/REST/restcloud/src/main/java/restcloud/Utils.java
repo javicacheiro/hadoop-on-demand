@@ -46,29 +46,55 @@ public class Utils {
 		}
 	}
 	
-	public static boolean nodeIdIsOnOnevmList(String nodeId, String userId){
+	public static boolean stringIsInArray(String string, String array[]){
 		try{
-			String username = DBOperations.getUsernameByUserid(userId);
-			String cmd = Utils.generateExport(username)
-				+" && onevm list | awk 'NR>1{print $1}'";
-			
-			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",cmd});
-			p.waitFor();
-			
-			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			ArrayList<String> ids = new ArrayList<String>();
-			while(in.ready())
-				ids.add(in.readLine());
-			
-			for(String id: ids){
-				if(id.equals(nodeId))
+			for(String str: array){
+				if(str.equals(string))
 					return true;
 			}
-			
 			return false;
 		}catch(Exception ex){
 			ex.printStackTrace();
 			return false;
+		}
+	}
+	
+	public static int countUserClusters(String username){
+		String onevmList[] = doCountUserClustersOnevmList(username);
+		if(onevmList == null)
+			return 0;
+
+		ArrayList<String> clusterNames = new ArrayList<String>(0);
+		
+		for(String str : onevmList){
+			String splitted[] = str.split(" ");
+			String clusterName = splitted[4].substring(0,splitted[4].lastIndexOf("-"));
+			
+			if(clusterNames.indexOf(clusterName)==-1) // Si no esta en el ArrayList
+				clusterNames.add(clusterName);
+		}
+		
+		return clusterNames.size();
+	}
+	
+	public static String[] doCountUserClustersOnevmList(String username){
+		try{
+			Process p = Runtime.getRuntime().exec(new String[]{"/bin/sh","-c",
+					generateExport(username)+" && onevm list | tail -n +2 |tr -s ' '"});
+			p.waitFor();
+			
+			ArrayList<String> lines = new ArrayList<String>();
+			BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			
+			while(br.ready())
+				lines.add(br.readLine());
+			
+			if(lines.size()==1 && lines.get(0).length()<=1)
+				return null;
+			return lines.toArray(new String[0]);
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return null;
 		}
 	}
 

@@ -340,17 +340,24 @@ public class DBOperations {
 	public static void insertSSHKey(SSHKey key){
 		try{
 			Connection con = establishConnection();
-			// Insertar SSHKEY
-			PreparedStatement ps = con.prepareStatement("INSERT INTO sshkey "
-					+"(sshkey) VALUES (?)");
-			ps.setString(1, key.getKey());
-			ps.executeUpdate();
+			String keyId = findSSHKeyIdBySSHKeyKey(key.getKey());
+			
+			PreparedStatement ps;
+			
+			if(keyId.equals("")){
+				// Insertar SSHKEY
+				ps = con.prepareStatement("INSERT INTO sshkey "
+						+"(sshkey) VALUES (?)");
+				ps.setString(1, key.getKey());
+				ps.executeUpdate();
+				keyId = findSSHKeyIdBySSHKeyKey(key.getKey());
+			}
 			
 			// Insertar relacion SSHKEY-USER
 			ps = con.prepareStatement("INSERT INTO keys_users "
 					+"(idUser, idKey) VALUES (?,?)");
 			ps.setString(1, ""+findIdUserByUsername(key.getUsername()));
-			ps.setString(2, findSSHKeyIdBySSHKeyKey(key.getKey()));
+			ps.setString(2, keyId);
 			ps.executeUpdate();
 			con.close();
 		}catch(Exception ex){
@@ -374,11 +381,15 @@ public class DBOperations {
 			ps.setString(2, findSSHKeyIdBySSHKeyKey(key.getKey()));
 			ps.executeUpdate();
 			
-			// Borrar SSHKEY
-			ps = con.prepareStatement("DELETE FROM sshkey "
-					+"WHERE sshkey=?");
-			ps.setString(1,key.getKey());
-			ps.executeUpdate();
+			// Borrar SSHKEY si ningun usuario la tiene asignada
+			ps = con.prepareStatement("SELECT * FROM keys_users WHERE idKey=?");
+			ps.setString(1, findSSHKeyIdBySSHKeyKey(key.getKey()));
+			if(!ps.executeQuery().first()){
+				ps = con.prepareStatement("DELETE FROM sshkey "
+						+"WHERE sshkey=?");
+				ps.setString(1,key.getKey());
+				ps.executeUpdate();
+			}
 			
 			// Limpiar todas las sshkey residuales que hayan quedado
 				/*
@@ -430,7 +441,9 @@ public class DBOperations {
 	 * Find the highest _id value in sshkey table which sshkey fields matches the
 	 * given key parameter
 	 * @param key
-	 * @return sshkey id
+	 * @return 	sshkey id
+	 * 			"" No such SSHKey found 
+	 * 			null - Error occurred
 	 */
 	public static String findSSHKeyIdBySSHKeyKey(String key){
 		try{
@@ -581,6 +594,26 @@ public class DBOperations {
 			return null;
 		}
 	}
+	/**
+	 * Check if the given ip corresponds to the master node of a cluster.
+	 * It knows it because only master nodes have 2G of memory.
+	 * @param ip
+	 * @return True: It is master node. False: It is NOT master node;
+	 */
+	public static boolean isMasterNode(String nodeId){
+		try{
+			Connection con = establishConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT _id FROM node "
+					+"WHERE memory='2G' AND _id=? ");
+			ps.setString(1, nodeId);
+			ResultSet rs = ps.executeQuery();
+			return rs.first();
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return false;
+		}
+	}
+	
 	
 	// ** CONNECTION UTILS ** //
 	// ********************** //

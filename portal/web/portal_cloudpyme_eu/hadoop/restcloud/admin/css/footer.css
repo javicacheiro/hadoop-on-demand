@@ -1,0 +1,15 @@
+#footerDiv{
+	margin: 0 auto;
+	height: 5%;
+	border-left: solid 2px white;
+	border-right: solid 2px white;
+	border-bottom: solid 1px white;
+	border-top: solid 3px white;
+	outline: solid 2px black;
+	text-align: center;
+	background-color: #720;
+}
+
+.footerSpan{
+	color: white;
+}
