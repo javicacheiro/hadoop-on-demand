@@ -45,6 +45,11 @@ function doIndex(){
 		
 		doHeaderDivs();
 		doClusters();
+		
+		document.getElementById("contentDiv").onclick=function(){
+			if(menuVisible)
+				hideMenu();
+		};
 }
 
 function hideAllContentDivs(){

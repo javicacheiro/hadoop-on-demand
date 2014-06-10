@@ -77,13 +77,13 @@ if (isset($Action) && ($Action == "SetName")) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <link rel="shortcut icon" href="http://portal.cloudpyme.eu/iconos/favicon.ico" />
+    <link rel="shortcut icon" href="iconos/favicon.ico" />
     <!-- Google Fonts -->    
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!-- Bootstrap: CSS, JS, iconos -->
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap.css" >
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/iconos/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css" >
+    <link rel="stylesheet" href="bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
     <!-- <script src="http://portal.cloudpyme.eu/js/bootstrap.min.js"></script> -->
     <!-- Estilos genéricos -->
     <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/style.css"> 
@@ -142,16 +142,16 @@ if (isset($Action) && ($Action == "SetName")) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <link rel="shortcut icon" href="http://portal.cloudpyme.eu/iconos/favicon.ico" />
+    <link rel="shortcut icon" href="iconos/favicon.ico" />
     <!-- Google Fonts -->    
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!-- Bootstrap: CSS, JS, iconos -->
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap.css" >
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/iconos/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css" >
+    <link rel="stylesheet" href="bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
     <!-- <script src="http://portal.cloudpyme.eu/js/bootstrap.min.js"></script> -->
     <!-- Estilos genéricos -->
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/style.css"> 
+    <link rel="stylesheet" href="bootstrap/style.css"> 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -191,7 +191,7 @@ function printLoginForm($TargetURL, $msg)
         <center>
 
             <div class="panel panel-info" style="width:35%;">
-             <div class="panel-heading"><strong><?=get_vocab("iniciar_sesion");?></strong></div>
+             <div class="panel-heading"><strong><?='LOG IN';?></strong></div>
                 <div class="panel-body">
 
                 <form role="form" id="logon" method="post" action="<?php echo htmlspecialchars(basename($PHP_SELF)); ?>">
@@ -234,7 +234,8 @@ function printLoginForm($TargetURL, $msg)
                             if ($msg != ""){
                                 echo "<br/><div class='alert alert-danger'><strong><i class='fa fa-warning'></i></strong> ".get_vocab("msg_error_login")."</div>";
                              } else {
-                                echo "<br/><div class='alert alert-warning'><strong><i class='fa fa-question-circle'></i></strong> ".get_vocab("msg_exito_login")."</div>";
+                                //echo "<br/><div class='alert alert-warning'><strong><i class='fa fa-question-circle'></i></strong> ".get_vocab("msg_exito_login")."</div>";
+                                echo "<br/><div class='alert alert-warning'><strong><i class='fa fa-question-circle'></i></strong> ".'You can use your existing CESGA credentials to access the service.'."</div>";
                              }
                         }
                         ?>
@@ -272,21 +273,21 @@ function authGet($titulo)
 <!DOCTYPE html>
 <html>
 <head>
-    <TITLE>CloudPyme.- <?=$titulo;?>: <?=get_vocab("authrequired");?></TITLE>
+    <TITLE><?=$titulo;?></TITLE>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <link rel="shortcut icon" href="http://portal.cloudpyme.eu/iconos/favicon.ico" />
+    <link rel="shortcut icon" href="iconos/favicon.ico" />
     <!-- Google Fonts -->    
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!-- Bootstrap: CSS, JS, iconos -->
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap.css" >
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/iconos/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css" >
+    <link rel="stylesheet" href="bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
     <!--  <script src="http://portal.cloudpyme.eu/js/bootstrap.min.js"></script> -->
     <!-- Estilos genéricos -->
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/style.css"> 
+    <link rel="stylesheet" href="bootstrap/style.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

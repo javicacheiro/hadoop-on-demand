@@ -2,14 +2,14 @@
         header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
         header("Pragma: no-cache");
 	
-	require_once('/var/www/html/hadoop/lib/config_lang.inc');
+	require_once('lib/config_lang.inc');
 	require_once "grab_globals.inc.php";
 	require_once "config_auth.inc";
 	require_once "functions.inc";
       	require_once "mrbs_auth.inc";
 
 	// Check the user is authorised for this page
-	checkAuthorised("Lista de M&aacute;quinas Virtuales");
+	checkAuthorised("Hadoop on demand");
 	$user = getUserName();
 	$passwd = getUserPassword();	
 
@@ -25,7 +25,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <link rel="shortcut icon" href="http://portal.cloudpyme.eu/iconos/favicon.ico" />
     <!-- Google Fonts -->    
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!-- Bootstrap: CSS, JS, iconos -->

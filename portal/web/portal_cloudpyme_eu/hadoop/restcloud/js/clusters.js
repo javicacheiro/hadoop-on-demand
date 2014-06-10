@@ -797,7 +797,8 @@ function updateVmNumbers(cluster){
 		progressStatus = "OK<br/>"
 			+'SSH access: \'<i>ssh hadoop@'+cluster.vms[0].ip+'</i>\'<br/>'
 			+'JobTracker Web Interface: <span class="clickable_span_bgwhite" onclick="window.open(\'http://'+cluster.vms[0].ip+':50030/jobtracker.jsp\')">http://'+cluster.vms[0].ip+':50030/jobtracker.jsp</span><br/>'
-			+'NameNode Web Interface: <span class="clickable_span_bgwhite" onclick="window.open(\'http://'+cluster.vms[0].ip+':50070/dfshealth.jsp\')">http://'+cluster.vms[0].ip+':50070/dfshealth.jsp</span><br/>';
+			+'NameNode Web Interface: <span class="clickable_span_bgwhite" onclick="window.open(\'http://'+cluster.vms[0].ip+':50070/dfshealth.jsp\')">http://'+cluster.vms[0].ip+':50070/dfshealth.jsp</span><br/>'
+			+'NOTICE: The cluster is protected using a <span class="clickable_span_bgwhite" onclick="doIps()">firewall</span> and uses <span class="clickable_span_bgwhite" onclick="doKeys()">ssh keys</span> for authentication.<br/>';
 
 	document.getElementById("spanProgressClusterStatus").innerHTML = progressStatus;
 }

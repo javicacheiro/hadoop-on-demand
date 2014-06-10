@@ -32,12 +32,12 @@
     <!-- Google Fonts -->    
     <link href='http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
     <!-- Bootstrap: CSS, JS, iconos -->
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap.css" >
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css" >
+    <link rel="stylesheet" href="bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" href="http://portal.cloudpyme.eu/iconos/font-awesome/css/font-awesome.css">
    <!-- <script src="http://portal.cloudpyme.eu/js/bootstrap.min.js"></script>-->
     <!-- Estilos genéricos -->
-    <link rel="stylesheet" href="http://portal.cloudpyme.eu/css/style.css"> 
+    <link rel="stylesheet" href="bootstrap/style.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

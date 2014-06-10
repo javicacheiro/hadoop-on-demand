@@ -115,6 +115,6 @@ $ldap_group_member_attrib = 'memberof';
 $ldap_unbind_between_attempts = FALSE;
 
 // Output debugging information for LDAP actions
-$ldap_debug = FALSE;
+$ldap_debug = TRUE;
 
 ?>

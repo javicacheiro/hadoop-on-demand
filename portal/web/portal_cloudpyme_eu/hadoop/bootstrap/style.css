@@ -1,0 +1,207 @@
+/* Style CSS - Gestión */
+body 
+{
+       margin:0;
+       padding:0;
+       font-size:13px;
+       background-color: #fff;
+       color:#000;
+       font-family:"Open Sans",Helvetica,"San Serif";
+}
+ 
+      
+#header_portal 
+{
+        margin:0;
+        padding:0;
+        height:119px;
+        width:100%;
+        background-image: url("./../iconos/bg_header.png");           
+        background-repeat:repeat-x;
+        background-color:#f1f1f1;
+        text-align:center; 
+        color:#fff;
+     
+}    
+
+#header_portal img{
+    margin-top:1em;
+ }
+
+
+
+/* Contenedor */
+#container
+{
+    width:100%;
+    display:table;
+}
+
+#col_center
+{
+   min-height:25em;
+   background-color:#fff;
+   /*background-color:#f1f1f1;*/
+   padding:8em; 
+}
+
+/* Submenú */
+#col_left{
+    margin:0;
+    padding:0 2em 1em 2em;
+    width:25%;
+    float:left;
+    text-align:left;
+   
+}
+
+/* Contenido */
+#col_wide{
+    margin:0;
+    padding:0 2em 1em 1em;
+    width:75%;
+    float:left; 
+    text-align:left;    
+}
+
+
+/* Footer Logotipos */
+ #footer
+ {
+     clear:both;
+     bottom:0;
+     background-color:#fff;
+     border-top:1px solid #ccc;
+     padding-top:0.90em;
+     padding-bottom:0.90em;
+     text-align:center; 
+     height:100px;      
+ }
+ 
+ 
+/* Imágenes */ 
+img
+{
+    border:none;
+}
+
+
+/* Textos */
+
+h1{
+   font-size:16px;
+   font-variant:small-caps;
+   
+}
+
+h1.breadcrumb{
+    font-size:12px;
+    color:#333;
+}
+
+h2{
+   font-size:16px;
+   font-variant:small-caps;
+  /* margin-top:2em;*/
+   
+}
+
+/* Titulares anclados en col-wide */
+h2 a, a:hover{
+   color:#000;
+   text-decoration:none;
+}
+
+h3{
+   font-size:18px;
+   line-height:0.80em;
+}
+
+h4{
+    font-size:12px;
+    font-variant:small-caps;
+}
+
+p{
+    font-style:italic;
+}
+
+
+/* Tablas */
+
+table 
+{
+   /* border:1px solid #dddddd;*/
+    font-size:12px;
+    width:100%;
+   /* margin-top:2em;
+    margin-bottom:2em;*/
+    /*text-align:center;*/
+    
+}
+
+th
+{
+    background-color:#e0e0e0; 
+    color:#333; 
+    height:2em;
+    text-align:center;
+    border:1px solid #ccc;
+    /*background-color:#21759b;*/
+    /* color:#f1f1f1;*/
+}
+
+tr
+{
+    border:#dddddd;
+}
+
+tr:hover td
+{
+    background-color:#dddddd; 
+}
+
+td 
+{
+    background-color:#f1f1f1;
+    padding:0.5em 2em 0.5em 2em;
+}
+
+/* Tablas col-wide: contenido centrado */
+#col_wide td
+{
+   text-align:center;
+}
+
+/* MODIFICANDO ESTILOS BOOTSTRAP */
+
+/* Modificando estilos barra navegación*/
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    background-color: #E7E7E7;
+}
+
+
+/* Label: ultima actualizacion */
+.label-info {
+    /*background-color: #5BC0DE;*/
+    background-color:#3399cc;
+    font-size:11px;
+ }
+
+ 
+/* Landing Page: buttons */
+ p.normal{
+   font-style:normal;    
+ }
+
+
+ 
+
+
+
+
