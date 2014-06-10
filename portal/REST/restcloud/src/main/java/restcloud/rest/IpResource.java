@@ -26,7 +26,7 @@ public class IpResource {
 		 */
 		@POST("/ip")
 		@PermitAll
-		public Message addSSHKey(final IP ip){
+		public Message addIp(final IP ip){
 			try{
 				
 					DBOperations.insertIP(ip);
