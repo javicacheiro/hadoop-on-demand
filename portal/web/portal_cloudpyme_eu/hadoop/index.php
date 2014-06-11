@@ -74,7 +74,7 @@
 			. '</script>';
 	}
 	else{
-		echo 'Login failed';
+		echo 'Access to REST service failed';
 	}    
 
 
