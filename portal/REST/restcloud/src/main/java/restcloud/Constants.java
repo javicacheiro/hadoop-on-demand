@@ -13,7 +13,7 @@ public class Constants {
 	
 	// ** DEFAULT PROPERTIES ** //
 	// ************************ //
-	public final static String DEFAULT_SCRIPTS_PATH = "/usr/local/hadoop-on-demand-rest/";
+	public final static String DEFAULT_SCRIPTS_PATH = "./scripts/";
 	public final static String DEFAULT_USER_MAX_CLUSTERS = "1";
 	public final static String DEFAULT_USER_MAX_VMS_FOR_CLUSTER = "20";
 	
