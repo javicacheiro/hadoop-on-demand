@@ -20,6 +20,11 @@
 #     Use different template for master
 #   09-01-2014 JLC
 #     Check if there is a cluster already registered, then exit
+#   08-05-2014 JLC
+#     REST options definition
+#   15-05-2014 JLC
+#     REST options implementation
+#     Create HDFS dir: /user/hadoop
 #
 # TODO
 #   TODO1: Implement replication size, blocksize and rtasks cmdline options and conf options
@@ -34,7 +39,7 @@ scriptName="${0##*/}"
 #
 # Default values
 #
-declare -i SIZE=10
+declare -i SIZE=3
 declare -i REPLICATION=3
 declare -i BLOCKSIZE=16777216
 declare -i RTASKS=1
@@ -64,10 +69,12 @@ Usage: $scriptName [-s SIZE] [-r dfs.replication] [-b  <dfs.block.size>] [-t <ma
 Start a Hadoop cluster 
 
 options include:
-    -s SIZE                   Number of slaves in the Hadoop cluster (default 10)
+    -s SIZE                   Number of slaves in the Hadoop cluster (default 3)
     -r dfs.replication        Number of replicas of each file (default 3)
     -b dfs.block.size         HDFS block size (default 16MB)
     -t mapred.reduce.tasks    Number of reduce tasks (default 1)
+    -c clusterID              Cluster ID (only for use within REST service calls)
+    -R                        REST API mode (only for use within REST service calls)
     -h                        Print help
 
 EOF
@@ -78,12 +85,14 @@ EOF
 #  Read options
 #
 function readOptions() {
-  while getopts ":hs:r:b:t:" opt; do
+  while getopts ":hs:r:b:t:c:R" opt; do
       case "$opt" in
           s) SIZE=$OPTARG ;;
           r) REPLICATION=$OPTARG ;;
           b) BLOCKSIZE=$OPTARG ;;
           t) RTASKS=$OPTARG ;;
+          c) CLUSTERID=$OPTARG ;;
+          R) REST="yes" ;;
           h) printUsage; exit 1 ;;
           *) printUsage; exit 1 ;;
       esac
@@ -145,8 +154,11 @@ function startCluster() {
   while [[ $STARTED -lt $TOTAL ]]; do
     sleep 10
     STARTED=`onevm list m | grep $LABEL | awk '{print $5}'| grep runn | wc -l`
-    #echo "  ... arrancados $STARTED / $TOTAL"
-    progressbar $STARTED $TOTAL
+    if [[ -z $REST ]]; then
+      progressbar $STARTED $TOTAL
+    else
+      echo "  ... arrancados $STARTED / $TOTAL"
+    fi
   done
   echo -e "\n\n"
 }
@@ -237,6 +249,8 @@ function configureMaster() {
       #./start-dfs.sh
       #./start-mapred.sh
       ./start-all.sh
+      sleep 20
+      hadoop fs -mkdir /user/hadoop
     '
     "
 }
@@ -263,24 +277,42 @@ readOptions "$@"
 TOTAL=$((SIZE+1))
 
 # Label for the cluster
-LABEL=hadoop-1.1.2-$$
-
-# Move to hadoop-on-demand root directory
-cd $HADOOP_ROOT
-
-if [[ -r clustername ]]; then
-  # A cluster is already registered so we stop here
-  echo
-  echo "¡Ya tiene un cluster Hadoop en ejecucion!"
-  echo "Solo se permite un cluster por usuario"
-  echo "Para parar el cluster actual puede utilizar:"
-  echo "    hadoop-stop"
-  echo
-  exit 2
+if [[ -z $CLUSTERID ]]; then
+  LABEL=hadoop-1.1.2-$$
 else
-  # Save the label for later use
-  echo $LABEL > clustername
+  LABEL=hadoop-$CLUSTERID
 fi
+
+if [[ -z $REST ]]; then
+  # Move to hadoop-on-demand root directory
+  cd $HADOOP_ROOT
+
+  if [[ -r clustername ]]; then
+    # A cluster is already registered so we stop here
+    echo
+    echo "¡Ya tiene un cluster Hadoop en ejecucion!"
+    echo "Solo se permite un cluster por usuario"
+    echo "Para parar el cluster actual puede utilizar:"
+    echo "    hadoop-stop"
+    echo
+    exit 2
+  else
+    # Save the label for later use
+    echo $LABEL > clustername
+  fi
+else
+  # If we are running in REST mode 
+  #
+  # We do not store the cluster name
+  #
+  # We return the LABEL of the new cluster as expected
+  # by the rest service
+  echo name:$LABEL
+  
+  # we do not need the log file
+  LOG=/dev/null
+fi
+
 
 # Start the VMs needed (SIZE+1)
 date
