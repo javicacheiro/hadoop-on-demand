@@ -1,0 +1,6 @@
+#detailsDiv{
+	padding: 5px;
+	width: 45%;
+	background-color: plum;
+	float: right;
+}

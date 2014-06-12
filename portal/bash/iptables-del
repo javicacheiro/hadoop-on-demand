@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#################
+### FUNCTIONS ###
+#################
+function print_help {
+	echo $0
+	echo -e "\t$0 -h"
+	echo -e "\t\tShows this help"
+	echo -e "\tiptables-del IP"
+	echo -e "\t\tDeletes all the occurrences for the given IP from iptables"
+	echo -e "\t\tFor instance: $0 193.144.34.101"	
+	echo
+}
+
+
+###################
+### EXIT VALUES ###
+###################
+# 0 - Success
+# 1 - Insufficient parameters
+# 2 - Too much parameters
+# 3 - Help requested
+
+
+
+### PARSE CMD ###
+IP=$1
+
+if [ $# -ne 1 ]; then
+	echo 'Wrong number of parameters'
+	print_help
+	exit 1
+fi
+
+if [ $1 == '-h' ] || [ $1 == '--help' ]; then
+	print_help
+	exit 3;
+fi;
+
+IP=${IP/\/32/}
+
+input_rules=`iptables -L INPUT --line-numbers -n | awk  '$5 == "'$IP'" {print $1}'`
+
+# We sort then in reverse order so we can remove then without displacing the rest of rules
+for i in `echo $input_rules | tr ' ' '\n' | sort -r -n`; do
+	iptables -D INPUT $i
+done
+

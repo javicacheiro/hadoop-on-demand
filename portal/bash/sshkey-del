@@ -1,0 +1,108 @@
+#!/bin/bash
+
+### EXIT CODES
+##### 0 Success
+##### 1 Insufficient arguments
+##### 2 Too much arguments
+##### 3 Help
+##### 4 Unexpected Error
+##### 5 Less than 10 chars
+##### 6 More than 10 chars
+
+##### VARS #####
+################
+akp=~/.ssh/authorized_keys # authorized_keys path
+
+##### FUNCTIONS #####
+#####################
+function print_help {
+	echo -e 'sshkey-del syntax:'
+	echo -e "\t"'sshkey-del "key last 10 chars"'
+}
+
+
+#####################
+#####  M A I N  #####
+#####################
+if [ $# -lt 1 ]; then
+	echo 'Insufficient arguments'
+	print_help
+	exit 1
+fi
+
+if [ $# -gt 1 ]; then
+	echo 'Too much arguments'
+	print_help
+	exit 2
+fi
+
+if [ $1 == '-h' ] 2>/dev/null || [ $1 == '--help' ] 2> /dev/null; then
+	print_help
+	exit 3
+fi
+
+nc=`echo -n $1 | wc -c` # Number of Chars
+
+if [ $nc -lt 10 ]; then
+	echo Given key end-fragment has less than 10 chars 
+	exit 5
+fi
+
+if [ $nc -gt 10 ]; then
+	echo Given key end-fragment has more than 10 chars 
+	exit 6
+fi
+
+
+nlbd=`cat $akp | wc -l` # Number of Lines Before Delete
+
+## -- DELETE -- ##
+
+nr=1 # Number of  Row
+
+for i in $(cat $akp | awk '{print $2}'); do
+	if [ $(cat $akp | awk 'NR=='$nr' {print $1}') == 'ssh-dss' ]; then
+		fragment=`echo $i | awk '{print substr($1,569,10)}'`
+		if [ $fragment == $1 ]; then
+			cat $akp | awk 'NR!='$nr' {print}' > "$akp"'.tmp'
+			#rm -f $akp
+			cp -f "$akp"'.tmp' $akp
+			nr=`echo $nr' - 1' | bc`
+		fi
+
+	elif [ $(cat $akp | awk 'NR=='$nr' {print $1}') == 'ssh-rsa' ]; then
+		fragment=`echo $i | awk '{print substr($1,363,10)}'`
+		if [ $fragment == $1 ]; then
+			cat $akp | awk 'NR!='$nr' {print}' > "$akp"'.tmp'
+			#rm -f $akp
+			cp -f "$akp"'.tmp' $akp
+			nr=`echo $nr' - 1' | bc`
+		fi
+	fi
+	nr=`echo $nr' + 1' | bc`
+done
+
+## ------------ ##
+
+nlad=`cat $akp | wc -l` # Number of Lines After Delete
+
+ndl=`echo $nlbd ' - ' $nlad | bc` # Number of Deleted Lines
+
+if [ $ndl -gt 1 ]; then
+	echo $ndl lines were deleted!
+fi 
+
+if [ $ndl == 1 ]; then
+	echo $ndl line was deleted!
+fi
+
+if [ $ndl == 0 ]; then
+	echo no lines were deleted!
+fi
+
+if [ $ndl -lt 0 ]; then
+	echo 'UNEXPECTED ERROR OCURRED'
+	exit 4
+fi
+
+exit 0
