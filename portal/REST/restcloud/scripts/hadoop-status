@@ -11,6 +11,8 @@
 #     First version
 #   15-05-2014 JLC
 #     REST options
+#   12-06-2014 JLC
+#     Support for master with 2 IPs
 
 # Hadoop-on-demand root directory
 HADOOP_ROOT=$HOME/.hadoop-on-demand
@@ -70,7 +72,8 @@ fi
 
 if [[ -z $REST ]]; then
   cd $HADOOP_ROOT
-  MASTER=`head -n1 node.list`
+  #MASTER=`head -n1 node.list`
+  MASTER=`cat master`
 else
   if [[ -z $CLUSTERID ]]; then
     echo "ERROR: No se ha especificado el Cluster ID."

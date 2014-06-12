@@ -27,6 +27,8 @@
 #     Create HDFS dir: /user/hadoop
 #   06-06-2014 JLC
 #     Hadoop 1.2.1 support
+#   12-06-2014 JLC
+#     Support for a master with 2 IPs: one public and one private
 #
 # TODO
 #   TODO1: Implement replication size, blocksize and rtasks cmdline options and conf options
@@ -225,7 +227,11 @@ function configureNode() {
         cp /etc/sysconfig/network /etc/sysconfig/network.0
         sed "s/HOSTNAME=localhost/HOSTNAME=$nodename/" /etc/sysconfig/network.0 > /etc/sysconfig/network
 
-        # Restart firewall
+	# Firewall
+        for node in \`cat node.list\`; do
+                iptables -I INPUT 1 -s \$node -j ACCEPT
+        done
+
         #service iptables restart
 EOF
 }
@@ -264,8 +270,23 @@ function configureMaster() {
 function getNodeList() {
   #onevm list m|grep hadoop112|awk '{print $1}'|xargs -l1 onevm show |grep IP= |sed 's/.*IP="//'|sed 's/",//' > node.list
   #onevm list m | grep $LABEL | awk '{print $1}'|xargs -l1 onevm show |grep IP= | grep -Eo '[0-9.]+' > node.list
-  onevm list m | grep $LABEL | awk '{print $1}'|xargs -l1 oneip > node.list
-  NODES=`cat node.list`
+  #onevm list m | grep $LABEL | awk '{print $1}'|xargs -l1 oneip > node.list
+  VM_IDS=`onevm list m | grep $LABEL | awk '{print $1}'`
+  master=true
+  for ID in $VM_IDS; do
+    if [ "$master" = true ]; then
+      MASTER_PUB=`oneip $ID`
+      echo $MASTER_PUB > master
+      onevm show $ID -x | grep '<IP>' | grep -o '[0-9.]\+' | tail -n1 > node.list
+      master=false
+      NODES=$MASTER_PUB
+    else
+      oneip $ID >> node.list
+      NODES="$NODES `oneip $ID`"
+    fi
+  done
+  #tail -n+2 all.list > node.list
+  #NODES=`cat node.list`
 }
 
 ###############################################################################
@@ -348,7 +369,7 @@ for node in $NODES; do
 	  let "N++"
   fi
 
-  configureNode $node $nodename &> $LOG &
+  configureNode $node $nodename >> $LOG 2>&1 &
 
 done
 
@@ -357,15 +378,14 @@ echo "Esperando a que todos los slave esten configurados"
 wait
 
 echo "Configurando el master del cluster"
-MASTER=`head -n1 node.list`
-configureMaster $MASTER &> $LOG
+configureMaster $MASTER_PUB >> $LOG 2>&1
 
 # Wait a little bit for complete hadoop startup
 sleep 10
 
-echo "" > $LOG
-echo "-------------- HADOOP STATUS ------------------------------" > $LOG
-ssh hadoop@$MASTER '
+echo "" >> $LOG
+echo "-------------- HADOOP STATUS ------------------------------" >> $LOG
+ssh hadoop@$MASTER_PUB '
 . /etc/profile
 echo "==> Hadoop cluster status"
 hadoop dfsadmin -report | grep "Datanodes available"
@@ -375,10 +395,10 @@ echo "===> HDFS"
 hadoop dfsadmin -report
 echo "===> Task trackers"
 hadoop job -list-active-trackers
-' &> $LOG
-echo "-------------- HADOOP STATUS ------------------------------" > $LOG
+' >> $LOG 2>&1
+echo "-------------- HADOOP STATUS ------------------------------" >> $LOG
 
-date > $LOG
+date >> $LOG
 
 # Configuration finished
 cat <<EOF
@@ -390,12 +410,12 @@ cat <<EOF
 -----------------------------------------------------------------------
 
 Ya puede conectarse al nuevo cluster de hadoop a traves mediante ssh:
-  ssh hadoop@$MASTER
+  ssh hadoop@$MASTER_PUB
    
 
 Tambien monitorizar el estado del cluster en las siguientes direcciones:
-    JobTracker Web Interface:  http://$MASTER:50030/jobtracker.jsp
-    NameNode Web Interface:    http://$MASTER:50070/dfshealth.jsp
+    JobTracker Web Interface:  http://$MASTER_PUB:50030/jobtracker.jsp
+    NameNode Web Interface:    http://$MASTER_PUB:50070/dfshealth.jsp
 
 -----------------------------------------------------------------------
 
