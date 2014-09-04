@@ -1,0 +1,143 @@
+# Firewall configuration written by JLC
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+:INPUT - [0:0]
+:BANNED - [0:0]
+#
+# Trafico local
+#
+-A INPUT -i lo -j ACCEPT
+#
+# Ping
+#
+-A INPUT -p icmp --icmp-type any -j ACCEPT
+#
+# Nodos con acceso total
+#
+# Red FT
+#-A INPUT -s 84.21.168.0/24 -j ACCEPT
+# Frontales SVG
+#-A INPUT -s 193.144.34.110 -j ACCEPT
+#-A INPUT -s 193.144.34.189 -j ACCEPT
+# Red cloud publica
+-A INPUT -s 193.144.35.0/24 -j ACCEPT
+# Nodos del cluster
+-A INPUT -s 193.144.35.171 -j ACCEPT
+-A INPUT -s 193.144.35.172 -j ACCEPT
+-A INPUT -s 193.144.35.173 -j ACCEPT
+-A INPUT -s 193.144.35.174 -j ACCEPT
+-A INPUT -s 193.144.35.175 -j ACCEPT
+-A INPUT -s 193.144.35.176 -j ACCEPT
+-A INPUT -s 193.144.35.177 -j ACCEPT
+-A INPUT -s 193.144.35.178 -j ACCEPT
+-A INPUT -s 193.144.35.179 -j ACCEPT
+-A INPUT -s 193.144.35.180 -j ACCEPT
+-A INPUT -s 193.144.35.181 -j ACCEPT
+-A INPUT -s 193.144.35.182 -j ACCEPT
+-A INPUT -s 193.144.35.183 -j ACCEPT
+-A INPUT -s 193.144.35.184 -j ACCEPT
+-A INPUT -s 193.144.35.185 -j ACCEPT
+-A INPUT -s 193.144.35.186 -j ACCEPT
+-A INPUT -s 193.144.35.187 -j ACCEPT
+-A INPUT -s 193.144.35.188 -j ACCEPT
+-A INPUT -s 193.144.35.189 -j ACCEPT
+-A INPUT -s 193.144.35.190 -j ACCEPT
+-A INPUT -s 193.144.35.191 -j ACCEPT
+-A INPUT -s 147.251.3.192 -j ACCEPT
+-A INPUT -s 147.251.3.194 -j ACCEPT
+-A INPUT -s 147.251.3.195 -j ACCEPT
+-A INPUT -s 147.251.3.230 -j ACCEPT
+-A INPUT -s 147.251.3.231 -j ACCEPT
+-A INPUT -s 147.251.3.232 -j ACCEPT
+-A INPUT -s 147.251.3.53 -j ACCEPT
+-A INPUT -s 147.251.3.54 -j ACCEPT
+-A INPUT -s 147.251.3.61 -j ACCEPT
+-A INPUT -s 147.251.3.63 -j ACCEPT
+-A INPUT -s 147.251.3.64 -j ACCEPT
+-A INPUT -s 147.251.3.65 -j ACCEPT
+-A INPUT -s 147.251.3.73 -j ACCEPT
+-A INPUT -s 147.251.3.90 -j ACCEPT
+-A INPUT -s 147.251.3.106 -j ACCEPT
+-A INPUT -s 147.251.3.108 -j ACCEPT
+-A INPUT -s 147.251.3.109 -j ACCEPT
+-A INPUT -s 147.251.3.110 -j ACCEPT
+-A INPUT -s 147.251.3.111 -j ACCEPT
+-A INPUT -s 147.251.3.123 -j ACCEPT
+-A INPUT -s 155.210.198.139 -j ACCEPT
+-A INPUT -s 155.210.198.143 -j ACCEPT
+-A INPUT -s 155.210.198.144 -j ACCEPT
+-A INPUT -s 155.210.198.145 -j ACCEPT
+-A INPUT -s 155.210.198.146 -j ACCEPT
+-A INPUT -s 155.210.198.147 -j ACCEPT
+-A INPUT -s 155.210.198.148 -j ACCEPT
+-A INPUT -s 155.210.198.149 -j ACCEPT
+-A INPUT -s 155.210.198.151 -j ACCEPT
+-A INPUT -s 155.210.198.153 -j ACCEPT
+-A INPUT -s 155.210.198.154 -j ACCEPT
+-A INPUT -s 155.210.198.155 -j ACCEPT
+-A INPUT -s 155.210.198.156 -j ACCEPT
+-A INPUT -s 155.210.198.157 -j ACCEPT
+-A INPUT -s 155.210.198.158 -j ACCEPT
+-A INPUT -s 155.210.198.159 -j ACCEPT
+-A INPUT -s 155.210.198.160 -j ACCEPT
+-A INPUT -s 155.210.198.161 -j ACCEPT
+-A INPUT -s 155.210.198.162 -j ACCEPT
+-A INPUT -s 155.210.198.163 -j ACCEPT
+
+
+#
+# SSH
+#
+# Nodos con acceso ssh sin limite en el numero de intentos de conexion
+-A INPUT -s 193.144.44.0/24 -p tcp --dport 22 -j ACCEPT
+-A INPUT -s 193.144.34.0/24 -p tcp --dport 22 -j ACCEPT
+-A INPUT -s 193.144.40.0/24 -p tcp --dport 22 -j ACCEPT
+-A INPUT -s 84.21.168.0/24 -p tcp --dport 22 -j ACCEPT
+-A INPUT -s 84.21.169.0/24 -p tcp --dport 22 -j ACCEPT
+-A INPUT -s 193.144.33.0/24 -p tcp --dport 22 -j ACCEPT
+-A INPUT -s 10.212.5.0/24 -p tcp --dport 22 -j ACCEPT
+#
+# Limitar numero de intentos de conexion por SSH
+#
+# Opcion 1: IP que hayan intentado acceder 10 o más veces en los ultimos 10 minutos se banean durante 1 año
+#
+# Todos los intentos de conexion se añaden a la lista SSH
+-A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH
+# Aquellas IP que hayan intentado acceder 10 o más veces en los ultimos 10 minutos se procesan en la cadena BANNED
+-A INPUT -p tcp --dport 22 -m recent --update --seconds 600 --hitcount 10 --rttl --name SSH -j BANNED
+# Las IP que hayan intentado acceder 10 o mas veces se añaden a la lista SSH_BANNED
+-A BANNED -p tcp --dport 22 -m recent --set --name SSH_BANNED
+# Las ips que se encuentren en la lista SSH_BANNED tendran el acceso restringido durante 1 año
+# Para ver la lista de ips restringidas se puede emplear cat /proc/net/ipt_recent/SSH_BANNED
+-A INPUT -m recent --rcheck --seconds 31536000 --name SSH_BANNED -j DROP
+#
+# Opcion 2: Si en los ultimos 60 segundos alguna IP ha intentado acceder mas de 3 veces se banea
+#
+# Limitar ataques de fuerza bruta ssh
+#-A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --set --name SSH_LIST --rsource
+# Actualizamos la lista de conexiones nuevas, quedandonos sólo con las entradas de los últimos 60 seg.
+# Si en esa lista hay alguna conexión que se haya intentado mas de 3 veces, hacemos DROP
+#-A INPUT -p tcp -m tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 3 --name SSH_LIST --rsource -j DROP
+#
+# Aceptamos conexiones SSH
+#
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+#
+# Aceptamos la vuelta de conexiones establecidas
+#
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+#
+# Otros servicios
+#
+# Para permitir NRPE NAGIOS
+#-A INPUT -m state --state NEW -s 193.144.34.39/32 -p tcp --dport 5666 -j ACCEPT
+# GMOND a traves de stats.cesga.es
+#-A INPUT -m state --state NEW -p tcp -m tcp --dport 8680 -j ACCEPT
+#-A INPUT -m state --state NEW -p udp -m udp --dport 8680 -j ACCEPT
+#-A INPUT -p IGMP -j ACCEPT
+#
+#
+COMMIT
+

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>hadoop.tmp.dir</name>
+        	<value>/scratch/hadoop</value>
+        	<description>A base for other temporary directories.</description>
+        </property>
+     
+	<property>
+        	<name>fs.default.name</name>
+         	<value>hdfs://hadoop-master:54310</value>
+     	</property>
+
+<!-- parametros para optimizcion del cluster -->
+	<property>
+	      	<name>fs.inmemory.size.mb</name>
+	        <value>200</value>
+	</property>
+	<property>
+         	<name>io.sort.factor</name>
+                <value>100</value>
+        </property>
+	<property>
+                <name>io.sort.mb</name>
+                <value>150</value>
+        </property>
+	<property>
+         	<name>io.sort.record.percent</name>
+                <value>0.138</value>
+        </property>
+	<property>
+         	<name>io.sort.spill.percent</name>
+                <value>1.0</value>
+        </property>
+	<property>
+		<name>io.file.buffer.size</name>
+	        <value>131072</value>
+	</property>
+	<property>
+        	<name>mapred.task.timeout</name>
+	        <value>18000000</value>
+	</property>
+	<property>
+        	<name>topology.script.file.name</name>
+	        <value>/opt/cesga/hadoop/conf/which_rack.sh</value>
+	</property>
+
+</configuration>

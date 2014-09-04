@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+   <property>
+       <name>mapred.job.tracker</name>
+       <value>hadoop-master:54311</value>
+   </property>
+   <property>
+      <name>dfs.hosts</name>
+      <value>/opt/cesga/hadoop/conf/hosts.allow</value>
+   </property>
+   <property>
+      <name>mapred.hosts</name>
+      <value>/opt/cesga/hadoop/conf/hosts.allow</value>
+   </property>
+   <property>
+      <name>dfs.hosts.exclude</name>
+      <value>/opt/cesga/hadoop/conf/hosts.deny</value>
+   </property>
+   <property>
+      <name>mapred.hosts.exclude</name>
+      <value>/opt/cesga/hadoop/conf/hosts.deny</value>
+   </property>
+
+<!-- config para cluster grande -->
+
+<property>
+	<name>mapred.tasktracker.map.tasks.maximum</name>
+	<value>1</value>
+</property>
+
+<property>
+        <name>mapred.tasktracker.reduce.tasks.maximum</name>
+        <value>1</value>
+</property>
+
+<property>
+        <name>mapred.reduce.tasks</name>
+        <value>9</value>
+</property>
+</configuration>

@@ -1,0 +1,1125 @@
+Configurando el nodo 193.144.35.171
+Configurando el nodo 193.144.35.172
+Configurando el nodo 193.144.35.174
+Configurando el nodo 193.144.35.175
+Configurando el nodo 193.144.35.178
+Configurando el nodo 193.144.35.179
+Configurando el nodo 193.144.35.180
+Configurando el nodo 193.144.35.183
+Configurando el nodo 193.144.35.184
+Configurando el nodo 193.144.35.185
+Configurando el nodo 193.144.35.173
+Configurando el nodo 193.144.35.191
+Configurando el nodo 193.144.35.190
+Configurando el nodo 193.144.35.188
+Configurando el nodo 193.144.35.189
+Configurando el nodo 193.144.35.187
+Configurando el nodo 193.144.35.177
+Configurando el nodo 193.144.35.176
+Configurando el nodo 193.144.35.182
+Configurando el nodo 193.144.35.186
+Configurando el nodo 193.144.35.181
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+14:54:09:8f:c8:85:ce:8b:f8:b1:bd:1d:99:9e:7d:b6.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1254
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.184 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+ac:5d:2e:00:d6:39:68:bb:43:c6:57:7d:4e:8b:63:e6.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1242
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.172 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+19:6e:62:22:48:99:8a:c1:54:5f:05:31:41:c7:03:18.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1249
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.179 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+56:06:ca:80:04:42:5d:46:e2:ab:98:1c:81:f4:cc:21.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1257
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.187 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+08:3f:70:94:63:84:30:bf:c9:07:27:31:b5:e2:04:07.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1241
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.171 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+ce:53:08:d4:f1:f2:d6:34:65:3d:2c:8e:29:73:dd:5a.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1243
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.173 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+9c:78:5c:82:ab:0f:ac:5c:47:13:66:05:ba:f7:a2:b7.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1346
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.190 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+a0:9c:68:f0:11:65:a3:2b:dd:01:79:4f:22:1e:25:62.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1250
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.180 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+65:bc:97:cf:db:f7:ca:d8:2e:26:4a:12:d8:d6:6d:8b.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1260
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.191 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+4c:95:8f:c6:d2:07:c0:e4:0e:2e:6e:0d:71:ff:5c:1e.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1255
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.185 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+59:7a:66:a5:72:40:e7:08:09:f7:e8:b8:6d:f4:c1:c3.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1259
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.189 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+b4:4c:68:8a:3d:a2:65:a7:07:ef:04:72:14:3b:fd:c8.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1258
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.188 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+68:1e:56:f9:7d:fa:7c:05:e9:ea:ed:6e:c4:6a:f0:9c.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1245
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.175 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+4d:34:1f:26:a6:dd:21:00:ae:1b:37:8d:04:87:97:52.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1248
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.178 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+40:cc:be:9d:61:83:b7:cb:9d:09:e7:8a:7b:b6:52:1c.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1253
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.183 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+b9:40:0c:50:93:3a:e6:28:ad:fd:2e:8f:da:22:51:41.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1244
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.174 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+f1:9c:8c:a8:71:12:b5:55:45:e9:18:ca:d3:9b:02:08.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1246
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.176 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+6c:6d:80:c5:78:b0:0a:c4:eb:eb:c2:4e:b0:55:b7:8d.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1252
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.182 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+39:65:97:ec:e8:a1:e5:52:ea:f1:82:8a:a8:87:bd:b6.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1247
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.177 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+45:c3:b3:33:82:51:4c:e5:ed:47:d3:74:e4:fd:47:4f.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1251
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.181 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+5f:b8:30:cf:66:5f:c8:92:67:33:30:dc:ca:b4:75:36.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1256
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.186 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+14:54:09:8f:c8:85:ce:8b:f8:b1:bd:1d:99:9e:7d:b6.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1254
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.184 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+ac:5d:2e:00:d6:39:68:bb:43:c6:57:7d:4e:8b:63:e6.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1242
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.172 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+19:6e:62:22:48:99:8a:c1:54:5f:05:31:41:c7:03:18.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1249
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.179 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+ce:53:08:d4:f1:f2:d6:34:65:3d:2c:8e:29:73:dd:5a.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1243
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.173 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+4c:95:8f:c6:d2:07:c0:e4:0e:2e:6e:0d:71:ff:5c:1e.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1255
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.185 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+65:bc:97:cf:db:f7:ca:d8:2e:26:4a:12:d8:d6:6d:8b.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1260
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.191 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+4d:34:1f:26:a6:dd:21:00:ae:1b:37:8d:04:87:97:52.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1248
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.178 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+a0:9c:68:f0:11:65:a3:2b:dd:01:79:4f:22:1e:25:62.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1250
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.180 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+08:3f:70:94:63:84:30:bf:c9:07:27:31:b5:e2:04:07.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1241
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.171 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+59:7a:66:a5:72:40:e7:08:09:f7:e8:b8:6d:f4:c1:c3.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1259
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.189 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+9c:78:5c:82:ab:0f:ac:5c:47:13:66:05:ba:f7:a2:b7.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1346
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.190 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+ Ya existe /scratch
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+68:1e:56:f9:7d:fa:7c:05:e9:ea:ed:6e:c4:6a:f0:9c.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1245
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.175 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+b4:4c:68:8a:3d:a2:65:a7:07:ef:04:72:14:3b:fd:c8.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1258
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.188 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+5f:b8:30:cf:66:5f:c8:92:67:33:30:dc:ca:b4:75:36.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1256
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.186 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+6c:6d:80:c5:78:b0:0a:c4:eb:eb:c2:4e:b0:55:b7:8d.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1252
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.182 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+56:06:ca:80:04:42:5d:46:e2:ab:98:1c:81:f4:cc:21.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1257
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.187 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+40:cc:be:9d:61:83:b7:cb:9d:09:e7:8a:7b:b6:52:1c.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1253
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.183 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+39:65:97:ec:e8:a1:e5:52:ea:f1:82:8a:a8:87:bd:b6.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1247
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.177 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+ ... scratch
+ Ya existe /scratch
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+45:c3:b3:33:82:51:4c:e5:ed:47:d3:74:e4:fd:47:4f.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1251
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.181 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+f1:9c:8c:a8:71:12:b5:55:45:e9:18:ca:d3:9b:02:08.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1246
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.176 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+b9:40:0c:50:93:3a:e6:28:ad:fd:2e:8f:da:22:51:41.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1244
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.174 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ ... scratch
+ Ya existe /scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ ... scratch
+ Ya existe /scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+08:3f:70:94:63:84:30:bf:c9:07:27:31:b5:e2:04:07.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1241
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.171 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+14/06/09 15:14:30 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = hadoop-master/193.144.35.171
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 1.2.1
+STARTUP_MSG:   build = https://svn.apache.org/repos/asf/hadoop/common/branches/branch-1.2 -r 1503152; compiled by 'mattf' on Mon Jul 22 15:23:09 PDT 2013
+STARTUP_MSG:   java = 1.7.0_51
+************************************************************/
+14/06/09 15:14:30 INFO util.GSet: Computing capacity for map BlocksMap
+14/06/09 15:14:30 INFO util.GSet: VM type       = 64-bit
+14/06/09 15:14:30 INFO util.GSet: 2.0% max memory = 954728448
+14/06/09 15:14:30 INFO util.GSet: capacity      = 2^21 = 2097152 entries
+14/06/09 15:14:30 INFO util.GSet: recommended=2097152, actual=2097152
+14/06/09 15:14:30 INFO namenode.FSNamesystem: fsOwner=hadoop
+14/06/09 15:14:31 INFO namenode.FSNamesystem: supergroup=supergroup
+14/06/09 15:14:31 INFO namenode.FSNamesystem: isPermissionEnabled=true
+14/06/09 15:14:31 INFO namenode.FSNamesystem: dfs.block.invalidate.limit=100
+14/06/09 15:14:31 INFO namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+14/06/09 15:14:31 INFO namenode.FSEditLog: dfs.namenode.edits.toleration.length = 0
+14/06/09 15:14:31 INFO namenode.NameNode: Caching file names occuring more than 10 times 
+14/06/09 15:14:31 INFO common.Storage: Image file /scratch/hadoop/dfs/name/current/fsimage of size 112 bytes saved in 0 seconds.
+14/06/09 15:14:31 INFO namenode.FSEditLog: closing edit log: position=4, editlog=/scratch/hadoop/dfs/name/current/edits
+14/06/09 15:14:31 INFO namenode.FSEditLog: close success: truncate to 4, editlog=/scratch/hadoop/dfs/name/current/edits
+14/06/09 15:14:32 INFO common.Storage: Storage directory /scratch/hadoop/dfs/name has been successfully formatted.
+14/06/09 15:14:32 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at hadoop-master/193.144.35.171
+************************************************************/
+starting namenode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-namenode-hadoop-master.out
+193.144.35.173: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-2.out
+193.144.35.180: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-9.out
+193.144.35.175: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-4.out
+193.144.35.177: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-6.out
+193.144.35.174: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-3.out
+193.144.35.186: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-15.out
+193.144.35.182: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-11.out
+193.144.35.184: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-13.out
+193.144.35.176: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-5.out
+193.144.35.185: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-14.out
+193.144.35.178: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-7.out
+193.144.35.179: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-8.out
+193.144.35.181: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-10.out
+193.144.35.172: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-1.out
+193.144.35.191: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-20.out
+193.144.35.188: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-17.out
+193.144.35.189: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-18.out
+193.144.35.187: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-16.out
+193.144.35.190: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-19.out
+193.144.35.183: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-12.out
+localhost: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+localhost: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+localhost: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+localhost: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+localhost: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+localhost: It is also possible that the RSA host key has just been changed.
+localhost: The fingerprint for the RSA key sent by the remote host is
+localhost: 08:3f:70:94:63:84:30:bf:c9:07:27:31:b5:e2:04:07.
+localhost: Please contact your system administrator.
+localhost: Add correct host key in /home/hadoop/.ssh/known_hosts to get rid of this message.
+localhost: Offending key in /home/hadoop/.ssh/known_hosts:1
+localhost: Password authentication is disabled to avoid man-in-the-middle attacks.
+localhost: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+localhost: starting secondarynamenode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-secondarynamenode-hadoop-master.out
+starting jobtracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-jobtracker-hadoop-master.out
+193.144.35.177: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-6.out
+193.144.35.191: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-20.out
+193.144.35.174: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-3.out
+193.144.35.185: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-14.out
+193.144.35.176: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-5.out
+193.144.35.178: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-7.out
+193.144.35.179: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-8.out
+193.144.35.187: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-16.out
+193.144.35.188: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-17.out
+193.144.35.175: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-4.out
+193.144.35.189: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-18.out
+193.144.35.186: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-15.out
+193.144.35.180: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-9.out
+193.144.35.181: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-10.out
+193.144.35.182: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-11.out
+193.144.35.184: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-13.out
+193.144.35.190: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-19.out
+193.144.35.172: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-1.out
+193.144.35.173: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-2.out
+193.144.35.183: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-12.out
+
+-------------- HADOOP STATUS ------------------------------
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+08:3f:70:94:63:84:30:bf:c9:07:27:31:b5:e2:04:07.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:1241
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 193.144.35.171 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+==> Hadoop cluster status
+Datanodes available: 20 (20 total, 0 dead)
+Tasktrackers available 34
+===> HDFS
+Configured Capacity: 1458177474560 (1.33 TB)
+Present Capacity: 1400718991405 (1.27 TB)
+DFS Remaining: 1400718417920 (1.27 TB)
+DFS Used: 573485 (560.04 KB)
+DFS Used%: 0%
+Under replicated blocks: 0
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+
+-------------------------------------------------
+Datanodes available: 20 (20 total, 0 dead)
+
+Name: 193.144.35.185:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:19 CEST 2014
+
+
+Name: 193.144.35.186:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.178:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.177:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.174:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.176:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:19 CEST 2014
+
+
+Name: 193.144.35.183:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:17 CEST 2014
+
+
+Name: 193.144.35.180:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:17 CEST 2014
+
+
+Name: 193.144.35.188:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28687 (28.01 KB)
+Non DFS Used: 2872938481 (2.68 GB)
+DFS Remaining: 70035906560(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.189:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.181:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:17 CEST 2014
+
+
+Name: 193.144.35.190:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.182:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.172:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.179:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28687 (28.01 KB)
+Non DFS Used: 2872938481 (2.68 GB)
+DFS Remaining: 70035906560(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.187:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.175:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.173:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+Name: 193.144.35.184:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28687 (28.01 KB)
+Non DFS Used: 2872930289 (2.68 GB)
+DFS Remaining: 70035914752(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:17 CEST 2014
+
+
+Name: 193.144.35.191:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:15:18 CEST 2014
+
+
+===> Task trackers
+tracker_hadoop-54:localhost/127.0.0.1:57648
+tracker_hadoop-48:localhost/127.0.0.1:35931
+tracker_hadoop-53:localhost/127.0.0.1:52599
+tracker_hadoop-1:localhost/127.0.0.1:55270
+tracker_hadoop-5:localhost/127.0.0.1:56302
+tracker_hadoop-6:localhost/127.0.0.1:39079
+tracker_hadoop-3:localhost/127.0.0.1:33450
+tracker_hadoop-13:localhost/127.0.0.1:51763
+tracker_hadoop-7:localhost/127.0.0.1:52265
+tracker_hadoop-19:localhost/127.0.0.1:42192
+tracker_hadoop-17:localhost/127.0.0.1:43855
+tracker_hadoop-59:localhost/127.0.0.1:37531
+tracker_hadoop-41:localhost/127.0.0.1:50885
+tracker_hadoop-4:localhost/127.0.0.1:45274
+tracker_hadoop-9:localhost/127.0.0.1:42648
+tracker_hadoop-49:localhost/127.0.0.1:33112
+tracker_hadoop-15:localhost/127.0.0.1:37314
+tracker_hadoop-16:localhost/127.0.0.1:32901
+tracker_hadoop-10:localhost/127.0.0.1:60048
+tracker_hadoop-52:localhost/127.0.0.1:37554
+tracker_hadoop-44:localhost/127.0.0.1:52505
+tracker_hadoop-46:localhost/127.0.0.1:59297
+tracker_hadoop-14:localhost/127.0.0.1:42736
+tracker_hadoop-60:localhost/127.0.0.1:36899
+tracker_hadoop-18:localhost/127.0.0.1:43441
+tracker_hadoop-11:localhost/127.0.0.1:45595
+tracker_hadoop-50:localhost/127.0.0.1:43831
+tracker_hadoop-43:localhost/127.0.0.1:42304
+tracker_hadoop-2:localhost/127.0.0.1:37418
+tracker_hadoop-12:localhost/127.0.0.1:36327
+tracker_hadoop-58:localhost/127.0.0.1:57717
+tracker_hadoop-45:localhost/127.0.0.1:35060
+tracker_hadoop-20:localhost/127.0.0.1:59311
+tracker_hadoop-8:localhost/127.0.0.1:44729
+-------------- HADOOP STATUS ------------------------------
+lun jun  9 15:20:44 CEST 2014

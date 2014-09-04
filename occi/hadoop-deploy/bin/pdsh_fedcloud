@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#/usr/local/bin/pdsh -R ssh -w c4-4,c4-5,c4-8,c4-10,c4-11,c4-17,c4-19,c4-21,c4-22,c4-23,c4-24,c5-1,c5-7,c5-8,c5-10,c5-11,c5-12,c5-16,c5-18,c5-21,c6-8,c6-11,c6-4,c4-54,c4-53 "$@" |/usr/local/bin/dshbak  -c
+#/usr/local/bin/pdsh -R ssh -w c5-21,c6-1,c6-3,c6-4,c6-7,c6-8,c6-9,c6-10,c6-11 "$@" |/usr/local/bin/dshbak  -c
+#NODES="compute-4-5,compute-4-7,compute-4-8,compute-4-9,compute-4-10,compute-4-12,compute-4-15,compute-4-17,compute-4-18"
+
+#PREFIX=~/Dropbox/hadoop-deploy/
+#export LD_LIBRARY_PATH=$PREFIX/lib
+#
+#NODES=`cat $PREFIX/node.list`
+#$PREFIX/bin/pdsh -R ssh -w $NODES "$@" | $PREFIX/bin/dshbak  -c
+
+
+# System version of pdsh
+PREFIX=~/Dropbox/hadoop-deploy/
+NODES=`cat $PREFIX/node.list | tr '\n' ',' | sed 's/,$//'`
+pdsh -l root -R ssh -w $NODES "$@" | dshbak  -c

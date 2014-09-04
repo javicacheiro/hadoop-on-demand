@@ -1,0 +1,481 @@
+Configurando el nodo 147.251.3.192
+Configurando el nodo 147.251.3.194
+Configurando el nodo 147.251.3.195
+Configurando el nodo 147.251.3.231
+Configurando el nodo 147.251.3.61
+Configurando el nodo 147.251.3.63
+Configurando el nodo 147.251.3.64
+Configurando el nodo 147.251.3.230
+Configurando el nodo 147.251.3.111
+Configurando el nodo 147.251.3.106
+Configurando el nodo 147.251.3.110
+Configurando el nodo 147.251.3.108
+Configurando el nodo 147.251.3.65
+Configurando el nodo 147.251.3.109
+Configurando el nodo 147.251.3.136
+Configurando el nodo 147.251.3.73
+Configurando el nodo 147.251.3.123
+Configurando el nodo 147.251.3.90
+Configurando el nodo 147.251.3.232
+Configurando el nodo 147.251.3.54
+Configurando el nodo 147.251.3.53
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+66:5b:7b:da:81:09:5a:bb:e3:c6:ba:dc:56:78:34:65.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:2343
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 147.251.3.110 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+66:5b:7b:da:81:09:5a:bb:e3:c6:ba:dc:56:78:34:65.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:2343
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 147.251.3.110 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ ... scratch
+ Ya existe /scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ ... scratch
+ Ya existe /scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+14/06/09 15:16:15 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = hadoop-master/147.251.3.192
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 1.2.1
+STARTUP_MSG:   build = https://svn.apache.org/repos/asf/hadoop/common/branches/branch-1.2 -r 1503152; compiled by 'mattf' on Mon Jul 22 15:23:09 PDT 2013
+STARTUP_MSG:   java = 1.7.0_51
+************************************************************/
+14/06/09 15:16:15 INFO util.GSet: Computing capacity for map BlocksMap
+14/06/09 15:16:15 INFO util.GSet: VM type       = 64-bit
+14/06/09 15:16:15 INFO util.GSet: 2.0% max memory = 954728448
+14/06/09 15:16:15 INFO util.GSet: capacity      = 2^21 = 2097152 entries
+14/06/09 15:16:15 INFO util.GSet: recommended=2097152, actual=2097152
+14/06/09 15:16:16 INFO namenode.FSNamesystem: fsOwner=hadoop
+14/06/09 15:16:16 INFO namenode.FSNamesystem: supergroup=supergroup
+14/06/09 15:16:16 INFO namenode.FSNamesystem: isPermissionEnabled=true
+14/06/09 15:16:16 INFO namenode.FSNamesystem: dfs.block.invalidate.limit=100
+14/06/09 15:16:16 INFO namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+14/06/09 15:16:16 INFO namenode.FSEditLog: dfs.namenode.edits.toleration.length = 0
+14/06/09 15:16:16 INFO namenode.NameNode: Caching file names occuring more than 10 times 
+14/06/09 15:16:16 INFO common.Storage: Image file /scratch/hadoop/dfs/name/current/fsimage of size 112 bytes saved in 0 seconds.
+14/06/09 15:16:16 INFO namenode.FSEditLog: closing edit log: position=4, editlog=/scratch/hadoop/dfs/name/current/edits
+14/06/09 15:16:16 INFO namenode.FSEditLog: close success: truncate to 4, editlog=/scratch/hadoop/dfs/name/current/edits
+14/06/09 15:16:16 INFO common.Storage: Storage directory /scratch/hadoop/dfs/name has been successfully formatted.
+14/06/09 15:16:16 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at hadoop-master/147.251.3.192
+************************************************************/
+starting namenode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-namenode-hadoop-master.out
+147.251.3.53: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-6.out
+147.251.3.65: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-11.out
+147.251.3.231: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-4.out
+147.251.3.109: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-16.out
+147.251.3.106: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-14.out
+147.251.3.54: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-7.out
+147.251.3.194: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-1.out
+147.251.3.73: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-12.out
+147.251.3.195: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-2.out
+147.251.3.230: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-3.out
+147.251.3.64: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-10.out
+147.251.3.90: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-13.out
+147.251.3.108: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-15.out
+147.251.3.110: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-17.out
+147.251.3.63: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-9.out
+147.251.3.136: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-20.out
+147.251.3.111: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-18.out
+147.251.3.61: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-8.out
+147.251.3.123: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-19.out
+147.251.3.232: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-5.out
+localhost: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+localhost: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+localhost: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+localhost: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+localhost: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+localhost: It is also possible that the RSA host key has just been changed.
+localhost: The fingerprint for the RSA key sent by the remote host is
+localhost: 10:6c:5e:d3:00:42:3a:00:cf:65:bf:8d:2b:56:02:01.
+localhost: Please contact your system administrator.
+localhost: Add correct host key in /home/hadoop/.ssh/known_hosts to get rid of this message.
+localhost: Offending key in /home/hadoop/.ssh/known_hosts:1
+localhost: Password authentication is disabled to avoid man-in-the-middle attacks.
+localhost: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+localhost: starting secondarynamenode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-secondarynamenode-hadoop-master.out
+starting jobtracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-jobtracker-hadoop-master.out
+147.251.3.61: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-8.out
+147.251.3.63: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-9.out
+147.251.3.231: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-4.out
+147.251.3.195: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-2.out
+147.251.3.73: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-12.out
+147.251.3.230: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-3.out
+147.251.3.194: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-1.out
+147.251.3.123: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-19.out
+147.251.3.90: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-13.out
+147.251.3.136: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-20.out
+147.251.3.111: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-18.out
+147.251.3.64: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-10.out
+147.251.3.232: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-5.out
+147.251.3.108: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-15.out
+147.251.3.110: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-17.out
+147.251.3.109: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-16.out
+147.251.3.65: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-11.out
+147.251.3.53: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-6.out
+147.251.3.54: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-7.out
+147.251.3.106: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-14.out
+
+-------------- HADOOP STATUS ------------------------------
+==> Hadoop cluster status
+Datanodes available: 20 (20 total, 0 dead)
+Tasktrackers available 20
+===> HDFS
+Configured Capacity: 1458177474560 (1.33 TB)
+Present Capacity: 1400718999597 (1.27 TB)
+DFS Remaining: 1400718426112 (1.27 TB)
+DFS Used: 573485 (560.04 KB)
+DFS Used%: 0%
+Under replicated blocks: 0
+Blocks with corrupt replicas: 0
+Missing blocks: 0
+
+-------------------------------------------------
+Datanodes available: 20 (20 total, 0 dead)
+
+Name: 147.251.3.53:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.61:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28687 (28.01 KB)
+Non DFS Used: 2872930289 (2.68 GB)
+DFS Remaining: 70035914752(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.110:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.65:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.63:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.64:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.230:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.108:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.232:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.109:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.123:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.54:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28687 (28.01 KB)
+Non DFS Used: 2872930289 (2.68 GB)
+DFS Remaining: 70035914752(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.111:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.106:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.73:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.90:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.136:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28687 (28.01 KB)
+Non DFS Used: 2872938481 (2.68 GB)
+DFS Remaining: 70035906560(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:01 CEST 2014
+
+
+Name: 147.251.3.194:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.195:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+Name: 147.251.3.231:50010
+Decommission Status : Normal
+Configured Capacity: 72908873728 (67.9 GB)
+DFS Used: 28672 (28 KB)
+Non DFS Used: 2872922112 (2.68 GB)
+DFS Remaining: 70035922944(65.23 GB)
+DFS Used%: 0%
+DFS Remaining%: 96.06%
+Last contact: Mon Jun 09 15:17:02 CEST 2014
+
+
+===> Task trackers
+tracker_hadoop-20:localhost/127.0.0.1:43776
+tracker_hadoop-4:localhost/127.0.0.1:54208
+tracker_hadoop-5:localhost/127.0.0.1:34928
+tracker_hadoop-13:localhost/127.0.0.1:46187
+tracker_hadoop-15:localhost/127.0.0.1:60270
+tracker_hadoop-11:localhost/127.0.0.1:41427
+tracker_hadoop-8:localhost/127.0.0.1:53636
+tracker_hadoop-6:localhost/127.0.0.1:44212
+tracker_hadoop-19:localhost/127.0.0.1:56259
+tracker_hadoop-12:localhost/127.0.0.1:46260
+tracker_hadoop-18:localhost/127.0.0.1:44667
+tracker_hadoop-14:localhost/127.0.0.1:42485
+tracker_hadoop-16:localhost/127.0.0.1:50002
+tracker_hadoop-9:localhost/127.0.0.1:38937
+tracker_hadoop-7:localhost/127.0.0.1:39666
+tracker_hadoop-17:localhost/127.0.0.1:59278
+tracker_hadoop-1:localhost/127.0.0.1:42863
+tracker_hadoop-10:localhost/127.0.0.1:33400
+tracker_hadoop-3:localhost/127.0.0.1:45689
+tracker_hadoop-2:localhost/127.0.0.1:34237
+-------------- HADOOP STATUS ------------------------------
+lun jun  9 15:22:27 CEST 2014

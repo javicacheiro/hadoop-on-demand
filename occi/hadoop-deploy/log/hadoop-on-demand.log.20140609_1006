@@ -1,0 +1,525 @@
+Configurando el nodo 147.251.3.192
+Configurando el nodo 147.251.3.230
+Configurando el nodo 147.251.3.232
+Configurando el nodo 147.251.3.53
+Configurando el nodo 147.251.3.54
+Configurando el nodo 147.251.3.194
+Configurando el nodo 147.251.3.61
+Configurando el nodo 147.251.3.195
+Configurando el nodo 147.251.3.106
+Configurando el nodo 147.251.3.63
+Configurando el nodo 147.251.3.108
+Configurando el nodo 147.251.3.90
+Configurando el nodo 147.251.3.136
+Configurando el nodo 147.251.3.73
+Configurando el nodo 147.251.3.123
+Configurando el nodo 147.251.3.110
+Configurando el nodo 147.251.3.111
+Configurando el nodo 147.251.3.65
+Configurando el nodo 147.251.3.64
+Configurando el nodo 147.251.3.109
+Configurando el nodo 147.251.3.231
+Warning: Permanently added '147.251.3.63' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.90' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.192' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.111' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.65' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.64' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.195' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.54' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.73' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.106' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.53' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.232' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.109' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.108' (RSA) to the list of known hosts.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+66:5b:7b:da:81:09:5a:bb:e3:c6:ba:dc:56:78:34:65.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:2343
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 147.251.3.110 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+Warning: Permanently added '147.251.3.123' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.230' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.194' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.231' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.136' (RSA) to the list of known hosts.
+Warning: Permanently added '147.251.3.61' (RSA) to the list of known hosts.
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+... hadoop
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+66:5b:7b:da:81:09:5a:bb:e3:c6:ba:dc:56:78:34:65.
+Please contact your system administrator.
+Add correct host key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts:2343
+You can use following command to remove all keys for this IP:
+ssh-keygen -R 147.251.3.110 -f /mnt/home_common/jlopez_opensuse_13.1/.ssh/known_hosts
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ ... scratch
+ Ya existe /scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ ... scratch
+ Ya existe /scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+ Ya existe /scratch
+ ... scratch
+mke2fs 1.41.12 (17-May-2010)
+Etiqueta del sistema de ficheros=
+Tipo de SO: Linux
+Tamaño del bloque=4096 (bitácora=2)
+Tamaño del fragmento=4096 (bitácora=2)
+Stride=0 blocks, Stripe width=0 blocks
+4587520 nodos-i, 18350080 bloques
+917504 bloques (5.00%) reservados para el superusuario
+Primer bloque de datos=0
+Número máximo de bloques del sistema de ficheros=4294967296
+560 bloque de grupos
+32768 bloques por grupo, 32768 fragmentos por grupo
+8192 nodos-i por grupo
+Respaldo del superbloque guardado en los bloques: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424
+
+ ... scratch
+ Ya existe /scratch
+Escribiendo las tablas de nodos-i:   0/560  1/560  2/560  3/560  4/560  5/560  6/560  7/560  8/560  9/560 10/560 11/560 12/560 13/560 14/560 15/560 16/560 17/560 18/560 19/560 20/560 21/560 22/560 23/560 24/560 25/560 26/560 27/560 28/560 29/560 30/560 31/560 32/560 33/560 34/560 35/560 36/560 37/560 38/560 39/560 40/560 41/560 42/560 43/560 44/560 45/560 46/560 47/560 48/560 49/560 50/560 51/560 52/560 53/560 54/560 55/560 56/560 57/560 58/560 59/560 60/560 61/560 62/560 63/560 64/560 65/560 66/560 67/560 68/560 69/560 70/560 71/560 72/560 73/560 74/560 75/560 76/560 77/560 78/560 79/560 80/560 81/560 82/560 83/560 84/560 85/560 86/560 87/560 88/560 89/560 90/560 91/560 92/560 93/560 94/560 95/560 96/560 97/560 98/560 99/560100/560101/560102/560103/560104/560105/560106/560107/560108/560109/560110/560111/560112/560113/560114/560115/560116/560117/560118/560119/560120/560121/560122/560123/560124/560125/560126/560127/560128/560129/560130/560131/560132/560133/560134/560135/560136/560137/560138/560139/560140/560141/560142/560143/560144/560145/560146/560147/560148/560149/560150/560151/560152/560153/560154/560155/560156/560157/560158/560159/560160/560161/560162/560163/560164/560165/560166/560167/560168/560169/560170/560171/560172/560173/560174/560175/560176/560177/560178/560179/560180/560181/560182/560183/560184/560185/560186/560187/560188/560189/560190/560191/560192/560193/560194/560195/560196/560197/560198/560199/560200/560201/560202/560203/560204/560205/560206/560207/560208/560209/560210/560211/560212/560213/560214/560215/560216/560217/560218/560219/560220/560221/560222/560223/560224/560225/560226/560227/560228/560229/560230/560231/560232/560233/560234/560235/560236/560237/560238/560239/560240/560241/560242/560243/560244/560245/560246/560247/560248/560249/560250/560251/560252/560253/560254/560255/560256/560257/560258/560259/560260/560261/560262/560263/560264/560265/560266/560267/560268/560269/560270/560271/560272/560273/560274/560275/560276/560277/560278/560279/560280/560281/560282/560283/560284/560285/560286/560287/560288/560289/560290/560291/560292/560293/560294/560295/560296/560297/560298/560299/560300/560301/560302/560303/560304/560305/560306/560307/560308/560309/560310/560311/560312/560313/560314/560315/560316/560317/560318/560319/560320/560321/560322/560323/560324/560325/560326/560327/560328/560329/560330/560331/560332/560333/560334/560335/560336/560337/560338/560339/560340/560341/560342/560343/560344/560345/560346/560347/560348/560349/560350/560351/560352/560353/560354/560355/560356/560357/560358/560359/560360/560361/560362/560363/560364/560365/560366/560367/560368/560369/560370/560371/560372/560373/560374/560375/560376/560377/560378/560379/560380/560381/560382/560383/560384/560385/560386/560387/560388/560389/560390/560391/560392/560393/560394/560395/560396/560397/560398/560399/560400/560401/560402/560403/560404/560405/560406/560407/560408/560409/560410/560411/560412/560413/560414/560415/560416/560417/560418/560419/560420/560421/560422/560423/560424/560425/560426/560427/560428/560429/560430/560431/560432/560433/560434/560435/560436/560437/560438/560439/560440/560441/560442/560443/560444/560445/560446/560447/560448/560449/560450/560451/560452/560453/560454/560455/560456/560457/560458/560459/560460/560461/560462/560463/560464/560465/560466/560467/560468/560469/560470/560471/560472/560473/560474/560475/560476/560477/560478/560479/560480/560481/560482/560483/560484/560485/560486/560487/560488/560489/560490/560491/560492/560493/560494/560495/560496/560497/560498/560499/560500/560501/560502/560503/560504/560505/560506/560507/560508/560509/560510/560511/560512/560513/560514/560515/560516/560517/560518/560519/560520/560521/560522/560523/560524/560525/560526/560527/560528/560529/560530/560531/560532/560533/560534/560535/560536/560537/560538/560539/560540/560541/560542/560543/560544/560545/560546/560547/560548/560549/560550/560551/560552/560553/560554/560555/560556/560557/560558/560559/560hecho                           
+Creating journal (32768 blocks): hecho
+Escribiendo superbloques y la información contable del sistema de ficheros: hecho
+
+Este sistema de ficheros se revisará automáticamente cada 36 montajes o
+180 días, lo que suceda primero.  Utilice tune2fs -c o -i para cambiarlo.
+14/06/09 10:01:33 INFO namenode.NameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting NameNode
+STARTUP_MSG:   host = hadoop-master/193.144.35.171
+STARTUP_MSG:   args = [-format]
+STARTUP_MSG:   version = 1.2.1
+STARTUP_MSG:   build = https://svn.apache.org/repos/asf/hadoop/common/branches/branch-1.2 -r 1503152; compiled by 'mattf' on Mon Jul 22 15:23:09 PDT 2013
+STARTUP_MSG:   java = 1.7.0_51
+************************************************************/
+14/06/09 10:01:34 INFO util.GSet: Computing capacity for map BlocksMap
+14/06/09 10:01:34 INFO util.GSet: VM type       = 64-bit
+14/06/09 10:01:34 INFO util.GSet: 2.0% max memory = 954728448
+14/06/09 10:01:34 INFO util.GSet: capacity      = 2^21 = 2097152 entries
+14/06/09 10:01:34 INFO util.GSet: recommended=2097152, actual=2097152
+14/06/09 10:01:34 INFO namenode.FSNamesystem: fsOwner=hadoop
+14/06/09 10:01:34 INFO namenode.FSNamesystem: supergroup=supergroup
+14/06/09 10:01:34 INFO namenode.FSNamesystem: isPermissionEnabled=true
+14/06/09 10:01:34 INFO namenode.FSNamesystem: dfs.block.invalidate.limit=100
+14/06/09 10:01:34 INFO namenode.FSNamesystem: isAccessTokenEnabled=false accessKeyUpdateInterval=0 min(s), accessTokenLifetime=0 min(s)
+14/06/09 10:01:34 INFO namenode.FSEditLog: dfs.namenode.edits.toleration.length = 0
+14/06/09 10:01:34 INFO namenode.NameNode: Caching file names occuring more than 10 times 
+14/06/09 10:01:35 INFO common.Storage: Image file /scratch/hadoop/dfs/name/current/fsimage of size 112 bytes saved in 0 seconds.
+14/06/09 10:01:35 INFO namenode.FSEditLog: closing edit log: position=4, editlog=/scratch/hadoop/dfs/name/current/edits
+14/06/09 10:01:35 INFO namenode.FSEditLog: close success: truncate to 4, editlog=/scratch/hadoop/dfs/name/current/edits
+14/06/09 10:01:35 INFO common.Storage: Storage directory /scratch/hadoop/dfs/name has been successfully formatted.
+14/06/09 10:01:35 INFO namenode.NameNode: SHUTDOWN_MSG: 
+/************************************************************
+SHUTDOWN_MSG: Shutting down NameNode at hadoop-master/193.144.35.171
+************************************************************/
+starting namenode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-namenode-hadoop-master.out
+147.251.3.90: Warning: Permanently added '147.251.3.90' (RSA) to the list of known hosts.
+147.251.3.90: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-13.out
+147.251.3.230: Warning: Permanently added '147.251.3.230' (RSA) to the list of known hosts.
+147.251.3.230: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-3.out
+147.251.3.109: Warning: Permanently added '147.251.3.109' (RSA) to the list of known hosts.
+147.251.3.109: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-16.out
+147.251.3.63: Warning: Permanently added '147.251.3.63' (RSA) to the list of known hosts.
+147.251.3.63: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-9.out
+147.251.3.194: Warning: Permanently added '147.251.3.194' (RSA) to the list of known hosts.
+147.251.3.194: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-1.out
+147.251.3.110: Warning: Permanently added '147.251.3.110' (RSA) to the list of known hosts.
+147.251.3.110: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-17.out
+147.251.3.73: Warning: Permanently added '147.251.3.73' (RSA) to the list of known hosts.
+147.251.3.73: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-12.out
+147.251.3.53: Warning: Permanently added '147.251.3.53' (RSA) to the list of known hosts.
+147.251.3.53: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-6.out
+147.251.3.195: Warning: Permanently added '147.251.3.195' (RSA) to the list of known hosts.
+147.251.3.195: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-2.out
+147.251.3.65: Warning: Permanently added '147.251.3.65' (RSA) to the list of known hosts.
+147.251.3.65: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-11.out
+147.251.3.108: Warning: Permanently added '147.251.3.108' (RSA) to the list of known hosts.
+147.251.3.108: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-15.out
+147.251.3.106: Warning: Permanently added '147.251.3.106' (RSA) to the list of known hosts.
+147.251.3.106: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-14.out
+147.251.3.123: Warning: Permanently added '147.251.3.123' (RSA) to the list of known hosts.
+147.251.3.123: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-19.out
+147.251.3.54: Warning: Permanently added '147.251.3.54' (RSA) to the list of known hosts.
+147.251.3.54: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-7.out
+147.251.3.64: Warning: Permanently added '147.251.3.64' (RSA) to the list of known hosts.
+147.251.3.64: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-10.out
+147.251.3.111: Warning: Permanently added '147.251.3.111' (RSA) to the list of known hosts.
+147.251.3.111: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-18.out
+147.251.3.232: Warning: Permanently added '147.251.3.232' (RSA) to the list of known hosts.
+147.251.3.232: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-5.out
+147.251.3.231: Warning: Permanently added '147.251.3.231' (RSA) to the list of known hosts.
+147.251.3.231: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-4.out
+147.251.3.61: Warning: Permanently added '147.251.3.61' (RSA) to the list of known hosts.
+147.251.3.61: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-8.out
+147.251.3.192: Warning: Permanently added '147.251.3.192' (RSA) to the list of known hosts.
+147.251.3.192: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-master.out
+155.210.198.148: Warning: Permanently added '155.210.198.148' (RSA) to the list of known hosts.
+155.210.198.148: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-47.out
+155.210.198.145: Warning: Permanently added '155.210.198.145' (RSA) to the list of known hosts.
+155.210.198.145: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-44.out
+193.144.35.188: Warning: Permanently added '193.144.35.188' (RSA) to the list of known hosts.
+193.144.35.188: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-17.out
+155.210.198.144: Warning: Permanently added '155.210.198.144' (RSA) to the list of known hosts.
+155.210.198.144: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-43.out
+155.210.198.143: Warning: Permanently added '155.210.198.143' (RSA) to the list of known hosts.
+155.210.198.143: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-42.out
+155.210.198.139: Warning: Permanently added '155.210.198.139' (RSA) to the list of known hosts.
+155.210.198.139: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-41.out
+155.210.198.146: Warning: Permanently added '155.210.198.146' (RSA) to the list of known hosts.
+155.210.198.146: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-45.out
+155.210.198.147: Warning: Permanently added '155.210.198.147' (RSA) to the list of known hosts.
+155.210.198.147: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-46.out
+193.144.35.190: Warning: Permanently added '193.144.35.190' (RSA) to the list of known hosts.
+193.144.35.190: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-19.out
+193.144.35.184: Warning: Permanently added '193.144.35.184' (RSA) to the list of known hosts.
+193.144.35.184: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-13.out
+193.144.35.191: Warning: Permanently added '193.144.35.191' (RSA) to the list of known hosts.
+193.144.35.191: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-20.out
+193.144.35.173: Warning: Permanently added '193.144.35.173' (RSA) to the list of known hosts.
+193.144.35.173: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-2.out
+193.144.35.177: Warning: Permanently added '193.144.35.177' (RSA) to the list of known hosts.
+193.144.35.177: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-6.out
+193.144.35.180: Warning: Permanently added '193.144.35.180' (RSA) to the list of known hosts.
+193.144.35.180: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-9.out
+193.144.35.176: Warning: Permanently added '193.144.35.176' (RSA) to the list of known hosts.
+193.144.35.176: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-5.out
+193.144.35.178: Warning: Permanently added '193.144.35.178' (RSA) to the list of known hosts.
+193.144.35.178: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-7.out
+193.144.35.175: Warning: Permanently added '193.144.35.175' (RSA) to the list of known hosts.
+193.144.35.175: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-4.out
+193.144.35.189: Warning: Permanently added '193.144.35.189' (RSA) to the list of known hosts.
+193.144.35.189: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-18.out
+193.144.35.182: Warning: Permanently added '193.144.35.182' (RSA) to the list of known hosts.
+193.144.35.182: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-11.out
+193.144.35.172: Warning: Permanently added '193.144.35.172' (RSA) to the list of known hosts.
+193.144.35.172: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-1.out
+193.144.35.185: Warning: Permanently added '193.144.35.185' (RSA) to the list of known hosts.
+193.144.35.185: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-14.out
+193.144.35.181: Warning: Permanently added '193.144.35.181' (RSA) to the list of known hosts.
+193.144.35.181: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-10.out
+155.210.198.155: Warning: Permanently added '155.210.198.155' (RSA) to the list of known hosts.
+155.210.198.155: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-52.out
+155.210.198.149: Warning: Permanently added '155.210.198.149' (RSA) to the list of known hosts.
+155.210.198.149: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-48.out
+155.210.198.153: Warning: Permanently added '155.210.198.153' (RSA) to the list of known hosts.
+155.210.198.153: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-50.out
+193.144.35.187: Warning: Permanently added '193.144.35.187' (RSA) to the list of known hosts.
+193.144.35.187: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-16.out
+155.210.198.156: Warning: Permanently added '155.210.198.156' (RSA) to the list of known hosts.
+155.210.198.156: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-53.out
+155.210.198.154: Warning: Permanently added '155.210.198.154' (RSA) to the list of known hosts.
+155.210.198.154: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-51.out
+155.210.198.151: Warning: Permanently added '155.210.198.151' (RSA) to the list of known hosts.
+155.210.198.151: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-49.out
+193.144.35.186: Warning: Permanently added '193.144.35.186' (RSA) to the list of known hosts.
+193.144.35.186: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-15.out
+193.144.35.174: Warning: Permanently added '193.144.35.174' (RSA) to the list of known hosts.
+193.144.35.174: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-3.out
+155.210.198.159: Warning: Permanently added '155.210.198.159' (RSA) to the list of known hosts.
+155.210.198.159: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-56.out
+155.210.198.160: Warning: Permanently added '155.210.198.160' (RSA) to the list of known hosts.
+155.210.198.160: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-57.out
+155.210.198.162: Warning: Permanently added '155.210.198.162' (RSA) to the list of known hosts.
+155.210.198.162: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-59.out
+155.210.198.163: Warning: Permanently added '155.210.198.163' (RSA) to the list of known hosts.
+155.210.198.163: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-60.out
+155.210.198.158: Warning: Permanently added '155.210.198.158' (RSA) to the list of known hosts.
+155.210.198.158: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-55.out
+155.210.198.157: Warning: Permanently added '155.210.198.157' (RSA) to the list of known hosts.
+155.210.198.157: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-54.out
+155.210.198.161: Warning: Permanently added '155.210.198.161' (RSA) to the list of known hosts.
+155.210.198.161: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-58.out
+193.144.35.179: Warning: Permanently added '193.144.35.179' (RSA) to the list of known hosts.
+193.144.35.179: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-8.out
+193.144.35.183: Warning: Permanently added '193.144.35.183' (RSA) to the list of known hosts.
+193.144.35.183: starting datanode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-datanode-hadoop-12.out
+localhost: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+localhost: @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+localhost: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+localhost: IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+localhost: Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+localhost: It is also possible that the RSA host key has just been changed.
+localhost: The fingerprint for the RSA key sent by the remote host is
+localhost: 10:6c:5e:d3:00:42:3a:00:cf:65:bf:8d:2b:56:02:01.
+localhost: Please contact your system administrator.
+localhost: Add correct host key in /home/hadoop/.ssh/known_hosts to get rid of this message.
+localhost: Offending key in /home/hadoop/.ssh/known_hosts:1
+localhost: Password authentication is disabled to avoid man-in-the-middle attacks.
+localhost: Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
+localhost: starting secondarynamenode, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-secondarynamenode-hadoop-master.out
+starting jobtracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-jobtracker-hadoop-master.out
+147.251.3.123: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-19.out
+147.251.3.232: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-5.out
+147.251.3.106: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-14.out
+147.251.3.110: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-17.out
+147.251.3.63: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-9.out
+147.251.3.108: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-15.out
+147.251.3.61: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-8.out
+147.251.3.111: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-18.out
+147.251.3.73: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-12.out
+147.251.3.195: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-2.out
+147.251.3.53: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-6.out
+147.251.3.65: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-11.out
+147.251.3.90: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-13.out
+147.251.3.109: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-16.out
+147.251.3.54: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-7.out
+147.251.3.230: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-3.out
+147.251.3.194: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-1.out
+147.251.3.231: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-4.out
+147.251.3.64: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-10.out
+147.251.3.192: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-master.out
+193.144.35.177: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-6.out
+193.144.35.185: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-14.out
+155.210.198.143: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-42.out
+155.210.198.144: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-43.out
+193.144.35.175: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-4.out
+155.210.198.139: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-41.out
+155.210.198.145: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-44.out
+155.210.198.146: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-45.out
+193.144.35.186: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-15.out
+193.144.35.176: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-5.out
+193.144.35.182: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-11.out
+193.144.35.184: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-13.out
+193.144.35.191: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-20.out
+193.144.35.174: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-3.out
+193.144.35.179: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-8.out
+193.144.35.188: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-17.out
+193.144.35.181: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-10.out
+193.144.35.172: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-1.out
+193.144.35.173: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-2.out
+193.144.35.178: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-7.out
+193.144.35.183: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-12.out
+155.210.198.149: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-48.out
+193.144.35.180: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-9.out
+193.144.35.190: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-19.out
+155.210.198.148: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-47.out
+193.144.35.187: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-16.out
+155.210.198.151: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-49.out
+193.144.35.189: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-18.out
+155.210.198.153: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-50.out
+155.210.198.147: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-46.out
+155.210.198.155: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-52.out
+155.210.198.160: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-57.out
+155.210.198.156: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-53.out
+155.210.198.154: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-51.out
+155.210.198.162: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-59.out
+155.210.198.159: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-56.out
+155.210.198.163: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-60.out
+155.210.198.158: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-55.out
+155.210.198.161: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-58.out
+155.210.198.157: starting tasktracker, logging to /opt/cesga/hadoop-1.2.1/libexec/../logs/hadoop-hadoop-tasktracker-hadoop-54.out
+14/06/09 10:02:08 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:09 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:10 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:11 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:12 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:14 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:15 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:16 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:17 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:18 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+mkdir: Call to hadoop-master/193.144.35.171:54310 failed on connection exception: java.net.ConnectException: Connection refused
+
+-------------- HADOOP STATUS ------------------------------
+==> Hadoop cluster status
+14/06/09 10:02:32 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:33 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:34 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:35 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:36 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:37 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:38 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:39 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:40 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:41 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+report: Call to hadoop-master/193.144.35.171:54310 failed on connection exception: java.net.ConnectException: Conexión rehusada
+Tasktrackers available 14/06/09 10:02:44 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:45 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:46 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:47 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:48 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:49 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:50 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:51 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:52 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:53 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+Exception in thread "main" java.net.ConnectException: Call to hadoop-master/193.144.35.171:54311 failed on connection exception: java.net.ConnectException: Conexión rehusada
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1142)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1118)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:229)
+	at org.apache.hadoop.mapred.$Proxy1.getProtocolVersion(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:85)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:62)
+	at org.apache.hadoop.mapred.$Proxy1.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.checkVersion(RPC.java:422)
+	at org.apache.hadoop.mapred.JobClient.createProxy(JobClient.java:559)
+	at org.apache.hadoop.mapred.JobClient.init(JobClient.java:498)
+	at org.apache.hadoop.mapred.JobClient.run(JobClient.java:1786)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:79)
+	at org.apache.hadoop.mapred.JobClient.main(JobClient.java:2123)
+Caused by: java.net.ConnectException: Conexión rehusada
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:511)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:481)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:457)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:583)
+	at org.apache.hadoop.ipc.Client$Connection.access$2200(Client.java:205)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1249)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1093)
+	... 16 more
+0
+===> HDFS
+14/06/09 10:02:56 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:57 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:58 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:02:59 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:00 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:01 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:02 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:03 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:04 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:05 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54310. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+report: Call to hadoop-master/193.144.35.171:54310 failed on connection exception: java.net.ConnectException: Conexión rehusada
+===> Task trackers
+14/06/09 10:03:08 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:09 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:10 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:11 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:12 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:13 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 5 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:14 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 6 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:15 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 7 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:16 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 8 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+14/06/09 10:03:17 INFO ipc.Client: Retrying connect to server: hadoop-master/193.144.35.171:54311. Already tried 9 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)
+Exception in thread "main" java.net.ConnectException: Call to hadoop-master/193.144.35.171:54311 failed on connection exception: java.net.ConnectException: Conexión rehusada
+	at org.apache.hadoop.ipc.Client.wrapException(Client.java:1142)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1118)
+	at org.apache.hadoop.ipc.RPC$Invoker.invoke(RPC.java:229)
+	at org.apache.hadoop.mapred.$Proxy1.getProtocolVersion(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invokeMethod(RetryInvocationHandler.java:85)
+	at org.apache.hadoop.io.retry.RetryInvocationHandler.invoke(RetryInvocationHandler.java:62)
+	at org.apache.hadoop.mapred.$Proxy1.getProtocolVersion(Unknown Source)
+	at org.apache.hadoop.ipc.RPC.checkVersion(RPC.java:422)
+	at org.apache.hadoop.mapred.JobClient.createProxy(JobClient.java:559)
+	at org.apache.hadoop.mapred.JobClient.init(JobClient.java:498)
+	at org.apache.hadoop.mapred.JobClient.run(JobClient.java:1786)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:65)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:79)
+	at org.apache.hadoop.mapred.JobClient.main(JobClient.java:2123)
+Caused by: java.net.ConnectException: Conexión rehusada
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.hadoop.net.SocketIOWithTimeout.connect(SocketIOWithTimeout.java:206)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:511)
+	at org.apache.hadoop.net.NetUtils.connect(NetUtils.java:481)
+	at org.apache.hadoop.ipc.Client$Connection.setupConnection(Client.java:457)
+	at org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:583)
+	at org.apache.hadoop.ipc.Client$Connection.access$2200(Client.java:205)
+	at org.apache.hadoop.ipc.Client.getConnection(Client.java:1249)
+	at org.apache.hadoop.ipc.Client.call(Client.java:1093)
+	... 16 more
+-------------- HADOOP STATUS ------------------------------
+lun jun  9 10:08:40 CEST 2014

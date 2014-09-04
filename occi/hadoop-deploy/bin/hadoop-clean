@@ -1,0 +1,66 @@
+#!/bin/bash
+#
+# Functions
+#
+scriptName="${0##*/}"
+
+function printUsage() {
+    cat <<EOF
+
+Usage: $scriptName -f node.list 
+    
+Clean a previously existing Hadoop cluster 
+
+options include:
+    -f node.list              Location of the file containing the list of nodes
+    -h                        Print help
+
+EOF
+}
+
+
+#
+#  Read options
+#
+function readOptions() {
+  while getopts ":hf:" opt; do
+      case "$opt" in
+          f) NODELIST=$OPTARG ;;
+          h) printUsage; exit 1 ;;
+          *) printUsage; exit 1 ;;
+      esac
+  done
+
+  # Check that there are no unparsed options and that we have the options we need
+  shift $((OPTIND - 1))
+  if [[ $# != 0 || -z $NODELIST ]]; then
+      printUsage
+      exit 1
+  fi
+}
+
+###############################################################################
+#
+# MAIN
+#
+###############################################################################
+
+readOptions "$@"
+
+if [[ ! -r $NODELIST ]]; then
+	echo "Not possible to read file $NODELIST"
+	exit 2
+fi
+
+NODES=`cat $NODELIST`
+MASTER=`head -n1 $NODELIST`
+
+ssh root@$MASTER <<EOF
+	su - hadoop -c '
+		/opt/cesga/hadoop/bin/stop-all.sh
+	'
+EOF
+
+for node in $NODES; do ssh root@$node rm -rf /scratch/hadoop/*; done
+
+

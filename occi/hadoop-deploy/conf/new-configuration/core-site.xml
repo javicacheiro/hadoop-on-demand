@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>hadoop.tmp.dir</name>
+        	<value>/scratch/hadoop</value>
+        	<description>A base for other temporary directories.</description>
+        </property>
+     
+	<property>
+        	<name>fs.default.name</name>
+         	<value>hdfs://hadoop-master:54310</value>
+     	</property>
+
+<!-- parametros para optimizcion del cluster -->
+	<property>
+	      	<name>fs.inmemory.size.mb</name>
+	        <value>200</value>
+	</property>
+	<property>
+         	<name>mapreduce.task.io.sort.factor</name>
+                <value>100</value>
+        </property>
+	<property>
+                <name>mapreduce.task.io.sort.mb</name>
+                <value>200</value>
+        </property>
+	<property>
+		<name>io.file.buffer.size</name>
+	        <value>131072</value>
+	</property>
+
+</configuration>
