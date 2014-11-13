@@ -1,0 +1,96 @@
+<?php 
+// -*-mode: PHP; coding:utf-8;-*-
+// $Id: lang.en 
+// This file contains PHP code that specifies language specific strings
+// The default strings come from lang.en, and anything in a locale
+// specific file will overwrite the default. This is a US/UK English file.
+// This file is PHP code. Treat it as such.
+
+
+///////////////////////////////////
+// TRADUCCIONES PORTAL CLOUDPYME //
+///////////////////////////////////
+
+// Textos LOGIN
+$vocab["unknown_user"]         = "Unknow user";
+$vocab["iniciar_sesion"]       = "Big Data Service Login";
+$vocab["usuario"]              = "User";
+$vocab["contraseña"]           = "Password";
+$vocab["msg_exito_login"]      = "Authentication is required. Username and password.";
+$vocab["msg_error_login"]      = "Unknow user"; 
+$vocab["login_tip"]            = "You can use your existing CESGA credentials to access the service.";
+
+// Textos BARRA NAVEGACIÓN
+$vocab["inicio"]               = "HOME";
+$vocab["computo"]              = "COMPUTING";
+$vocab["almacenamiento"]       = "STORAGE";
+$vocab["soporte"]              = "SUPPORT";
+$vocab["documentacion"]        = "DOCUMENTATION";
+$vocab["perfil"]               = "Profile";
+$vocab["desconectar"]          = "Log Out";
+
+//Textos PÁGINA INICIO
+$vocab["acceder"]                    = "Enter";
+$vocab["computo_descripcion"]        = "Computing infrastructure and virtual machines management.";
+$vocab["almacenamiento_descripcion"] = "Storage and files synchronisation service.";
+$vocab["soporte_descripcion"]        = "Technical support management system.";
+$vocab["documentacion_descripcion"]  = "Documentation, tutorials and useful information for the CloudPYME user.";
+
+
+
+// Textos GESTION-CÓMPUTO
+// Panel control (menú izq)
+$vocab["panel_control"]              = "CONTROL PANEL";
+    $vocab["lanzar_m_v"]                      = "Launch Virtual Machine";
+    $vocab["listar_m_v"]                      = "List Virtual Machines";
+    $vocab["m_v_ejecucion"]                   = "Virtual Machines Running";
+    $vocab["m_v_ultimos_dias"]                = "Virtual Machines in the last 7 days";
+    $vocab["listado_trabajos_cola"]           = "Job queue";
+    $vocab["informacion_consumo"]             = "Consumption Information";
+ 
+// Panel listar máquinas virtuales    
+$vocab["panel_listar_m_v"]              = "LIST VIRTUAL MACHINES";  
+     $vocab["ultima_actualizacion"]             = "Last Update";
+     $vocab["eliminar"]                         = "Delete";
+     $vocab["th_id"]                            = "ID";
+     $vocab["th_host"]                          = "Host";
+     $vocab["th_inicio"]                        = "Start";
+     $vocab["th_tipo"]                          = "Type";
+     $vocab["th_tiempo"]                        = "Time";
+     $vocab["th_estado"]                        = "Status";
+     $vocab["th_acceder"]                       = "Enter";
+     $vocab["th_acciones"]                      = "Actions";
+     $vocab["th_fin"]                           = "End";
+     $vocab["th_jobid"]                         = "JobID";
+     $vocab["th_procesadores_solicitados"]      = "Requested processors";
+     $vocab["th_tiempo_solicitado"]             = "Requested time";
+     $vocab["th_memoria_total"]                 = "Total memory";
+     $vocab["th_tareas"]                        = "Tasks";
+     $vocab["th_consumo_estimado"]              = "Estimated consumption";
+     $vocab["th_horas_pri"]                     = "Hours Pri";
+     $vocab["th_horas_npri"]                    = "Hours NPri";
+     $vocab["th_consumo_diario"]                = "Daily consumption";
+     $vocab["th_consumo_total"]                 = "Total consumption";
+     
+     
+     $vocab["no_mv_ejecucion"]                  = "There are not machines running.";
+     $vocab["no_mv_ultimos_dias"]               = "There are no machine finished in the last 7 days.";
+     $vocab["no_trabajos_cola"]                 = "There are no pending jobs.";
+     
+     
+// Panel lanzar máquinas virtuales     
+$vocab["panel_lanzar_m_v"]              = "LAUNCH VIRTUAL MACHINE"; 
+     $vocab["tipo_maquina"]                     = "Machine type"; 
+     $vocab["tiempo_max_vida"]                  = "Maximum lifetime";
+     $vocab["horas"]                            = "hours";
+     $vocab["btn_lanzar_maquina"]               = "Launch Machine";
+     $vocab["msg_error_lanzar_maquina"]         = "ERROR: Operation not completed: ";
+     $vocab["msg_exito_lanzar_maquina"]         = "CORRECT: The virtual machine has been launched.";
+
+// Panel eliminar máquina virtual     
+$vocab["panel_eliminar_m_v"]                    = "DELETE VIRTUAL MACHINE";
+    $vocab["msg_error_eliminar_maquina"]        = "ERROR: Operation not completed: ";
+    $vocab["msg_exito_eliminar_maquina"]        = "CORRECT: The virtual machine has been deleted. ID: ";
+     
+     
+

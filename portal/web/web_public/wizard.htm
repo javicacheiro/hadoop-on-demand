@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Launch Wizard</title>
+    <link href="css/smart_wizard.css" rel="stylesheet" type="text/css">
+  <!--TODO: Use authentication passed from login screen -->
+  <script type="text/javascript" src="js/credentials.js"></script>
+
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="js/jquery.smartWizard-2.0.js"></script>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/bootstrap-wizard.css" rel="stylesheet"/>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      // Smart Wizard   
+      $('#wizard').smartWizard();
+      
+      function onFinishCallback(){
+        $('#wizard').smartWizard('showMessage','Finish Clicked');
+      }     
+    });
+    </script>
+
+    <script type="text/javascript">
+      function closeD(){
+        close();
+      }
+    </script>
+
+    <script type="text/javascript">
+      function clear_key(){
+  document.getElementById("input_key").value="";
+}
+
+function request_add_key(){
+  var key = document.getElementById("input_key").value;
+  
+
+  if(isValidKey(key)){
+    // TODO: Pass it from login screen instead of loading credentials.js
+    //var json = {
+    //  username : user,
+    //  key : key
+    //}
+     
+    
+    var request = $.ajax({
+      type: "POST",
+      url: "php/add_sshkey.php",
+      data: JSON.stringify(json),
+      dataType: "json",
+      success: function(data){
+        var print = "<b>ERROR</b> adding key '<u>"+
+          document.getElementById("input_key").value
+          +"</u>' for user "+user;
+        
+        if(data.message == "OK"){
+          var keyStr = document.getElementById("input_key").value;
+          keyStr = keyStr.substring(0,10) + '...' + keyStr.substring(keyStr.length-10);
+          print = "KEY '<u>"+ keyStr
+            +"</u>' <b>SUCCESSFULLY</b> added for user "+user;
+        }
+        
+        document.getElementById("addKeyResponseDiv").innerHTML = print;
+        
+        request_sshkeys();
+      }
+    });
+    
+    alert('You have added a key.\nDepending on the server load, database performance, number of registered keys and'
+        +' several other factors this operation can take a little. The page will reload information relative to'
+        +' sshkeys automatically after this operation ends.');
+  } else {
+    alert('You\'ve typed a non valid key');
+  }
+}
+
+// ** KEY VALIDATION FUNCTS ** //
+function isValidKey(key){
+  if(isValidDSAKey(key))
+    return true;
+  else if(isValidRSAKey(key))
+    return true;
+  
+  return false;
+}
+
+function isValidDSAKey(key){
+  keyHead = key.substring(0,7);
+  if(keyHead!='ssh-dss')
+    return false;
+  
+  if(key.length<(586))
+    return false;
+  
+  if(key.indexOf("'")>-1)
+    return false;
+  
+  return true;
+}
+
+function isValidRSAKey(key){
+  keyHead = key.substring(0,7);
+  if(keyHead!='ssh-rsa')
+    return false;
+  
+  if(key.length<(380))
+    return false;
+  
+  if(key.indexOf("'")>-1)
+    return false;
+  
+  return true;
+}
+
+// ** DO DEL KEYS ** //
+// ***************** //
+function doDelKeys(){
+  document.getElementById("keysDiv").style.display="block";
+  document.getElementById("keysDiv").innerHTML="Loading SSHKeys . . .";
+  
+  request_sshkeys();
+}
+
+function request_sshkeys(){
+  var json = {
+    user : user
+  }
+  
+  var request = $.ajax({
+    type: "POST",
+    url: "php/get_sshkeys.php",
+    data: JSON.stringify(json),
+    dataType: "json",
+    success: function(data){
+      var jsonData = jQuery.parseJSON(data);
+      var print = "You have not any sshkey stored in our database.";
+      
+      if(jsonData.keys.length > 0){
+        print = "";
+        for(var i = 0 ; i < jsonData.keys.length ; i++){
+          label = '<span class="spanResponseLabel">KEY '+i+' </span>';
+          print += label+'<div class="keyDiv">'+jsonData.keys[i]+"</div>"
+          +'<span class="spanStopCluster" onclick="deleteKey(\''+jsonData.keys[i]+'\')">DELETE</span><br/>'
+          +"<br/>";
+        }
+      }
+      
+      document.getElementById("keysDiv").innerHTML=print;
+      
+      
+    }
+  });
+}
+
+function deleteKey(key){
+  var json = {
+    username : user,
+    key : key
+  }
+  
+  var request = $.ajax({
+    type: "POST",
+    url: "php/del_sshkey.php",
+    data: JSON.stringify(json),
+    dataType: "json",
+    success: function(data){
+      request_sshkeys();
+    }
+  });
+  
+  alert('You have deleted a key.\nDepending on the server load, database performance, number of registered keys and'
+        +' several other factors this operation can take a little. The page will reload information relative to'
+        +' sshkeys automatically after this operation ends.');
+  
+}
+    </script>
+
+
+    
+  
+    <!--ESTILO PARA AUMENTAR EL ANCHO DEL DIALOGO-->
+    <style type="text/css">
+      .modal-dialog {
+        width: 750px;
+        margin: 30px auto;
+      }
+    </style>
+    
+    <!--ESTILO BOTÓN ADD KEY-->
+    <style type="text/css">
+      #addButton {
+        background-color: #0cf410;
+        border-radius: 10px;
+      }
+    </style>
+
+  </head>
+  <body>
+<!--login modal-->
+<div class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h2 class="text-center">Setup Wizard</h2>
+      </div>
+      <div class="modal-body">
+        <div id ="wizard" class="swMain">
+          <ul>
+            <li><a href="#step-1">
+              <span class="stepNumber">1</span>
+              <span class="stepDesc">
+                SSH
+              </span>
+            </a></li>
+            <li><a href="#step-2">
+              <span class="stepNumber">2</span>
+              <span class="stepDesc">
+                FIREWALL
+              </span>
+            </a></li>
+            <li><a href="#step-3">
+              <span class="stepNumber">3</span>
+              <span class="stepDesc">
+                REVIEW
+              </span>
+            </a></li>
+          </ul>
+          <div id="step-1">
+            <h2 class="StepTitle">Step 1 SSH</h2>
+            <ul type="disk"></ul>
+            </br><table class="form_table">
+            <tr>
+            <td class="labelTd_forTextarea">SSH key (rsa/dsa) </td>
+            <td><input type="file"></td>
+            </tr>
+            <tr>
+            <td><button type="button" onclick="request_add_key()" id="addButton">Add key</button></td>
+            </tr>
+            </table><br/><div id="addKeyResponseDiv"></div><br/>
+          </div>
+          <div id="step-2">
+            <h2 class="StepTitle">Step 2 Firewall</h2>
+            <br/><table class="form_table">
+            <tr>
+            <td class="labelTd_forTextarea">IP address </td>
+            <td><textarea id="input_ip" name="ip" class="tdTextarea" style="margin: 0px; width: 590px; height: 171px;"></textarea></td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center" width="100%"><button type="button" onclick="request_add_ip()">Add IP</button>
+            <button type="button" onclick="clear_ip()">Clear IP</button></td>
+            </tr>
+            </table><br/><div id="addIPResponseDiv"></div><br/>
+          </div>
+          <div id="step-3">
+            <h2 class="StepTitle">Step 3 Review</h2>
+          </div>
+        </div>
+          
+      <div class="modal-footer">
+          <div class="col-md-12">
+          <!--<button class="btn" data-dismiss="modal" aria-hidden="true">Register</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
+          </div>  
+      </div>
+  </div>
+  </div>
+</div>
+  <!-- script references -->
+    
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

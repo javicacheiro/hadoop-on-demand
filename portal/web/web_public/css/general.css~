@@ -1,0 +1,39 @@
+body, html{
+   height: 100%;
+   padding: 0 0 0 0;
+   margin: 0;
+   background-color: #FFF;
+   overflow: hidden;
+}
+#mainDiv{
+	width: 100%;	
+	margin: 0;
+	height: 100%;
+	border: solid 1px black;
+}
+
+.clickable_span{
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.clickable_span:hover{
+	color: orange;
+}
+
+.clickable_span:active{
+	color: red;
+	text-decoration: none;
+}
+
+#containerDiv{
+	margin: 0 auto;
+	height: 88%;
+	border-left: solid 2px white;
+	border-right: solid 2px white;
+	border-bottom: solid 2px white;
+	outline: solid 2px black;
+	padding: 5px;
+	overflow: scroll;
+}

@@ -1,0 +1,18 @@
+warning: CRLF will be replaced by LF in
+portal/web/web_public/bootstrap/style.css.
+The file will have its original line endings in your working directory.
+warning: CRLF will be replaced by LF in portal/web/web_public/functions.inc.
+The file will have its original line endings in your working directory.
+warning: CRLF will be replaced by LF in
+portal/web/web_public/lib/functions.inc.
+The file will have its original line endings in your working directory.
+warning: CRLF will be replaced by LF in portal/web/web_public/lib/lang.en.
+The file will have its original line endings in your working directory.
+warning: CRLF will be replaced by LF in portal/web/web_public/lib/lang.es.
+The file will have its original line endings in your working directory.
+warning: CRLF will be replaced by LF in portal/web/web_public/lib/lang.pt.
+The file will have its original line endings in your working directory.
+warning: CRLF will be replaced by LF in portal/web/web_public/mrbs_auth.inc.
+The file will have its original line endings in your working directory.
+warning: CRLF will be replaced by LF in portal/web/web_public/session_php.inc.
+The file will have its original line endings in your working directory.

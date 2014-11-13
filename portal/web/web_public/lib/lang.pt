@@ -1,0 +1,95 @@
+<?php 
+// -*-mode: PHP; coding:utf-8;-*-
+// $Id: lang.pt 
+// This file contains PHP code that specifies language specific strings
+// The default strings come from lang.en, and anything in a locale
+// specific file will overwrite the default. This is a Portuguese file.
+// This file is PHP code. Treat it as such.
+
+
+///////////////////////////////////
+// TRADUCCIONES PORTAL CLOUDPYME //
+///////////////////////////////////
+
+// Textos LOGIN
+$vocab["unknown_user"]         = "Usuário desconhecido";
+$vocab["iniciar_sesion"]       = "LOGIN";
+$vocab["usuario"]              = "Usuário";
+$vocab["contraseña"]           = "Senha";
+$vocab["msg_exito_login"]      = "A autenticação é necessária. Nome de usuário e senha.";
+$vocab["msg_error_login"]      = "Usuário desconhecido"; 
+
+// Textos BARRA NAVEGACIÓN
+$vocab["inicio"]               = "INÍCIO";
+$vocab["computo"]              = "COMPUTE";
+$vocab["almacenamiento"]       = "ARMAZENAMENTO";
+$vocab["soporte"]              = "APOIO";
+$vocab["documentacion"]        = "DOCUMENTAÇÃO";
+$vocab["perfil"]               = "Perfil";
+$vocab["desconectar"]          = "Fechar sessão";
+
+//Textos PÁGINA INICIO
+$vocab["acceder"]                    = "Aceder";
+$vocab["computo_descripcion"]        = "Infraestrutura de Computação. Gestão de máquinas virtuais.";
+$vocab["almacenamiento_descripcion"] = "Serviço de armazenamento e sincronização de ficheiros.";
+$vocab["soporte_descripcion"]        = "Sistema de gestão de pedidos de suporte técnico.";
+$vocab["documentacion_descripcion"]  = "Documentos, tutoriais e informação útil para o utente CloudPYME.";
+
+
+
+// Textos GESTION-CÓMPUTO
+// Panel control (menú izq)
+$vocab["panel_control"]              = "PAINEL DE CONTROLO";
+    $vocab["lanzar_m_v"]                      = "Lançar Máquina Virtual";
+    $vocab["listar_m_v"]                      = "Listar Máquinas Virtuais";
+    $vocab["m_v_ejecucion"]                   = "Máquinas Virtuais em Execução";
+    $vocab["m_v_ultimos_dias"]                = "Máquinas Virtuais dos últimos 7 dias";
+    $vocab["listado_trabajos_cola"]           = "Listagem de trabalhos em fila";
+    $vocab["informacion_consumo"]             = "Informação de consumo";
+ 
+// Panel listar máquinas virtuales    
+$vocab["panel_listar_m_v"]              = "LISTAR MÁQUINAS VIRTUAIS";  
+     $vocab["ultima_actualizacion"]             = "Última atualização";
+     $vocab["eliminar"]                         = "Eliminar";
+     $vocab["th_id"]                            = "ID";
+     $vocab["th_host"]                          = "Host";
+     $vocab["th_inicio"]                        = "Início";
+     $vocab["th_tipo"]                          = "Tipo";
+     $vocab["th_tiempo"]                        = "Tempo";
+     $vocab["th_estado"]                        = "Estado";
+     $vocab["th_acceder"]                       = "Aceder";
+     $vocab["th_acciones"]                      = "Ações";
+     $vocab["th_fin"]                           = "FiM";
+     $vocab["th_jobid"]                         = "JobID";
+     $vocab["th_procesadores_solicitados"]      = "Processadores requisitados";
+     $vocab["th_tiempo_solicitado"]             = "Tempo requisitado";
+     $vocab["th_memoria_total"]                 = "Memória total";
+     $vocab["th_tareas"]                        = "Tarefas";
+     $vocab["th_consumo_estimado"]              = "Consumo estimado";
+     $vocab["th_horas_pri"]                     = "Horas Pri";
+     $vocab["th_horas_npri"]                    = "Horas NPri";
+     $vocab["th_consumo_diario"]                = "Consumo Diário";
+     $vocab["th_consumo_total"]                 = "Consumo Total";
+     
+     
+     $vocab["no_mv_ejecucion"]                  = "Não há máquinas em execução.";
+     $vocab["no_mv_ultimos_dias"]               = "Não há máquinas finalizadas nos últimos 7 dias.";
+     $vocab["no_trabajos_cola"]                 = "Não há trabalhos em fila.";
+     
+     
+// Panel lanzar máquinas virtuales     
+$vocab["panel_lanzar_m_v"]              = "LANÇAR MÁQUINA VIRTUAL";
+     $vocab["tipo_maquina"]                     = "Tipo de máquina"; 
+     $vocab["tiempo_max_vida"]                  = "Maxima vida";
+     $vocab["horas"]                            = "horas";
+     $vocab["btn_lanzar_maquina"]               = "Lançar máquina";
+     $vocab["msg_error_lanzar_maquina"]         = "ERRO: Não se pôde realizar a operação: ";
+     $vocab["msg_exito_lanzar_maquina"]         = "CORRETO: A máquina virtual foi lançada.";
+
+// Panel eliminar máquina virtual     
+$vocab["panel_eliminar_m_v"]                    = "ELIMINAR MÁQUINA VIRTUAL";
+    $vocab["msg_error_eliminar_maquina"]        = "ERRO: Não se pôde realizar a operação: ";
+    $vocab["msg_exito_eliminar_maquina"]        = "CORRETO: A máquina virtual foi eliminada. ID: ";
+     
+     
+
