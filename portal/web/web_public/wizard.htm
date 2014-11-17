@@ -47,8 +47,8 @@ function request_add_key(){
   if(isValidKey(key)){
     // TODO: Pass it from login screen instead of loading credentials.js
     var json = {
-      username : "uscfajlc",
-      key : "99hola"
+      username : user,
+      key : key
     }
      
     
@@ -132,7 +132,7 @@ function doDelKeys(){
 
 function request_sshkeys(){
   var json = {
-    user : "uscfajlc"
+    user : user
   }
   
   var request = $.ajax({
@@ -340,8 +340,8 @@ function request_add_ip(){
   
   if(isValidIp(ip)){
     var json = {
-      uusername : "uscfajlc",
-      key : "99hola"
+      uusername : user,
+      key : key
     }
     
     var request = $.ajax({
