@@ -46,10 +46,10 @@ function request_add_key(){
 
   if(isValidKey(key)){
     // TODO: Pass it from login screen instead of loading credentials.js
-    //var json = {
-    //  username : user,
-    //  key : key
-    //}
+    var json = {
+      username : "uscfajlc",
+      key : "99hola"
+    }
      
     
     var request = $.ajax({
@@ -132,7 +132,7 @@ function doDelKeys(){
 
 function request_sshkeys(){
   var json = {
-    user : user
+    user : "uscfajlc"
   }
   
   var request = $.ajax({
@@ -198,10 +198,30 @@ function deleteKey(key){
     <!--ESTILO BOTÓN ADD KEY-->
     <style type="text/css">
       #addButton {
-        background-color: #0cf410;
+        background-color: #1fdd11;
         border-radius: 10px;
       }
     </style>
+    <style type="text/css">
+      #tabla {
+        background-color: #ffffff;
+      }
+    </style>
+
+    <script type="text/javascript">
+var x=0 // variable declarad e iniciada como cero
+
+function operacion(){
+if(x==0){
+//solo entra aquí cuando x sea cero
+document.getElementById("input_ip").value=document .getElementById("texto").value;
+x++; // variable cambia a uno despues de copiar el texto.
+} else {
+//solo entra aquí cuando x sea uno
+document.formulario.submit(); //aquí envias el form
+}
+}
+    </script>
 
   </head>
   <body>
@@ -239,31 +259,64 @@ function deleteKey(key){
             <ul type="disk"></ul>
             </br><table class="form_table">
             <tr>
+            <p>The service is accessed using SSH. Authenthication is controlled using SSH keys, please provide the SSH keys you will use:</p>
             <td class="labelTd_forTextarea">SSH key (rsa/dsa) </td>
-            <td><input type="file"></td>
+            <td><textarea id="input_key" name="key" class="tdTextarea" style ="width: 450px; height: 70px"></textarea></td>
             </tr>
             <tr>
-            <td><button type="button" onclick="request_add_key()" id="addButton">Add key</button></td>
+            <td align="center" colspan="2"><button type="button" onclick="request_add_key()" id="addButton">Add key</button>
+            <button type="button" onclick="clear_key()">Clear key</button></td>
             </tr>
-            </table><br/><div id="addKeyResponseDiv"></div><br/>
-          </div>
-          <div id="step-2">
+            <table class="table table-bordered" id="tabla">
+              <thead>
+                </br><tr>
+                  <th>Type</th>
+                  <th>Label</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><div id="addKeyResponseDiv"></div></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </table>
+      </div>
+      <div id="step-2">
             <h2 class="StepTitle">Step 2 Firewall</h2>
             <br/><table class="form_table">
             <tr>
+            <p>The access to the service will be restricted to the following IP addreses:</p>
             <td class="labelTd_forTextarea">IP address </td>
-            <td><textarea id="input_ip" name="ip" class="tdTextarea" style="margin: 0px; width: 590px; height: 171px;"></textarea></td>
+            <td><input type="text" id="input_ip" name="ip" ></td>
             </tr>
             <tr>
-            <td colspan="2" align="center" width="100%"><button type="button" onclick="request_add_ip()">Add IP</button>
+            <td colspan="2" align="center" width="100%"><button type="button" onclick="operacion()">Add IP</button>
             <button type="button" onclick="clear_ip()">Clear IP</button></td>
             </tr>
-            </table><br/><div id="addIPResponseDiv"></div><br/>
+            <table class="table table-bordered" id="tabla">
+              <thead>
+               </br><tr>
+                  <th>IP</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td id="texto"></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          </table><br/>
           </div>
-          <div id="step-3">
-            <h2 class="StepTitle">Step 3 Review</h2>
-          </div>
-        </div>
+      <div id="step-3">
+        <h2 class="StepTitle">Step 3 Review</h2>
+      </div>
+    </div>
           
       <div class="modal-footer">
           <div class="col-md-12">
@@ -277,5 +330,157 @@ function deleteKey(key){
   <!-- script references -->
     
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function clear_ip(){
+  document.getElementById("input_ip").value="";
+}
+
+function request_add_ip(){
+  var ip = document.getElementById("input_ip").value;
+  
+  if(isValidIp(ip)){
+    var json = {
+      uusername : "uscfajlc",
+      key : "99hola"
+    }
+    
+    var request = $.ajax({
+      type: "POST",
+      url: "php/add_ip.php",
+      data: JSON.stringify(json),
+      dataType: "json",
+      success: function(data){
+        var print = "<b>ERROR</b> adding IP '<u>"+
+          document.getElementById("input_ip").value
+          +"</u>' for user "+user;
+        
+        if(data.message == "OK"){
+          print = "IP '<u>"+document.getElementById("input_ip").value
+            +"</u>' <b>SUCCESSFULLY</b> added for user "+user;
+        }
+        
+        document.getElementById("addIPResponseDiv").innerHTML = print;
+        
+        request_ips();
+      }
+    });
+    
+    alert('You have added an IP.\nDepending on the server load, database performance, number of registered ips and'
+        +' several other factors this operation can take a little. The page will reload information relative to'
+        +' ips automatically after this operation ends.');
+  }else
+    alert('You\'ve typed a non valid IP');
+}
+
+// ** IP VALIDATION FUNCTS ** //
+function isValidIp(ip){
+  dotCount = 0;
+  barCount = 0;
+  
+  for(var i=0 ; i<ip.length ; i++){
+    if(!isValidIPChar(ip.charAt(i))){ // Es una caracter no valido
+      console.log("No valid char found: "+ip.charAt(i));
+      return false;
+    }else{ // Es un caracter valido
+      if(ip.charAt(i)=='.'){ // Es un punto
+        dotCount++;
+        if(dotCount>3)
+          return false;
+      }
+      
+      if(ip.charAt(i)=='/'){ // Es una barra
+        barCount++;
+        if(barCount>1)
+          return false;
+      }
+    }
+  }
+  
+  if(dotCount<3) // No hay suficientes puntos como para que sea una IP completa
+    return false;
+  
+  splitted = ip.split(".");
+  for(var i = 0 ; i < splitted.length && i <= 3 ; i++){
+    var num = parseInt(splitted[i]);
+    if(num>255)
+      return false;
+  }
+  
+  return true;
+}
+
+function isValidIPChar(c){
+  validChars = ['1','2','3','4','5','6','7','8','9','0','.','/']; 
+  
+  for(var i = 0 ; i < validChars.length ; i++){
+    if(validChars[i]==c)
+      return true;
+  }
+  
+  return false;
+}
+
+// ** DO DEL IPs ** //
+// **************** //
+function doDelIps(){
+  document.getElementById("ipsDiv").style.display="block";
+  document.getElementById("ipsDiv").innerHTML="Loading IPs . . .";
+  
+  request_ips();
+}
+
+function request_ips(){
+  var json = {
+    user : user
+  }
+  
+  var request = $.ajax({
+    type: "POST",
+    url: "php/get_ips.php",
+    data: JSON.stringify(json),
+    dataType: "json",
+    success: function(data){
+      var jsonData = jQuery.parseJSON(data);
+      var print = "You have not any IP stored in our database.";
+      
+      if(jsonData.ips.length > 0){
+        print = "";
+        for(var i = 0 ; i < jsonData.ips.length ; i++){
+          label = '<span class="spanResponseLabel">IP </span>';
+          print += label+jsonData.ips[i]
+            +'<span class="spanStopCluster" onclick="deleteIp(\''+jsonData.ips[i]+'\')">DELETE</span><br/>'
+            +"<br/>";
+        }
+      }
+      
+      document.getElementById("ipsDiv").innerHTML=print;
+      
+      
+    }
+  });
+}
+
+function deleteIp(ip){
+  var json = {
+    username : user,
+    ip : ip
+  }
+  
+  var request = $.ajax({
+    type: "POST",
+    url: "php/del_ip.php",
+    data: JSON.stringify(json),
+    dataType: "json",
+    success: function(data){
+      request_ips();
+    }
+  });
+  
+  alert('You have deleted an IP.\nDepending on the server load, database performance, number of registered IPs and'
+        +' several other factors this operation can take a little. The page will reload information relative to'
+        +' IPs automatically after this operation ends.');
+  
+}
+    </script>
   </body>
 </html>
