@@ -1,12 +1,12 @@
-  function closeD(){
-    close();
-  }
+function closeD(){
+  close();
+}
 
-  function clear_key(){
-    document.getElementById("input_key").value="";
-  }
+function clear_key(){
+  document.getElementById("input_key").value="";
+}
 
-  function request_add_key(){
+function request_add_key(){
   var key = document.getElementById("input_key").value;
 
   if(isValidKey(key)){
@@ -15,36 +15,39 @@
       username : user,
       key : key
     }
- 
-  var request = $.ajax({
-    type: "POST",
-    url: "php/add_sshkey.php",
-    data: JSON.stringify(json),
-    dataType: "json",
-    success: function(data){
-      var print = "<b>ERROR</b> adding key '<u>"+
-        document.getElementById("input_key").value
-        +"</u>' for user "+user;
-      
-      if(data.message == "OK"){
-        var keyStr = document.getElementById("input_key").value;
-        keyStr = keyStr.substring(0,10) + '...' + keyStr.substring(keyStr.length-10);
-        print = "KEY '<u>"+ keyStr
-          +"</u>' <b>SUCCESSFULLY</b> added for user "+user;
+    console.log(json);
+   
+    var request = $.ajax({
+      type: "POST",
+      url: "php/add_sshkey.php",
+      data: JSON.stringify(json),
+      dataType: "json",
+      success: function(data){
+        var print = "<b>ERROR</b> adding key '<u>"+
+          document.getElementById("input_key").value
+          +"</u>' for user "+user;
+        
+        if(data.message == "OK"){
+          var keyStr = document.getElementById("input_key").value;
+          keyStr = keyStr.substring(0,10) + '...' + keyStr.substring(keyStr.length-10);
+          print = "KEY '<u>"+ keyStr
+            +"</u>' <b>SUCCESSFULLY</b> added for user "+user;
+        }
+        
+        document.getElementById("addKeyResponseDiv").innerHTML = print;
+        
+        request_sshkeys();
       }
-      
-      document.getElementById("addKeyResponseDiv").innerHTML = print;
-      
-      request_sshkeys();
-    }
-  });
-  
-  alert('You have added a key.\nDepending on the server load, database performance, number of registered keys and'
-      +' several other factors this operation can take a little. The page will reload information relative to'
-      +' sshkeys automatically after this operation ends.');
-} else {
-  alert('You\'ve typed a non valid key');
-}
+    });
+    
+    alert('You have added a key.\n'
+        +'Depending on the server load, database performance, number of registered keys and'
+        +' several other factors this operation can take a little.'
+        +' The page will reload information relative to'
+        +' sshkeys automatically after this operation ends.');
+  } else {
+    alert('You\'ve typed a non valid key');
+  }
 }
 
 // ** KEY VALIDATION FUNCTS ** //
@@ -296,9 +299,9 @@ function deleteIp(ip){
 $(document).ready(
     function(){
       // Smart Wizard   
-      $('#wizard').smartWizard(
+      $('#wizard').smartWizard({
         onFinish: onFinishCallback
-      );
+      });
 
       function onFinishCallback(){
         $('#wizard').smartWizard('showMessage','Finish Clicked');
