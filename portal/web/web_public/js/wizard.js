@@ -117,8 +117,8 @@ var IPService = {
         var ip = document.getElementById('input_ip').value;
         if (this.validate(ip)) {
             var json = {
-                uusername: user,
-                key: key
+                username: user,
+                ip: ip 
             }
             var request = $.ajax({
                 type: 'POST',
@@ -130,11 +130,12 @@ var IPService = {
                     document.getElementById('input_ip').value
                     + '</u>\' for user ' + user;
                     if (data.message == 'OK') {
-                        print = 'IP \'<u>' + document.getElementById('input_ip').value
+                        print = 'IP \'<u>' + ip
                         + '</u>\' <b>SUCCESSFULLY</b> added for user ' + user;
                     }
                     document.getElementById('addIPResponseDiv').innerHTML = print;
                     IPService.get(user);
+                    $('#ips_table > tbody:last').prepend('<tr><td>'+ip+'</td><td></tr>');
                 }
             });
             alert('You have added an IP.\nDepending on the server load, database performance, number of registered ips and'
@@ -203,7 +204,7 @@ var IPService = {
                         + '<br/>';
                     }
                 }
-                document.getElementById('ipsDiv').innerHTML = print;
+                document.getElementById('addIPResponseDiv').innerHTML = print;
             }
         });
     }
