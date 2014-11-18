@@ -34,14 +34,14 @@ var KeyService = {
                 username: user,
                 key: key
             }
-            console.log(json);
+            //console.log(json);
             var request = $.ajax({
                 type: 'POST',
                 url: 'php/add_sshkey.php',
                 data: JSON.stringify(json),
                 dataType: 'json',
                 timeout: 5000,
-                success: function(data) {
+                success: function(data, status, exception) {
                     if (data.message == 'OK') {
                         $('<div class="alert alert-success" role="alert">Key succesfully configured</div>').appendTo('#messages').fadeOut(3000);
                         //TODO: Check if we need to list all keys or not
@@ -64,21 +64,22 @@ var KeyService = {
             });
             $('<div class="alert alert-info" role="alert">Adding the new key to database</div>').appendTo('#messages').fadeOut(2000);
         } else {
-            $('<div class="alert alert-danger alert-dismissible" role="alert">You\'ve typed a non valid key</div>').appendTo('#messages');
+            $('<div class="alert alert-danger" role="alert">You\'ve typed a non valid key</div>').appendTo('#messages').fadeOut(3000);
         }
     }
     ,validate: function(key) {
         keyHead = key.substring(0, 7);
+        keyLength = key.indexOf(' ', 9) - 8;
         // DSA
         if (keyHead == 'ssh-dss') {
-          if (key.length < (586))
+          if (keyLength < 588)
               return false;
           if (key.indexOf('\'') > - 1)
               return false;
           return true;
         } else if (keyHead == 'ssh-rsa') {
             // RSA
-            if (key.length < (380))
+            if (keyLength < 200)
                 return false;
             if (key.indexOf('\'') > - 1)
                 return false;
