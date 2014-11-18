@@ -127,23 +127,22 @@ var IPService = {
                 data: JSON.stringify(json),
                 dataType: 'json',
                 success: function (data) {
-                    var print = '<b>ERROR</b> adding IP \'<u>' +
-                    document.getElementById('input_ip').value
-                    + '</u>\' for user ' + user;
                     if (data.message == 'OK') {
-                        print = 'IP \'<u>' + ip
-                        + '</u>\' <b>SUCCESSFULLY</b> added for user ' + user;
+                        $('<div class="alert alert-success" role="alert">IP succesfully configured</div>').appendTo('#messages').fadeOut(3000);
+                        //TODO: Check if we need to list all keys or not
+                        //IPService.get(user);
+                        $('#ip_keys_table > tbody:last').prepend('<tr><td>'+ip+'</td><td>DELETE</td></tr>');
+                    } else {
+                        $('<div class="alert alert-danger alert-dismissible" role="alert">Unknown error adding IP</div>').appendTo('#ipmessages');
                     }
-                    document.getElementById('addIPResponseDiv').innerHTML = print;
-                    IPService.get(user);
-                    $('#ips_table > tbody:last').prepend('<tr><td>'+ip+'</td><td></tr>');
+                },
+                error: function(xhrObj, textStatus, exception) {
+                    $('<div class="alert alert-danger alert-dismissible" role="alert">Error adding IP</div>').appendTo('#ipmessages');
                 }
             });
-            alert('You have added an IP.\nDepending on the server load, database performance, number of registered ips and'
-            + ' several other factors this operation can take a little. The page will reload information relative to'
-            + ' ips automatically after this operation ends.');
+            $('<div class="alert alert-info" role="alert">Adding the new IP to database</div>').appendTo('#ipmessages').fadeOut(2000);
         } else {
-            alert('You\'ve typed a non valid IP');
+            $('<div class="alert alert-danger" role="alert">You\'ve typed a non valid IP</div>').appendTo('#ipmessages').fadeOut(3000);
         }
     }
     ,validate: function(ip) {

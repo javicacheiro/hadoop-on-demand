@@ -74,8 +74,8 @@
             <ul type="disk"></ul>
             </br><table class="form_table">
             <tr><div id='messages'></div>
-            <p>The service is accessed using SSH. Authenthication is controlled using SSH keys, please provide the SSH keys you will use:</p>
-            <td class="labelTd_forTextarea">SSH key (rsa/dsa) </td>
+            <p>The service is accessed using SSH. Authenthication is controlled using SSH keys, please add the SSH keys (DSA or RSA) that you will use:</p>
+            <td class="labelTd_forTextarea">SSH key (RSA/DSA) </td>
             <td><textarea id="input_key" name="key" class="tdTextarea" style ="width: 450px; height: 70px"></textarea></td>
             </tr>
             <tr>
@@ -102,15 +102,16 @@
             <h2 class="StepTitle">Step 2 Firewall</h2>
             <br/><table class="form_table">
             <tr>
-            <p>The access to the service will be restricted to the following IP addreses:</p>
-            <td class="labelTd_forTextarea">IP address </td>
-            <td><input type="text" id="input_ip" name="ip" ></td>
+              <div id='ipmessages'></div>
+              <p>The access to the service will be restricted to the following IP addreses:</p>
+              <td class="labelTd_forTextarea">IP address </td>
+              <td><input type="text" id="input_ip" name="ip" ></td>
             </tr>
             <tr>
             <td colspan="2" align="center" width="100%"><button type="button" onclick="IPService.add()">Add IP</button>
             <button type="button" onclick="IPService.clear()">Clear IP</button></td>
             </tr>
-            <table class="table table-bordered" id="ips_table">
+            <table class="table table-bordered" id="ip_keys_table">
               <thead>
                </br><tr>
                   <th>IP</th>
