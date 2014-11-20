@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Wizard cluster</title>
+    <link href="css/smart_wizard.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="js/jquery.smartWizard-2.0.js"></script>
+    <script type="text/javascript" src="js/cluster.js"></script>
+    <script type="text/javascript" src="js/credentials.js"></script>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/content.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/bootstrap-wizard.css" rel="stylesheet"/>
+    
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      // Smart Wizard   
+      $('#wizard').smartWizard();
+      
+      function onFinishCallback(){
+        $('#wizard').smartWizard('showMessage','Finish Clicked');
+      }     
+    });
+    </script>
+    
+    <!--Estilo para los dos primeros pasos-->
+    <style type="text/css">
+      .swMain ul.anchor li a .stepDescE{
+        position:absolute;
+        display:block;
+        float:left;
+        text-align: center;
+        padding:5px;
+        font: bold 20px Verdana, Arial, Helvetica, sans-serif;
+      }
+    </style>
+
+    <!--ESTILO PARA AUMENTAR EL ANCHO DEL DIALOGO-->
+    <style type="text/css">
+      .modal-dialog {
+        width: 750px;
+        margin: 30px auto;
+      }
+    </style>
+
+    <!--ESTILO DEL COLOR DE LOS BOTONES -->
+    <style type="text/css">
+      #botones {
+        background-color: #bcadad;
+      }
+    </style>
+  </head>
+  <body>
+<!--login modal-->
+<div class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h2 class="text-center">Cluster Wizard</h2>
+      </div>
+      <div class="modal-body">
+        <div id ="wizard" class="swMain">
+          <ul>
+            <li><a href="#step-1">
+              <span class="stepNumber">1</span>
+              <span class="stepDescE">
+                NUMBER OF NODES
+              </span>
+            </a></li>
+            <li><a href="#step-2">
+              <span class="stepNumber">2</span>
+              <span class="stepDescE">
+                ADVANCED OPTIONS
+              </span>
+            </a></li>
+            <li><a href="#step-3">
+              <span class="stepNumber">3</span>
+              <span class="stepDesc">
+                REVIEW
+              </span>
+            </a></li>
+          </ul>
+          <div id="step-1">
+            <h2 class="StepTitle">Step 1 Nodes</h2>
+              <br/><table class="form_table">
+                <tr>
+                  <td class="labelTd" onmouseover="ClusterService.show()" onmouseout="ClusterService.hide()">Number of nodes</td>
+                  <td><input type="text" id="input_size" name="nodes" value="3"/></td>
+                </tr>
+                <tr>
+                  <td><button type="button" onclick="ClusterService.request_start_hadoop()" id="botones">Start hadoop</button></td>
+                  <td><button type="button" onclick="fill_default()" id="botones">Default values</button></td>
+                </tr>
+              </table>
+              <div id="addClusterDiv"></div>
+             
+          </div>
+          <div id="step-2">
+            <h2 class="StepTitle">Step 2 Advanced Options</h2>
+              <br/><table class="form_table">
+                <tr>
+                  <td class="labelTd" onmouseover="showNumberOfNodesHelp()" onmouseout="hideTipDiv()">Number of slave nodes</td>
+                  <td><input type="text" id="input_size" name="nodes"/></td>
+                </tr>
+                <tr>
+                  <td class="labelTd" onmouseover="showReplicasHelp()" onmouseout="hideTipDiv()">DFS Replicas</td>
+                  <td><input type="text" id="input_replicas" name="replicas"/></td>
+                </tr>
+                <tr>
+                  <td class="labelTd" onmouseover="showBlockSizeHelp()" onmouseout="hideTipDiv()">DFS Block Size</td>
+                  <td><input type="text" id="input_blocksize" name="blocksize"/></td>
+                </tr>
+                <tr>
+                  <td class="labelTd" onmouseover="showReduceTasksNumber()" onmouseout="hideTipDiv()">Reduce Tasks Number</td>
+                  <td><input type="text" id="input_reduce" name="reduce"/></td>
+                </tr>
+                <tr>
+                  <td onmouseover="showHadoopVersion()" onmouseout="hideTipDiv()">Hadoop version</td>
+                </tr>
+                <tr>
+                  <td><input type="radio" name="version" checked="checked">Hadoop v1</input></td>
+                  <td><input type="radio" name="version" disabled="disabled">Hadoop v2</input></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><span class="clickable_span" onclick="printLaunchClusterTable()">Standard features</span></td>
+                </tr>
+                <tr>
+                  <td><button type="button" onclick="request_start_hadoop()" id="botones">Start hadoop</button></td>
+                  <td><button type="button" onclick="fill_default()" id="botones">Default values</button></td>
+                </tr>
+              </table>
+          </div>
+          <div id="step-3">
+            <h2 class="StepTitle">Step 3 Review</h2>
+          </div>
+        </div>
+          
+      <div class="modal-footer">
+          <div class="col-md-12">
+          <!--<button class="btn" data-dismiss="modal" aria-hidden="true">Register</button>
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
+          </div>  
+      </div>
+  </div>
+  </div>
+</div>
+  <!-- script references -->
+    <script src="js/bootstrap.min.js"></script>
+    </script>
+  </body>
+</html>
