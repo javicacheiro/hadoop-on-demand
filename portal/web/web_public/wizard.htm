@@ -73,59 +73,55 @@
             <h2 class="StepTitle">Step 1 SSH</h2>
             <ul type="disk"></ul>
             </br><table class="form_table">
-            <tr>
-            <p>The service is accessed using SSH. Authenthication is controlled using SSH keys, please provide the SSH keys you will use:</p>
-            <td class="labelTd_forTextarea">SSH key (rsa/dsa) </td>
+            <tr><div id='messages'></div>
+            <p>The service is accessed using SSH. Authenthication is controlled using SSH keys, please add the SSH keys (DSA or RSA) that you will use:</p>
+            <td class="labelTd_forTextarea">SSH key (RSA/DSA) </td>
             <td><textarea id="input_key" name="key" class="tdTextarea" style ="width: 450px; height: 70px"></textarea></td>
             </tr>
             <tr>
-            <td align="center" colspan="2"><button type="button" onclick="request_add_key()" id="addButton">Add key</button>
-            <button type="button" onclick="clear_key()">Clear key</button></td>
+            <td align="center" colspan="2"><button type="button" onclick="KeyService.add()" id="addButton">Add key</button>
+            <button type="button" onclick="KeyService.clear()">Clear key</button></td>
             </tr>
-            <table class="table table-bordered" id="tabla">
+            <table class="table table-bordered" id="ssh_keys_table">
               <thead>
                 </br><tr>
                   <th>Type</th>
                   <th>Label</th>
-                  <th></th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-              <tr>
-                <td><div id="addKeyResponseDiv"></div></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
+              </tbody>
           </table>
+          <tr>
+            <td><div id="addKeyResponseDiv"></div></td>
+          </tr>
         </table>
       </div>
       <div id="step-2">
             <h2 class="StepTitle">Step 2 Firewall</h2>
             <br/><table class="form_table">
             <tr>
-            <p>The access to the service will be restricted to the following IP addreses:</p>
-            <td class="labelTd_forTextarea">IP address </td>
-            <td><input type="text" id="input_ip" name="ip" ></td>
+              <div id='ipmessages'></div>
+              <p>The access to the service will be restricted to the following IP addreses:</p>
+              <td class="labelTd_forTextarea">IP address </td>
+              <td><input type="text" id="input_ip" name="ip" ></td>
             </tr>
             <tr>
-            <td colspan="2" align="center" width="100%"><button type="button" onclick="operacion()">Add IP</button>
-            <button type="button" onclick="clear_ip()">Clear IP</button></td>
+            <td colspan="2" align="center" width="100%"><button type="button" onclick="IPService.add()">Add IP</button>
+            <button type="button" onclick="IPService.clear()">Clear IP</button></td>
             </tr>
-            <table class="table table-bordered" id="tabla">
+            <table class="table table-bordered" id="ip_keys_table">
               <thead>
                </br><tr>
                   <th>IP</th>
-                  <th></th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-              <tr>
-                <td id="texto"></td>
-                <td></td>
-              </tr>
-            </tbody>
+              </tbody>
           </table>
+          <tr><div id="addIPResponseDiv"></div></tr>
           </table><br/>
           </div>
       <div id="step-3">
