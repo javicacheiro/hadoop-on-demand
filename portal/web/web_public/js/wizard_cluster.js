@@ -6,17 +6,35 @@ var defaultReplicas = 3;
 var defaultBlockSize = 16;
 var defaultReduceTasks = 1;
 var defaultHadoopVersion = 1;
+
 var hadoopSize = defaultSize;
 var hadoopReplicas = defaultReplicas;
 var hadoopBlockSize = defaultBlockSize;
 var hadoopReduceTasks = defaultReduceTasks;
 
 var ClusterService = {
-	show: function () {
+	showNodes: function () {
 		document.getElementById("tipDiv").style.visibility="visible";
 		document.getElementById("tipDiv").innerHTML="Number of nodes (without including master node).<br/>"
 			+"default: "+defaultSize;
 	}
+	,showReplicas: function() {
+		document.getElementById("tipDiv").style.visibility="visible";
+		document.getElementById("tipDiv").innerHTML="Number of DFS replicas to be created.<br/>"
+			+"default: "+defaultReplicas;	
+	}
+	,showBlockSize: function(){
+		document.getElementById("tipDiv").style.visibility="visible";
+		document.getElementById("tipDiv").innerHTML="Specifies block size in MB.<br/>"
+			+"default: "+defaultBlockSize;
+	}
+	,showReduceTasksNumber: function(){
+		document.getElementById("tipDiv").style.visibility="visible";
+		document.getElementById("tipDiv").innerHTML="Number of reduce tasks.<br/>"
+		+"default: "+defaultReduceTasks;
+	}
+			
+
 	,hide: function (){
 		document.getElementById("tipDiv").innerHTML = "";
 		document.getElementById("tipDiv").style.visibility="hidden";
@@ -176,6 +194,13 @@ var ClusterService = {
 			ClusterService.submit_request(data);
 		}
 	}
+	,fill_default: function(){
+	hadoopSize = defaultSize;
+	hadoopReplicas = defaultReplicas;
+	hadoopBlockSize = defaultBlockSize;
+	hadoopReduceTasks = defaultReduceTasks;
+	fill();
+}
 	,submit_request: function(requestData){
 		var request = $.ajax({
 			type: "POST",

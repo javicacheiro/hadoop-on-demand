@@ -7,7 +7,7 @@
     <link href="css/smart_wizard.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="js/jquery.smartWizard-2.0.js"></script>
-    <script type="text/javascript" src="js/cluster.js"></script>
+    <script type="text/javascript" src="js/wizard_cluster.js"></script>
     <script type="text/javascript" src="js/credentials.js"></script>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -92,7 +92,7 @@
             <h2 class="StepTitle">Step 1 Nodes</h2>
               <br/><table class="form_table">
                 <tr>
-                  <td class="labelTd" onmouseover="ClusterService.show()" onmouseout="ClusterService.hide()">Number of nodes</td>
+                  <td class="labelTd">Number of nodes</td>
                   <td><input type="text" id="input_size" name="nodes" value="3"/></td>
                 </tr>
                 <tr>
@@ -100,29 +100,29 @@
                   <td><button type="button" onclick="fill_default()" id="botones">Default values</button></td>
                 </tr>
               </table>
-              <div id="addClusterDiv"></div>
+              
              
           </div>
           <div id="step-2">
             <h2 class="StepTitle">Step 2 Advanced Options</h2>
               <br/><table class="form_table">
                 <tr>
-                  <td class="labelTd" onmouseover="showNumberOfNodesHelp()" onmouseout="hideTipDiv()">Number of slave nodes</td>
-                  <td><input type="text" id="input_size" name="nodes"/></td>
+                  <td class="labelTd" onmouseover="ClusterService.showNodes()" onmouseout="ClusterService.hide()">Number of slave nodes</td>
+                  <td><input type="text" id="input_size" name="nodes" value="3"/></td>
                 </tr>
                 <tr>
-                  <td class="labelTd" onmouseover="showReplicasHelp()" onmouseout="hideTipDiv()">DFS Replicas</td>
-                  <td><input type="text" id="input_replicas" name="replicas"/></td>
+                  <td class="labelTd" onmouseover="ClusterService.showReplicas()"onmouseout="ClusterService.hide()">DFS Replicas</td>
+                  <td><input type="text" id="input_replicas" name="replicas" value="3"/></td>
                 </tr>
                 <tr>
-                  <td class="labelTd" onmouseover="showBlockSizeHelp()" onmouseout="hideTipDiv()">DFS Block Size</td>
-                  <td><input type="text" id="input_blocksize" name="blocksize"/></td>
+                  <td class="labelTd" onmouseover="ClusterService.showBlockSize()" onmouseout="ClusterService.hide()">DFS Block Size</td>
+                  <td><input type="text" id="input_blocksize" name="blocksize" value="16"/></td>
                 </tr>
                 <tr>
-                  <td class="labelTd" onmouseover="showReduceTasksNumber()" onmouseout="hideTipDiv()">Reduce Tasks Number</td>
-                  <td><input type="text" id="input_reduce" name="reduce"/></td>
+                  <td class="labelTd" onmouseover="ClusterService.showReduceTasksNumber()" onmouseout="ClusterService.hide()">Reduce Tasks Number</td>
+                  <td><input type="text" id="input_reduce" name="reduce" value="1"/></td>
                 </tr>
-                <tr>
+                <!--<tr>
                   <td onmouseover="showHadoopVersion()" onmouseout="hideTipDiv()">Hadoop version</td>
                 </tr>
                 <tr>
@@ -131,15 +131,17 @@
                 </tr>
                 <tr>
                   <td colspan="2"><span class="clickable_span" onclick="printLaunchClusterTable()">Standard features</span></td>
-                </tr>
-                <tr>
-                  <td><button type="button" onclick="request_start_hadoop()" id="botones">Start hadoop</button></td>
-                  <td><button type="button" onclick="fill_default()" id="botones">Default values</button></td>
+                </tr>-->
+                <br><tr>
+                  <td><button type="button" onclick="ClusterService.request_start_hadoop()" id="botones">Start hadoop</button></td>
+                  <td><button type="button" onclick="ClusterService.fill_default()" id="botones">Default values</button></td>
                 </tr>
               </table>
+              <div id="tipDiv"></div>
           </div>
           <div id="step-3">
             <h2 class="StepTitle">Step 3 Review</h2>
+            <div id="addClusterDiv"></div>
           </div>
         </div>
           
