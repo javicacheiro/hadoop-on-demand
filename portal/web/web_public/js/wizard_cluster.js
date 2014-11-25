@@ -3,10 +3,10 @@ var advancedMode = false;
 
 var ClusterService = {
   // Default values
-  hadoopSize: 3,
+  size: 3,
   replicas: 3,
   blocksize: 16,
-  reduce: 1,
+  reduces: 1,
 
   tipNodes: function () {
     document.getElementById("tipDiv").style.visibility = "visible";
@@ -168,11 +168,11 @@ var ClusterService = {
   }
   ,setup: function(){
     // Set default values
-    document.getElementById('input_size').value = ClusterService.hadoopSize;
-    if(document.getElementById("input_replicas")){
-      document.getElementById('input_replicas').value = ClusterService.hadoopReplicas;
-      document.getElementById('input_blocksize').value = ClusterService.hadoopBlockSize;
-      document.getElementById('input_reduce').value = ClusterService.hadoopReduceTasks;
+    document.getElementById('input_size').value = ClusterService.size;
+    if(document.getElementById('input_replicas')){
+      document.getElementById('input_replicas').value = ClusterService.replicas;
+      document.getElementById('input_blocksize').value = ClusterService.blocksize;
+      document.getElementById('input_reduce').value = ClusterService.reduces;
     }
   }
 };
