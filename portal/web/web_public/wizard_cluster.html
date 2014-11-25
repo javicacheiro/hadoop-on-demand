@@ -95,10 +95,6 @@
                   <td class="labelTd" onmouseover="ClusterService.tooltipNodes()" onmouseout="ClusterService.hide()">Number of slave nodes</td>
                   <td><input type="text" id="input_size" name="nodes"/></td>
                 </tr>
-                <tr>
-                  <td><button type="button" onclick="ClusterService.submit_request()" id="botones">Start</td>
-                  <td><button type="button" onclick="ClusterService.setup()" id="botones">Default values</button></td>
-                </tr>
               </table>
               
              
@@ -133,6 +129,11 @@
           </div>
           <div id="step-3">
             <h2 class="StepTitle">Step 3 Review</h2>
+              <br/><table class="form_table">
+                <tr>
+                  <td><button type="button" onclick="ClusterService.submit_request()" id="botones">Start</td>
+                </tr>
+              </table>
             <div id="addClusterDiv"></div>
           </div>
         </div>
