@@ -172,11 +172,11 @@ var ClusterService = {
   }
   ,setup: function(){
     // Set default values
-    $('#input_size').value = ClusterService.hadoopSize;
+    document.getElementById('input_size').value = ClusterService.hadoopSize;
     if(document.getElementById("input_replicas")){
-      $('#input_replicas').value = ClusterService.hadoopReplicas;
-      $('#input_blocksize').value = ClusterService.hadoopBlockSize;
-      $('#input_reduce').value = ClusterService.hadoopReduceTasks;
+      document.getElementById('input_replicas').value = ClusterService.hadoopReplicas;
+      document.getElementById('input_blocksize').value = ClusterService.hadoopBlockSize;
+      document.getElementById('input_reduce').value = ClusterService.hadoopReduceTasks;
     }
   }
 };
