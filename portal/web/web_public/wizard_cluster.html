@@ -89,10 +89,10 @@
             </a></li>
           </ul>
           <div id="step-1">
-            <h2 class="StepTitle">Step 1 Nodes</h2>
+            <h2 class="StepTitle">Step 1 Number of Nodes</h2>
               <br/><table class="form_table">
                 <tr>
-                  <td class="labelTd">Number of nodes</td>
+                  <td class="labelTd" onmouseover="ClusterService.tooltipNodes()" onmouseout="ClusterService.hide()">Number of slave nodes</td>
                   <td><input type="text" id="input_size" name="nodes"/></td>
                 </tr>
                 <tr>
@@ -107,19 +107,15 @@
             <h2 class="StepTitle">Step 2 Advanced Options</h2>
               <br/><table class="form_table">
                 <tr>
-                  <td class="labelTd" onmouseover="ClusterService.showNodes()" onmouseout="ClusterService.hide()">Number of slave nodes</td>
-                  <td><input type="text" id="input_size" name="nodes"/></td>
-                </tr>
-                <tr>
-                  <td class="labelTd" onmouseover="ClusterService.showReplicas()" onmouseout="ClusterService.hide()">DFS Replicas</td>
+                  <td class="labelTd" onmouseover="ClusterService.tooltipReplicas()" onmouseout="ClusterService.hide()">HDFS Replicas</td>
                   <td><input type="text" id="input_replicas" name="replicas"/></td>
                 </tr>
                 <tr>
-                  <td class="labelTd" onmouseover="ClusterService.showBlockSize()" onmouseout="ClusterService.hide()">DFS Block Size</td>
+                  <td class="labelTd" onmouseover="ClusterService.tooltipBlockSize()" onmouseout="ClusterService.hide()">HDFS Block Size</td>
                   <td><input type="text" id="input_blocksize" name="blocksize"/></td>
                 </tr>
                 <tr>
-                  <td class="labelTd" onmouseover="ClusterService.showReduceTasksNumber()" onmouseout="ClusterService.hide()">Reduce Tasks Number</td>
+                  <td class="labelTd" onmouseover="ClusterService.tooltipReduceTasksNumber()" onmouseout="ClusterService.hide()">Reduce Tasks Number</td>
                   <td><input type="text" id="input_reduce" name="reduce"/></td>
                 </tr>
                 <!--<tr>
@@ -132,9 +128,6 @@
                 <tr>
                   <td colspan="2"><span class="clickable_span" onclick="printLaunchClusterTable()">Standard features</span></td>
                 </tr>-->
-                <br><tr>
-                  <td><button type="button" onclick="ClusterService.setup()" id="botones" align="center">Default values</button></td>
-                </tr>
               </table>
               <div id="tipDiv"></div>
           </div>

@@ -8,19 +8,19 @@ var ClusterService = {
   blocksize: 16,
   reduces: 1,
 
-  tipNodes: function () {
+  tooltipNodes: function () {
     document.getElementById("tipDiv").style.visibility = "visible";
     document.getElementById("tipDiv").innerHTML = "Number of nodes (without including master node).";
   }
-  ,tipReplicas: function() {
+  ,tooltipReplicas: function() {
     document.getElementById("tipDiv").style.visibility="visible";
     document.getElementById("tipDiv").innerHTML="The default number of replicas for each block.";
   }
-  ,tipBlockSize: function(){
+  ,tooltipBlockSize: function(){
     document.getElementById("tipDiv").style.visibility="visible";
     document.getElementById("tipDiv").innerHTML="The default block size for new files, in MB.";
   }
-  ,tipReduceTasksNumber: function(){
+  ,tooltipReduceTasksNumber: function(){
     document.getElementById("tipDiv").style.visibility="visible";
     document.getElementById("tipDiv").innerHTML="The default number of reduce tasks.";
   }
