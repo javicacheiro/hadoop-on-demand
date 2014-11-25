@@ -3,10 +3,10 @@ var advancedMode = false;
 
 var ClusterService = {
   // Default values
-  hadoopSize: 3;
-  replicas: 3;
-  blocksize: 16;
-  reduce: 1;
+  hadoopSize: 3,
+  replicas: 3,
+  blocksize: 16,
+  reduce: 1,
 
   showNodes: function () {
     document.getElementById("tipDiv").style.visibility="visible";
