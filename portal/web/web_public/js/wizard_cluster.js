@@ -8,25 +8,21 @@ var ClusterService = {
   blocksize: 16,
   reduce: 1,
 
-  showNodes: function () {
-    document.getElementById("tipDiv").style.visibility="visible";
-    document.getElementById("tipDiv").innerHTML="Number of nodes (without including master node).<br/>"
-      +"default: "+defaultSize;
+  tipNodes: function () {
+    document.getElementById("tipDiv").style.visibility = "visible";
+    document.getElementById("tipDiv").innerHTML = "Number of nodes (without including master node).";
   }
-  ,showReplicas: function() {
+  ,tipReplicas: function() {
     document.getElementById("tipDiv").style.visibility="visible";
-    document.getElementById("tipDiv").innerHTML="Number of DFS replicas to be created.<br/>"
-      +"default: "+defaultReplicas; 
+    document.getElementById("tipDiv").innerHTML="The default number of replicas for each block.";
   }
-  ,showBlockSize: function(){
+  ,tipBlockSize: function(){
     document.getElementById("tipDiv").style.visibility="visible";
-    document.getElementById("tipDiv").innerHTML="Specifies block size in MB.<br/>"
-      +"default: "+defaultBlockSize;
+    document.getElementById("tipDiv").innerHTML="The default block size for new files, in MB.";
   }
-  ,showReduceTasksNumber: function(){
+  ,tipReduceTasksNumber: function(){
     document.getElementById("tipDiv").style.visibility="visible";
-    document.getElementById("tipDiv").innerHTML="Number of reduce tasks.<br/>"
-    +"default: "+defaultReduceTasks;
+    document.getElementById("tipDiv").innerHTML="The default number of reduce tasks.";
   }
   ,hide: function (){
     document.getElementById("tipDiv").innerHTML = "";
