@@ -6,7 +6,7 @@ var ClusterService = {
   size: 3,
   replicas: 3,
   blocksize: 16,
-  reduces: 1,
+  reduce: 1,
 
   tooltipNodes: function () {
     document.getElementById("tipDiv").style.visibility = "visible";
@@ -172,8 +172,12 @@ var ClusterService = {
     if(document.getElementById('input_replicas')){
       document.getElementById('input_replicas').value = ClusterService.replicas;
       document.getElementById('input_blocksize').value = ClusterService.blocksize;
-      document.getElementById('input_reduce').value = ClusterService.reduces;
+      document.getElementById('input_reduce').value = ClusterService.reduce;
     }
+    $('.buttonNext').click(function(){
+      console.log("boton next");
+    });
+    console.log("fuera");
   }
 };
 
