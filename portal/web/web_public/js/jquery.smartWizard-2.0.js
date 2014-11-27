@@ -9,7 +9,6 @@
  * https://github.com/techlab/SmartWizard/blob/master/MIT-LICENSE.txt 
  * 
  */
- 
 (function($){
     $.fn.smartWizard = function(action) {
         var options = $.extend({}, $.fn.smartWizard.defaults, action);
@@ -89,6 +88,7 @@
                       if($(this).hasClass('buttonDisabled')){
                         return false;
                       }
+                      ClusterService.save();
                       doForwardProgress();
                       return false;
                   }); 
