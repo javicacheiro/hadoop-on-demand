@@ -106,7 +106,7 @@
 	if($response['message']=='OK'){
 		echo '<script type="text/javascript"> '
 			. 'window.localStorage.setItem("user" , "' . $user .'"); '
-			. 'window.location="hadoop.php"'
+			. 'window.location="wizard.htm"'
 			. '</script>';
 	}
 	else{
