@@ -88,7 +88,6 @@
                       if($(this).hasClass('buttonDisabled')){
                         return false;
                       }
-                      ClusterService.save();
                       doForwardProgress();
                       return false;
                   }); 
