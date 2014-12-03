@@ -29,17 +29,20 @@ var ClusterService = {
     document.getElementById("tipDiv").style.visibility="hidden";
   }
   ,save: function(){
-    if(document.getElementById("input_size")) // The first time doStartHadoop is called save is invoken before any input has been created
-      ClusterService.hadoopSize = document.getElementById("input_size").value;
+    if(document.getElementById("input_size")) 
+      ClusterService.size = document.getElementById("input_size").value;
     if(document.getElementById("input_replicas")){
-      ClusterService.hadoopReplicas = document.getElementById("input_replicas").value;
-      ClusterService.hadoopBlockSize = document.getElementById("input_blocksize").value;
-      ClusterService.hadoopReduceTasks = document.getElementById("input_reduce").value;
+      ClusterService.replicas = document.getElementById("input_replicas").value;
+      ClusterService.blocksize = document.getElementById("input_blocksize").value;
+      ClusterService.reducers = document.getElementById("input_reducers").value;
     }
   }
   ,validate: function(){
 
-    ClusterService.save();
+    var hadoopSize = ClusterService.size;
+    var hadoopReplicas = ClusterService.replicas;
+    var hadoopBlockSize = ClusterService.blocksize;
+    var hadoopReduceTasks = ClusterService.reducers;
 
     if(hadoopSize.length < 1){ // If hadoopSize is empty
       alert('Field for number of nodes is empty');
@@ -116,25 +119,25 @@ var ClusterService = {
   
     if(hadoopReduceTasks.length < 1){ // If hadoopReduceTasks is empty
       alert('Field for Reduce Tasks Number is empty');
-      document.getElementById("input_reduce").focus();
+      document.getElementById("input_reducers").focus();
       return false;
     }
 
     if(isNaN(hadoopReduceTasks)){ // If hadoopReduceTasks is not a number
       alert('The field for Reduce Tasks Number has invalid data (MUST be a numer)');
-      document.getElementById("input_reduce").focus();
+      document.getElementById("input_reducers").focus();
       return false;
     }
 
     if(hadoopReduceTasks<0){ // If hadoopReduceTasks is negative number
       alert('Reduce Tasks Number cannot be negative');
-      document.getElementById("input_reduce").focus();
+      document.getElementById("input_reducers").focus();
       return false;
     }
   
     if(hadoopReduceTasks.indexOf(".")>-1){ // If hadoopReduceTasks is decimal number
       alert('No decimal numbers allowed for Reduce Tasks Number');
-      document.getElementById("input_reduce").focus();
+      document.getElementById("input_reducers").focus();
       return false;
     }
   
@@ -143,10 +146,10 @@ var ClusterService = {
   ,request_start_hadoop: function(){
     if(ClusterService.validate()){  
       data = { 
-        size : ClusterService.hadoopSize,
-        replicas : ClusterService.hadoopReplicas,
-        blocksize : ClusterService.hadoopBlockSize,
-        reduce : ClusterService.hadoopReduceTasks,
+        size : ClusterService.size,
+        replicas : ClusterService.replicas,
+        blocksize : ClusterService.blocksize,
+        reduce : ClusterService.reducers,
         user : user
       }
       
@@ -162,7 +165,8 @@ var ClusterService = {
       success: function(data){
         startInstant = new Date().getTime();
         //Create jQuery object from the response HTML.
-        document.getElementById("addClusterDiv").innerHTML = data;
+        //document.getElementById("addClusterDiv").innerHTML = data;
+        console.log(data);
       }
     });
   }
@@ -172,12 +176,44 @@ var ClusterService = {
     if(document.getElementById('input_replicas')){
       document.getElementById('input_replicas').value = ClusterService.replicas;
       document.getElementById('input_blocksize').value = ClusterService.blocksize;
-      document.getElementById('input_reduce').value = ClusterService.reduce;
+      document.getElementById('input_reducers').value = ClusterService.reduce;
     }
-    $('.buttonNext').click(function(){
-      console.log("boton next");
+    // Smart Wizard   
+    $('#wizard').smartWizard({
+      labelFinish: 'Launch',
+      onLeaveStep: leaveAStepCallback,
+      onShowStep: showAStepCallback,
+      onFinish: onFinishCallback
     });
-    console.log("fuera");
+
+    function leaveAStepCallback(obj, context) {
+      // Save the values the user has introduced in the form
+      ClusterService.save();
+      // Validate them, if returned value is true then the wizard continues
+      return ClusterService.validate();
+    }
+
+    function showAStepCallback(obj, context) {
+      // TODO: Check why context is null when called and then context.toStep can not be used.
+      //       It seems stepNum is defined globally and that the call is different from documentation.
+      // In the review step fill the table
+      if (stepNum == 3) {
+        document.getElementById('review_size').textContent = ClusterService.size;
+        document.getElementById('review_replicas').textContent = ClusterService.replicas;
+        document.getElementById('review_blocksize').textContent = ClusterService.blocksize;
+        document.getElementById('review_reducers').textContent = ClusterService.reduce;
+      }
+    }
+    
+    function onFinishCallback(obj, context) {
+      console.log("Ready to launch cluster");
+      if(ClusterService.validate()){
+        ClusterService.request_start_hadoop();
+      }
+      return true;
+    }
+
+    //TODO: Add custom logic to validate each step using context.fromStep (see example in smartwizard page)
   }
 };
 
